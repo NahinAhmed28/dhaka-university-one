@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::resource('/products', \App\Http\Controllers\ProductController::class);
-Route::resource('/companies', \App\Http\Controllers\CompanyController::class);
-Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
+Route::resource('/abouts', \App\Http\Controllers\AboutController::class);
+Route::resource('/services', \App\Http\Controllers\ServiceController::class);
+Route::resource('/expertises', \App\Http\Controllers\ContactController::class);
 
