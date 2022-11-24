@@ -48,7 +48,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('about.index')}}">
                                 <i class="metismenu-icon">
                                 </i>Edit
                             </a>
@@ -71,13 +71,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Edit
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{route('service.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List
                             </a>
