@@ -16,18 +16,18 @@
         <th>Created At </th>
         </thead>
         <tbody>
-        @foreach($companies as $company)
-            <tr>
-                <td>{{$company->id}}</td>
-                <td>{{$company->title}}</td>
-                <td>{{$company->created_at}}</td>
-                <td>{{$company->updated_at}}</td>
-            </tr>
-        @endforeach
+{{--        @foreach($companies as $company)--}}
+{{--            <tr>--}}
+{{--                <td>{{$company->id}}</td>--}}
+{{--                <td>{{$company->title}}</td>--}}
+{{--                <td>{{$company->created_at}}</td>--}}
+{{--                <td>{{$company->updated_at}}</td>--}}
+{{--            </tr>--}}
+{{--        @endforeach--}}
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {!! $companies->links() !!}
+{{--        {!! $companies->links() !!}--}}
     </div>
 </div>
 </div>

@@ -15,18 +15,18 @@
 
         </thead>
         <tbody>
-                    @foreach($categories as $category)
-                        <tr>
-                            <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td>
-                            <td>{{$category->created_at}}</td>
-                            <td>{{$category->updated_at}}</td>
-                        </tr>
-                    @endforeach
+{{--                    @foreach($categories as $category)--}}
+{{--                        <tr>--}}
+{{--                            <td>{{$category->id}}</td>--}}
+{{--                            <td>{{$category->name}}</td>--}}
+{{--                            <td>{{$category->created_at}}</td>--}}
+{{--                            <td>{{$category->updated_at}}</td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {!! $categories->links() !!}
+{{--        {!! $categories->links() !!}--}}
     </div>
 </div>
 </div>
