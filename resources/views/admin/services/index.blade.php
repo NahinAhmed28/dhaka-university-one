@@ -11,19 +11,26 @@
         <th>ID</th>
         <th>Title</th>
         <th>Description</th>
-        <th>Created At </th>
         <th>Action </th>
 
         </thead>
         <tbody>
-{{--                    @foreach($categories as $category)--}}
-{{--                        <tr>--}}
-{{--                            <td>{{$category->id}}</td>--}}
-{{--                            <td>{{$category->name}}</td>--}}
-{{--                            <td>{{$category->created_at}}</td>--}}
-{{--                            <td>{{$category->updated_at}}</td>--}}
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
+                    @foreach($services as $service)
+                        <tr>
+                            <td>{{$service->id}}</td>
+                            <td>{{$service->title}}</td>
+                            <td>{{$service->description}}</td>
+                            <td>{{$service->updated_at}}</td>
+                            <td>
+                                <a href="{{ route('admin.service.edit',[$service->id]) }}" title="Edit">
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                    </button></a>
+                                <a href="{{ route('admin.service.show',[$service->id]) }}" title="View">
+                                    <button class="btn btn-outline-info btn-sm"> <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </button></a>
+                            </td>
+                        </tr>
+                    @endforeach
         </tbody>
     </table>
     <div class="d-flex justify-content-center">

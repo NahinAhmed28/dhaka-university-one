@@ -59,7 +59,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{route('service.create')}}">
                                 <i class="metismenu-icon">
                                 </i>Create
                             </a>
