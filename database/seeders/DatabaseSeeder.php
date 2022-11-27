@@ -87,5 +87,12 @@ class DatabaseSeeder extends Seeder
 //            'updated_at'=>now(),
 //        ]);
 
+
+        DB::table('abouts')->insert([
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+
     }
 }

@@ -2,11 +2,12 @@
 
 @section('content')
 
+
                 <div class="main-card mb-3 card">
                     <div class="card-body table-full-width table-responsive">
                         <h4> <strong class="text-bg-primary">About Details </strong></h4>
                         <!--begin::Form-->
-                        <form class="m-form m-form--fit m-form--label-align-right"  action="{{route('about.update', $about->id)}}" method="post" enctype="multipart/form-data">
+                        <form  action="{{route('about.update', $about->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                                 <div class="row">
