@@ -42,12 +42,6 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Create
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{route('about.index')}}">
                                 <i class="metismenu-icon">
                                 </i>Edit

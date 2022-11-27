@@ -10,11 +10,15 @@ class AboutController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'about' => About::first(),
+            ];
+
+        return view('admin.abouts.index', $data);
     }
 
     /**
@@ -65,11 +69,20 @@ class AboutController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\About  $about
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function update(Request $request, About $about)
     {
-        //
+
+
+         $about->update([
+            'description' => $request->description,
+        ]);
+
+        $data = [
+            'about' => About::first(),
+        ];
+        return view('admin.abouts.index',$data);
     }
 
     /**

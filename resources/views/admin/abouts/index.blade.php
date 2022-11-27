@@ -1,36 +1,41 @@
 @extends('admin.layouts.app')
 
 @section('content')
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body table-full-width table-responsive">
+                        <h4> <strong class="text-bg-primary">About Details </strong></h4>
+                        <!--begin::Form-->
+                        <form class="m-form m-form--fit m-form--label-align-right"  action="{{route('about.update', $about->id)}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="m-portlet__body">
+                                <div class="row">
+                                    <div class="row col-md-6">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <div class="form-group  m-form__group {{ $errors->has('description') ? 'has-danger' : '' }}">
+                                                <label class="form-control-label"><span class="text-danger">*</span> Description </label>
+                                                <textarea class="form-control" id="description" placeholder="" rows="3" name="description" cols="50">{{ old('description', $about->description) }}</textarea>
+                                                @if ($errors->has('description'))
+                                                    <div class="form-control-feedback">{{ $errors->first('description') }}</div>
+                                                @endif
+                                            </div>
+                                        </div>
 
-<div class="main-card mb-3 card">
-    <div class="card-body table-full-width table-responsive">
-    <h4> <strong class="text-bg-primary">Product LIST</strong></h4>
-    <table class="table table-hover table-striped">
-        <thead class="badge-light">
-        <th>ID</th>
-        <th>Product Name</th>
-        <th>Product Company</th>
-        <th>Product Category</th>
-        <th>Expire Date</th>
-        <th>Price</th>
-        </thead>
-        <tbody>
-{{--                    @foreach($products as $product)--}}
-{{--                        <tr>--}}
-{{--                            <td>{{$product->id}}</td>--}}
-{{--                            <td>{{$product->name}}</td>--}}
-{{--                            <td>{{$product->company->title}}</td>--}}
-{{--                            <td>{{$product->category->name}}</td>--}}
-{{--                            <td>{{$product->expire_date}}</td>--}}
-{{--                            <td>{{$product->price}}</td>--}}
-
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
-        </tbody>
-    </table>
-    <div class="d-flex justify-content-center">
-{{--        {!! $products->links() !!}--}}
-    </div>
-</div>
-</div>
+                                        <div class="m-portlet__foot m-portlet__foot--fit">
+                                            <div class="m-form__actions text-center">
+                                                <a href="{{ route('about.index') }}" class="btn btn-outline-warning"><i class="fa fa-times"></i> Cancel</a>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection
