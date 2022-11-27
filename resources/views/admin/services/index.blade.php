@@ -5,13 +5,14 @@
 
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-    <h4> <strong class="text-bg-primary">Company LIST</strong></h4>
+    <h4> <strong class="text-bg-primary">Services  LIST</strong></h4>
     <table class="table table-hover table-striped">
         <thead class="badge-light">
         <th>ID</th>
-        <th>Name</th>
+        <th>Title</th>
+        <th>Description</th>
         <th>Created At </th>
-        <th>Created At </th>
+        <th>Action </th>
 
         </thead>
         <tbody>
