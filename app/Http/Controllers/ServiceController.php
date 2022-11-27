@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
@@ -35,11 +38,36 @@ class ServiceController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('logo')){
+            $serviceImage = $request->file('logo');
+            $serviceImageFileName = 'service'.time() . '.' . $serviceImage->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/services')){
+                mkdir('assets/uploads/services', 0777, true);
+            }
+            $serviceImage->move('assets/uploads/services', $serviceImageFileName);
+//            Image::make('assets/uploads/services/'.$serviceImageFileName)->resize(150,150)->save('assets/uploads/services/'.$serviceImageFileName);
+        }else{
+            $serviceImageFileName = 'default_logo.png';
+        }
+
+//        dd($request->all());
+
+        $service = Service::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $serviceImageFileName,
+        ]);
+
+
+        $data = [
+            'services' => Service::get(),
+        ];
+        return view('admin.services.index', $data);
+
     }
 
     /**
