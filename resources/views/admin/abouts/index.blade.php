@@ -1,8 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-        <div class="row">
-            <div class="col-xs-12 col-sm-12">
+
                 <div class="main-card mb-3 card">
                     <div class="card-body table-full-width table-responsive">
                         <h4> <strong class="text-bg-primary">About Details </strong></h4>
@@ -10,7 +9,6 @@
                         <form class="m-form m-form--fit m-form--label-align-right"  action="{{route('about.update', $about->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="m-portlet__body">
                                 <div class="row">
                                     <div class="row col-md-6">
                                         <div class="col-xs-12 col-sm-12">
@@ -31,11 +29,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </form>
                         <!--end::Form-->
                     </div>
                 </div>
-            </div>
-        </div>
+
 @endsection
