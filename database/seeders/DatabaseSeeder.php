@@ -97,6 +97,7 @@ class DatabaseSeeder extends Seeder
         DB::table('missions')->insert([
             'title' => 'title',
             'description' => 'description description description description',
+            'image' => NULL,
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
