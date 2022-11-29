@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('ongoing_research', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
     }

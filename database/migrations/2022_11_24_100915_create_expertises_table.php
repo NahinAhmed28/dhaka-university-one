@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('expertises', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
     }
