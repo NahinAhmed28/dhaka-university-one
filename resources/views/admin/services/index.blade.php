@@ -19,7 +19,9 @@
                     @foreach($services as $service)
                         <tr>
                             <td>{{$service->id}}</td>
-                            <td>{{$service->id}}</td>
+                            <td>
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}" width="200px">
+                            </td>
                             <td>{{$service->title}}</td>
                             <td>{{$service->description}}</td>
                             <td>
@@ -35,7 +37,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-{{--        {!! $categories->links() !!}--}}
+        {!! $services->links() !!}
     </div>
 </div>
 </div>

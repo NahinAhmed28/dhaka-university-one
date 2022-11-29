@@ -88,13 +88,13 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('mission.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('mission.index')}}">
                                         <i class="metismenu-icon">
                                         </i>Edit
                                     </a>

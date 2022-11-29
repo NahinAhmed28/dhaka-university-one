@@ -7,6 +7,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
@@ -19,7 +20,7 @@ class ServiceController extends Controller
     public function index()
     {
         $data = [
-            'services' => Service::get(),
+            'services' => Service::get()->toQuery()->paginate(5),
         ];
         return view('admin.services.index', $data);
     }
@@ -42,14 +43,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('logo')){
-            $serviceImage = $request->file('logo');
+        if ($request->hasFile('image')){
+            $serviceImage = $request->file('image');
             $serviceImageFileName = 'service'.time() . '.' . $serviceImage->getClientOriginalExtension();
-            if (!file_exists('assets/uploads/services')){
-                mkdir('assets/uploads/services', 0777, true);
+            if (!file_exists('assets/uploads/service')){
+                mkdir('assets/uploads/service', 0777, true);
             }
-            $serviceImage->move('assets/uploads/services', $serviceImageFileName);
-//            Image::make('assets/uploads/services/'.$serviceImageFileName)->resize(150,150)->save('assets/uploads/services/'.$serviceImageFileName);
+            $serviceImage->move('assets/uploads/service', $serviceImageFileName);
+//            Image::make('assets/uploads/service/'.$serviceImageFileName)->resize(150,150)->save('assets/uploads/service/'.$serviceImageFileName);
         }else{
             $serviceImageFileName = 'default_logo.png';
         }
@@ -64,7 +65,7 @@ class ServiceController extends Controller
 
 
         $data = [
-            'services' => Service::get(),
+            'services' => Service::get()->toQuery()->paginate(5),
         ];
         return view('admin.services.index', $data);
 
@@ -87,9 +88,10 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $service = Service::find($id);
+        return view('admin.services.edit', compact('service'));
     }
 
     /**
@@ -97,11 +99,36 @@ class ServiceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Service  $service
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Service $service)
     {
-        //
+
+        $serviceImageFileName = $service->image;
+        if ($request->hasFile('image')){
+            $serviceImage = $request->file('image');
+            $serviceImageFileName = 'service'.time() . '.' . $serviceImage->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/service')){
+                mkdir('assets/uploads/service', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/service/'.$service->image) and $service->image != 'default.png'){
+                unlink('assets/uploads/service/'.$service->image);
+            }
+            $serviceImage->move('assets/uploads/service', $serviceImageFileName);
+        }
+
+         $service->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $serviceImageFileName,
+
+        ]);
+
+        return Redirect::back();
     }
 
     /**
