@@ -53,7 +53,7 @@
                 {{--Services--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        <i class="metismenu-icon pe-7s-usb"></i>
                         Services
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -76,7 +76,7 @@
                     {{--Approach--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-wine"></i>
+                        <i class="metismenu-icon pe-7s-plane"></i>
                         Approach
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -106,7 +106,7 @@
                 {{--Accademic--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-wine"></i>
+                        <i class="metismenu-icon pe-7s-notebook"></i>
                         Accademic
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -197,7 +197,7 @@
                 {{--Expertise--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        <i class="metismenu-icon pe-7s-users"></i>
                         Expertise
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -227,7 +227,7 @@
                 {{--Research--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        <i class="metismenu-icon pe-7s-notebook"></i>
                         Research
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -290,7 +290,7 @@
                 {{--Publication--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        <i class="metismenu-icon pe-7s-bookmarks"></i>
                         Publication
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -319,7 +319,7 @@
                 {{--Contact--}}
                 <li>
                     <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        <i class="metismenu-icon pe-7s-phone"></i>
                         Contact
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
