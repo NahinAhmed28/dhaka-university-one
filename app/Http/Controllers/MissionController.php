@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Mission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class MissionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data = [
+            'mission' => Mission::first(),
+        ];
+
+        return view('admin.missions.edit', $data);
     }
 
     /**
@@ -69,7 +74,31 @@ class MissionController extends Controller
      */
     public function update(Request $request, Mission $mission)
     {
-        //
+        $missionImageFileName = $mission->image;
+        if ($request->hasFile('image')){
+            $missionImage = $request->file('image');
+            $missionImageFileName = 'mission'.time() . '.' . $missionImage->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/mission')){
+                mkdir('assets/uploads/mission', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/mission/'.$mission->image) and $mission->image != 'default.png'){
+                unlink('assets/uploads/mission/'.$mission->image);
+            }
+            $missionImage->move('assets/uploads/mission', $missionImageFileName);
+        }
+
+        $mission->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $missionImageFileName,
+
+        ]);
+
+        return Redirect::back();
     }
 
     /**
