@@ -17,6 +17,7 @@
             </div>
             <div class="app-footer-right">
                 <ul class="nav">
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             Dashboard
@@ -24,20 +25,14 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <div class="badge badge-success mr-1 ml-0">
-                                <small>Account</small>
-                            </div>
+                            made with love and care
                         </a>
                     </li>
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
                 </ul>
             </div>
         </div>
     </div>
-    <p class="copyright text-center">
-
-        <script>
-            document.write(new Date().getFullYear())
-        </script>
-        <a href="http://www.facebook.com">Nahin Ahmed</a>, made with love and care
-    </p>
 </div>
