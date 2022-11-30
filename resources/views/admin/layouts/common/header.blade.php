@@ -54,23 +54,23 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">
+{{--                                    <img width="42" class="rounded-circle" src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt="">--}}
 {{--                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>--}}
                                 </a>
-                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                   <a href="#" style="text-decoration: none"> <button type="button" tabindex="0" class="dropdown-item">User Account</button></a>
-                                    <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                    <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                    <button type="button" tabindex="0" class="dropdown-item">Actions</button>
-                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                    <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
-                                </div>
+{{--                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">--}}
+{{--                                   <a href="#" style="text-decoration: none"> <button type="button" tabindex="0" class="dropdown-item">User Account</button></a>--}}
+{{--                                    <button type="button" tabindex="0" class="dropdown-item">Settings</button>--}}
+{{--                                    <h6 tabindex="-1" class="dropdown-header">Header</h6>--}}
+{{--                                    <button type="button" tabindex="0" class="dropdown-item">Actions</button>--}}
+{{--                                    <div tabindex="-1" class="dropdown-divider"></div>--}}
+{{--                                    <button type="button" tabindex="0" class="dropdown-item">Dividers</button>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
 
-                        <a class="nav-link" href="#">
-                            <span class="no-icon">Account</span>
-                        </a>
+{{--                        <a class="nav-link" href="#">--}}
+{{--                            <span class="no-icon">Account</span>--}}
+{{--                        </a>--}}
 {{--                        <a class="nav-link" href="{{route('logout')}}" >--}}
 {{--                            <span class="no-icon">Log out</span>--}}
 {{--                        </a>--}}
