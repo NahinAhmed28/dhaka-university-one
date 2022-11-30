@@ -7,79 +7,50 @@ use Illuminate\Http\Request;
 
 class FellowshipController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'fellowships' => Fellowship::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.fellowships.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.fellowships.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $fellowship = Fellowship::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Fellowship  $fellowship
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Fellowship $fellowship)
+
+        $data = [
+            'fellowships' => Fellowship::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.fellowships.index', $data);
+    }
+    public function show(Fellowship $internship)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Fellowship  $fellowship
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Fellowship $fellowship)
+    public function edit($id)
     {
-        //
+        $fellowship = Fellowship::find($id);
+        return view('admin.fellowships.edit', compact('fellowship'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fellowship  $fellowship
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Fellowship $fellowship)
     {
-        //
-    }
+        $fellowship->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Fellowship  $fellowship
-     * @return \Illuminate\Http\Response
-     */
+        ]);
+
+        return redirect()->route('fellowship.index');
+    }
     public function destroy(Fellowship $fellowship)
     {
-        //
     }
 }

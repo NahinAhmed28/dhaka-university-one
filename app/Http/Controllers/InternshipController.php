@@ -7,79 +7,50 @@ use Illuminate\Http\Request;
 
 class InternshipController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'internships' => Internship::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.internships.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.internships.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $internship = Internship::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
+
+        $data = [
+            'internships' => Internship::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.internships.index', $data);
+    }
     public function show(Internship $internship)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Internship $internship)
+    public function edit($id)
     {
-        //
+        $internship = Internship::find($id);
+        return view('admin.internships.edit', compact('internship'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Internship $internship)
     {
-        //
-    }
+        $internship->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Internship  $internship
-     * @return \Illuminate\Http\Response
-     */
+        ]);
+
+        return redirect()->route('internship.index');
+    }
     public function destroy(Internship $internship)
     {
-        //
     }
 }

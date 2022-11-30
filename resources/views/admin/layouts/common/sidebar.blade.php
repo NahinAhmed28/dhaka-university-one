@@ -295,6 +295,12 @@
                     </a>
                     <ul>
                         <li>
+                            <a href="{{route('contact.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Create
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{route('contact.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List

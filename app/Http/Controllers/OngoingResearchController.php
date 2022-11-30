@@ -7,79 +7,48 @@ use Illuminate\Http\Request;
 
 class OngoingResearchController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'rows' => OngoingResearch::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.ongoing-researches.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.ongoing-researches.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = OngoingResearch::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        $data = [
+            'rows' => OngoingResearch::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.ongoing-researches.index', $data);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\OngoingResearch  $ongoingResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function show(OngoingResearch $ongoingResearch)
+    public function show(OngoingResearch $data)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\OngoingResearch  $ongoingResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(OngoingResearch $ongoingResearch)
+    public function edit($id)
     {
-        //
+        $data = OngoingResearch::find($id);
+        return view('admin.ongoing-researches.edit', compact('data'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OngoingResearch  $ongoingResearch
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, OngoingResearch $ongoingResearch)
     {
-        //
-    }
+        $ongoingResearch->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\OngoingResearch  $ongoingResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(OngoingResearch $ongoingResearch)
+        ]);
+
+        return redirect()->route('ongoing-research.index');
+    }
+    public function destroy(OngoingResearch $data)
     {
-        //
     }
 }

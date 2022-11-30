@@ -7,79 +7,50 @@ use Illuminate\Http\Request;
 
 class HigherEducationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'higherEducation' => HigherEducation::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.higher-educations.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.higher-educations.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $higherEducation = HigherEducation::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\HigherEducation  $higherEducation
-     * @return \Illuminate\Http\Response
-     */
+
+        $data = [
+            'higherEducation' => HigherEducation::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.higher-educations.index', $data);
+    }
     public function show(HigherEducation $higherEducation)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\HigherEducation  $higherEducation
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(HigherEducation $higherEducation)
+    public function edit($id)
     {
-        //
+        $higherEducation = HigherEducation::find($id);
+        return view('admin.higher-educations.edit', compact('higherEducation'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HigherEducation  $higherEducation
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, HigherEducation $higherEducation)
     {
-        //
-    }
+        $higherEducation->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\HigherEducation  $higherEducation
-     * @return \Illuminate\Http\Response
-     */
+        ]);
+
+        return redirect()->route('higher-education.index');
+    }
     public function destroy(HigherEducation $higherEducation)
     {
-        //
     }
 }

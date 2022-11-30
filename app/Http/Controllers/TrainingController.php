@@ -7,77 +7,80 @@ use Illuminate\Http\Request;
 
 class TrainingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'trainings' => Training::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.trainings.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.trainings.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('image')) {
+            $trainingImage = $request->file('image');
+            $trainingImageFileName = 'training' . time() . '.' . $trainingImage->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/training')) {
+                mkdir('assets/uploads/training', 0777, true);
+            }
+            $trainingImage->move('assets/uploads/training', $trainingImageFileName);
+            //            Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
+        } else {
+            $trainingImageFileName = 'default_logo.png';
+        }
+        $training = Training::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $trainingImageFileName,
+        ]);
+        $data = [
+            'trainings' => Training::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.trainings.index', $data);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Training  $training
-     * @return \Illuminate\Http\Response
-     */
     public function show(Training $training)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Training  $training
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Training $training)
+    public function edit($id)
     {
-        //
+        $training = Training::find($id);
+        return view('admin.trainings.edit', compact('training'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Training  $training
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Training $training)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Training  $training
-     * @return \Illuminate\Http\Response
-     */
+        $trainingImageFileName = $training->image;
+        if ($request->hasFile('image')) {
+            $trainingImage = $request->file('image');
+            $trainingImageFileName = 'training' . time() . '.' . $trainingImage->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/training')) {
+                mkdir('assets/uploads/training', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/training/' . $training->image) and $training->image != 'default.png') {
+                unlink('assets/uploads/training/' . $training->image);
+            }
+            $trainingImage->move('assets/uploads/training', $trainingImageFileName);
+        }
+
+        $training->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $trainingImageFileName,
+
+        ]);
+
+        return redirect()->route('training.index');
+    }
     public function destroy(Training $training)
     {
         //

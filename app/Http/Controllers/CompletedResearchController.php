@@ -7,79 +7,48 @@ use Illuminate\Http\Request;
 
 class CompletedResearchController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'rows' => CompletedResearch::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.completed-researches.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.completed-researches.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = CompletedResearch::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        $data = [
+            'rows' => CompletedResearch::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.completed-researches.index', $data);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CompletedResearch  $completedResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function show(CompletedResearch $completedResearch)
+    public function show(CompletedResearch $data)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CompletedResearch  $completedResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(CompletedResearch $completedResearch)
+    public function edit($id)
     {
-        //
+        $data = CompletedResearch::find($id);
+        return view('admin.completed-researches.edit', compact('data'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CompletedResearch  $completedResearch
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, CompletedResearch $completedResearch)
     {
-        //
-    }
+        $completedResearch->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\CompletedResearch  $completedResearch
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(CompletedResearch $completedResearch)
+        ]);
+
+        return redirect()->route('completed-research.index');
+    }
+    public function destroy(CompletedResearch $data)
     {
-        //
     }
 }

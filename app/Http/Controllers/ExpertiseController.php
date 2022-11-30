@@ -7,77 +7,80 @@ use Illuminate\Http\Request;
 
 class ExpertiseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'expertises' => Expertise::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.expertises.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.expertises.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('image')) {
+            $expertiseImage = $request->file('image');
+            $expertiseImageFileName = 'expertise' . time() . '.' . $expertiseImage->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/expertise')) {
+                mkdir('assets/uploads/expertise', 0777, true);
+            }
+            $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
+            //            Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
+        } else {
+            $expertiseImageFileName = 'default_logo.png';
+        }
+        $expertise = Expertise::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $expertiseImageFileName,
+        ]);
+        $data = [
+            'expertises' => Expertise::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.expertises.index', $data);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Expertise  $expertise
-     * @return \Illuminate\Http\Response
-     */
     public function show(Expertise $expertise)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Expertise  $expertise
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Expertise $expertise)
+    public function edit($id)
     {
-        //
+        $expertise = Expertise::find($id);
+        return view('admin.expertises.edit', compact('expertise'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Expertise  $expertise
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Expertise $expertise)
     {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Expertise  $expertise
-     * @return \Illuminate\Http\Response
-     */
+        $expertiseImageFileName = $expertise->image;
+        if ($request->hasFile('image')) {
+            $expertiseImage = $request->file('image');
+            $expertiseImageFileName = 'expertise' . time() . '.' . $expertiseImage->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/expertise')) {
+                mkdir('assets/uploads/expertise', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/expertise/' . $expertise->image) and $expertise->image != 'default.png') {
+                unlink('assets/uploads/expertise/' . $expertise->image);
+            }
+            $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
+        }
+
+        $expertise->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $expertiseImageFileName,
+
+        ]);
+
+        return redirect()->route('expertise.index');
+    }
     public function destroy(Expertise $expertise)
     {
         //

@@ -7,79 +7,48 @@ use Illuminate\Http\Request;
 
 class PublicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = [
+            'rows' => Publication::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.publications.index', $data);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.publications.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = Publication::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        $data = [
+            'rows' => Publication::get()->toQuery()->paginate(5),
+        ];
+        return view('admin.publications.index', $data);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Publication  $publication
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Publication $publication)
+    public function show(Publication $data)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Publication  $publication
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Publication $publication)
+    public function edit($id)
     {
-        //
+        $data = Publication::find($id);
+        return view('admin.publications.edit', compact('data'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publication  $publication
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Publication $publication)
     {
-        //
-    }
+        $publication->update([
+            'title' => $request->title,
+            'description' => $request->description,
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Publication  $publication
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Publication $publication)
+        ]);
+
+        return redirect()->route('publication.index');
+    }
+    public function destroy(Publication $data)
     {
-        //
     }
 }

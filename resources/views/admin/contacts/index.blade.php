@@ -5,27 +5,29 @@
 
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-    <h4> <strong class="text-bg-primary">Services  LIST</strong></h4>
+    <h4> <strong class="text-bg-primary">Contacts LIST</strong></h4>
     <table class="table table-hover table-striped">
         <thead class="badge-light">
         <th>ID</th>
-        <th>Image</th>
-        <th>Title</th>
-        <th>Description</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Message</th>
         <th>Action </th>
 
         </thead>
         <tbody>
-                    @foreach($services as $service)
+                    @foreach($rows as $value)
                         <tr>
-                            <td>{{$service->id}}</td>
+                            <td>{{$value->id}}</td>
+                            <td>{{$value->name}}</td>
+                            <td>{{$value->email}}</td>
+                            <td>{{$value->phone}}</td>
+                            <td>{{$value->address}}</td>
+                            <td>{{$value->message}}</td>
                             <td>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}" width="200px">
-                            </td>
-                            <td>{{$service->title}}</td>
-                            <td>{{$service->description}}</td>
-                            <td>
-                                <a href="{{ route('service.edit',[$service->id]) }}" title="Edit">
+                                <a href="{{ route('contact.edit',[$value->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
                             </td>
@@ -34,7 +36,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {!! $services->links() !!}
+        {!! $rows->links() !!}
     </div>
 </div>
 </div>

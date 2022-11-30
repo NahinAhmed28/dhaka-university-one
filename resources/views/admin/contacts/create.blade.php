@@ -3,39 +3,53 @@
 @section('content')
     <div class="main-card mb-3 card">
         <div class="m-3" style="margin-bottom: 20px">
-            <h4>Create Services</h4>
+            <h4>Create Contacts</h4>
 
-            <form action="{{route('service.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('contact.store')}}" method="POST">
                 @csrf
 
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="title">Service Title</label>
-                        <input type="text" name="title" class="form-control md-2 {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" placeholder="Write Your Title" />
-                        @if ($errors->has('title'))
-                            <div class="invalid-feedback">{{ $errors->first('title') }}</div>
+                        <label for="title">Name</label>
+                        <input type="text" name="name" class="form-control md-2 {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" placeholder="Write Your Name" />
+                        @if ($errors->has('name'))
+                            <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                         @endif
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label>Service Image</label>
-                        <div class="custom-file">
-                            <input type="file" name="image" class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" id="PartnersImageFile" />
-                            <label class="custom-file-label" for="PartnersImageFile">Choose file</label>
-                            @if ($errors->has('image'))
-                                <div class="invalid-feedback">{{ $errors->first('image') }}</div>
-                            @endif
-                        </div>
-                        <div id="emailHelp" class="form-text text-info">Recommended image shape:(1260x720) px </div>
+                        <label for="title">Email</label>
+                        <input type="email" name="email" class="form-control md-2 {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="Write Your email" />
+                        @if ($errors->has('email'))
+                            <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="description">Service Title</label>
-                        <input type="text" name="description" class="form-control md-2 {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
-                        @if ($errors->has('title'))
-                            <div class="invalid-feedback">{{ $errors->first('description') }}</div>
+                        <label for="title">Phone</label>
+                        <input type="text" name="phone" class="form-control md-2 {{ $errors->has('phone') ? 'is-invalid' : '' }}" value="{{ old('phone') }}" placeholder="Write Your phone" />
+                        @if ($errors->has('phone'))
+                            <div class="invalid-feedback">{{ $errors->first('phone') }}</div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="title">Address</label>
+                        <textarea class="form-control" id="address" placeholder="Write Your address" rows="3" name="address" cols="50"></textarea>
+                        @if ($errors->has('address'))
+                            <div class="invalid-feedback">{{ $errors->first('address') }}</div>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="title">Message</label>
+                        <textarea class="form-control" id="message" placeholder="Write Your message" rows="3" name="message" cols="50"></textarea>
+                        @if ($errors->has('message'))
+                            <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                         @endif
                     </div>
                 </div>

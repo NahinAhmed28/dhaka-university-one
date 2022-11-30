@@ -3,14 +3,14 @@
 @section('content')
     <div class="main-card mb-3 card">
         <div class="m-3" style="margin-bottom: 20px">
-            <h4>Create Services</h4>
+            <h4>Create Expertise</h4>
 
-            <form action="{{route('service.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('expertise.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="title">Service Title</label>
+                        <label for="title">Expertise Title</label>
                         <input type="text" name="title" class="form-control md-2 {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" placeholder="Write Your Title" />
                         @if ($errors->has('title'))
                             <div class="invalid-feedback">{{ $errors->first('title') }}</div>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label>Service Image</label>
+                        <label>Expertise Image</label>
                         <div class="custom-file">
                             <input type="file" name="image" class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" id="PartnersImageFile" />
                             <label class="custom-file-label" for="PartnersImageFile">Choose file</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="description">Service Title</label>
+                        <label for="description">Expertise Title</label>
                         <input type="text" name="description" class="form-control md-2 {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
                         @if ($errors->has('title'))
                             <div class="invalid-feedback">{{ $errors->first('description') }}</div>

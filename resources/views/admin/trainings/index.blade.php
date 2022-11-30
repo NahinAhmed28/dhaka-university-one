@@ -5,7 +5,7 @@
 
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-    <h4> <strong class="text-bg-primary">Services  LIST</strong></h4>
+    <h4> <strong class="text-bg-primary">Training  LIST</strong></h4>
     <table class="table table-hover table-striped">
         <thead class="badge-light">
         <th>ID</th>
@@ -16,16 +16,16 @@
 
         </thead>
         <tbody>
-                    @foreach($services as $service)
+                    @foreach($trainings as $training)
                         <tr>
-                            <td>{{$service->id}}</td>
+                            <td>{{$training->id}}</td>
                             <td>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}" width="200px">
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/training/'.$training->image)}}" width="200px">
                             </td>
-                            <td>{{$service->title}}</td>
-                            <td>{{$service->description}}</td>
+                            <td>{{$training->title}}</td>
+                            <td>{{$training->description}}</td>
                             <td>
-                                <a href="{{ route('service.edit',[$service->id]) }}" title="Edit">
+                                <a href="{{ route('training.edit',[$training->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
                             </td>
@@ -34,7 +34,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {!! $services->links() !!}
+        {!! $trainings->links() !!}
     </div>
 </div>
 </div>
