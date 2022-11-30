@@ -33,6 +33,8 @@
                         </form>
                         <!--end::Form-->
                     </div>
-                </div>
+                </div>create.blade.php
+                edit.blade.php
+                index.blade.php
 
 @endsection
