@@ -112,15 +112,15 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('higher-education.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('higher-education.index')}}">
                                         <i class="metismenu-icon">
-                                        </i>Edit
+                                        </i>List
                                     </a>
                                 </li>
                             </ul>
@@ -132,15 +132,15 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('training.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('training.index')}}">
                                         <i class="metismenu-icon">
-                                        </i>Edit
+                                        </i>List
                                     </a>
                                 </li>
                             </ul>
@@ -152,15 +152,15 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('internship.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('internship.index')}}">
                                         <i class="metismenu-icon">
-                                        </i>Edit
+                                        </i>List
                                     </a>
                                 </li>
                             </ul>
@@ -172,15 +172,15 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('fellowship.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('fellowship.index')}}">
                                         <i class="metismenu-icon">
-                                        </i>Edit
+                                        </i>List
                                     </a>
                                 </li>
                             </ul>
@@ -197,19 +197,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{route('expertise.create')}}">
                                 <i class="metismenu-icon">
                                 </i>Create
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Edit
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{route('expertise.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List
                             </a>
@@ -233,19 +227,13 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('ongoing-research.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="metismenu-icon">
-                                        </i>Edit
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
+                                    <a href="{{route('ongoing-research.index')}}">
                                         <i class="metismenu-icon">
                                         </i>List
                                     </a>
@@ -259,19 +247,13 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('completed-research.create')}}">
                                         <i class="metismenu-icon">
                                         </i>Create
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="metismenu-icon">
-                                        </i>Edit
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
+                                    <a href="{{route('completed-research.index')}}">
                                         <i class="metismenu-icon">
                                         </i>List
                                     </a>
@@ -290,19 +272,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{route('publication.create')}}">
                                 <i class="metismenu-icon">
                                 </i>Create
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Edit
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{route('publication.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List
                             </a>
@@ -319,7 +295,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{{route('contact.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List
                             </a>
