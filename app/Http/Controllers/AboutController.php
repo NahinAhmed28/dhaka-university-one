@@ -82,7 +82,7 @@ class AboutController extends Controller
         $data = [
             'about' => About::first(),
         ];
-        return view('admin.abouts.index',$data);
+        return view('admin.abouts.edit',$data);
     }
 
     /**
