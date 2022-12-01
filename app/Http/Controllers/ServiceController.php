@@ -116,7 +116,7 @@ class ServiceController extends Controller
 
             //delete old image if exist
             if (file_exists('assets/uploads/service/'.$service->image) and $service->image != 'default.png'){
-                unlink('assets/uploads/service/'.$service->image);
+                rmdir('assets/uploads/service/'.$service->image);
             }
             $serviceImage->move('assets/uploads/service', $serviceImageFileName);
         }

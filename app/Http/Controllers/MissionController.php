@@ -88,7 +88,7 @@ class MissionController extends Controller
 
             //delete old image if exist
             if (file_exists('assets/uploads/mission/'.$mission->image) and $mission->image != 'default.png'){
-                unlink('assets/uploads/mission/'.$mission->image);
+                rmdir('assets/uploads/mission/'.$mission->image);
             }
             $missionImage->move('assets/uploads/mission', $missionImageFileName);
         }
