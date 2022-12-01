@@ -32,11 +32,16 @@
                             @endif
                         </div>
                     </div>
+
+
+                    {{-- service image area --}}
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group">
-                            <label class="form-control-label">Service Image</label>
-                            <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}"
-                                width="200px">
+                            <div class="service-flex">
+                                <label class="form-control-label">Service Image</label>
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}"
+                                    width="200px">
+                            </div>
                             <div class="custom-file">
                                 <input type="file" name="image"
                                     class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}"
