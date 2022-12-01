@@ -47,14 +47,71 @@ class DatabaseSeeder extends Seeder
         DB::table('missions')->insert([
             'title' => 'title',
             'description' => 'description description description description',
-            'image' => NULL,
+            'image' => Null ,
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
         DB::table('services')->insert([
             'title' => 'title',
             'description' => 'description description description description',
-            'image' => NULL,
+            'image' => Null,
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('completed_research')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('ongoing_research')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('fellowships')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('trainings')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('fellowships')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('higher_education')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('internships')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('publications')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('contacts')->insert([
+            'name' => 'title',
+            'email' => 'description description description description',
+            'phone' => 'description description description description',
+            'address' => 'description description description description',
+            'message' => 'description description description description',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
