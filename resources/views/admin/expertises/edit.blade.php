@@ -10,7 +10,7 @@
             @csrf
             @method('PUT')
             <div class="row">
-                <div class="row col-md-6">
+                <div class="row col-md-6 flexbox">
 
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('title') ? 'has-danger' : '' }}">
