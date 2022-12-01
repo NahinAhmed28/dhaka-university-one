@@ -67,7 +67,7 @@ class TrainingController extends Controller
 
             //delete old image if exist
             if (file_exists('assets/uploads/training/' . $training->image) and $training->image != 'default.png') {
-                unlink('assets/uploads/training/' . $training->image);
+                rmdir('assets/uploads/training/' . $training->image);
             }
             $trainingImage->move('assets/uploads/training', $trainingImageFileName);
         }
