@@ -61,7 +61,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('frontend/assets/img/about.jpg')}}" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
                     </div>
 
@@ -96,7 +96,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
-                            <img src="assets/img/about-boxes-1.jpg" class="card-img-top" alt="...">
+                            <img src="{{asset('frontend/assets/img/about-boxes-1.jpg')}}" class="card-img-top" alt="...">
                             <div class="card-icon">
                                 <i class="ri-brush-4-line"></i>
                             </div>
