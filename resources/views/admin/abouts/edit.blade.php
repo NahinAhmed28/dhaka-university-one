@@ -3,9 +3,9 @@
 @section('content')
 
 
-<div class="main-card mb-3 card">
+<div class="main-card card">
     <div class="card-body table-full-width table-responsive">
-        <h4> <strong class="text-bg-primary">About Details </strong></h4>
+        <h4> About Details </h4>
         <!--begin::Form-->
         <form action="{{route('about.update', $about->id)}}" method="post" enctype="multipart/form-data">
             @csrf
@@ -23,11 +23,13 @@
                         </div>
                     </div>
 
-                    <div class="m-portlet__foot m-portlet__foot--fit">
-                        <div class="m-form__actions text-center">
-                            <a href="{{ route('about.index') }}" class="btn btn-outline-warning"><i
-                                    class="fa fa-times"></i> Cancel</a>
-                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                    <div class="m-portlet__foot m-portlet__foot--fit ">
+                        <div class="m-form__actions text-center flexbox">
+                            <a href="{{ route('about.index') }}" class="btn btn-danger btn-flex"><i
+                                    class="fa fa-times"></i>
+                                Cancel</a>
+                            <button type="submit" class="btn btn-success btn-flex"><i class="fa fa-save"></i>
+                                Save</button>
                         </div>
                     </div>
                 </div>

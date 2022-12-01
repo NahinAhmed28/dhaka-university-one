@@ -1,3 +1,21 @@
 .main-card {
     min-height: 100%;
+    padding-left: 4%;
+    padding-top: 3%;
+
+}
+
+.flexbox {
+    display: flex;
+    padding-left: 13%;
+    justify-content: center;
+    gap: 3em;
+}
+
+.btn-flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
 }
