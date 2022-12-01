@@ -30,6 +30,20 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label class="form-control-label">Image</label>
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/fellowship/'.$fellowship->image)}}" width="200px">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" id="PartnersImageFile" />
+                                    <label class="custom-file-label" for="PartnersImageFile">Choose file</label>
+                                    @if ($errors->has('image'))
+                                        <div class="invalid-feedback">{{ $errors->first('image') }}</div>
+                                    @endif
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="m-portlet__foot m-portlet__foot--fit">
                             <div class="m-form__actions text-center">
                                 <a href="{{ route('fellowship.index') }}" class="btn btn-outline-warning"><i class="fa fa-times"></i> Cancel</a>

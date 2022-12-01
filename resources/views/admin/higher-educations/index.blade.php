@@ -18,6 +18,9 @@
                     @foreach($higherEducation as $value)
                         <tr>
                             <td>{{$value->id}}</td>
+                            <td>
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/higher-education/'.$value->image)}}" width="200px">
+                            </td>
                             <td>{{$value->title}}</td>
                             <td>{{$value->description}}</td>
                             <td>

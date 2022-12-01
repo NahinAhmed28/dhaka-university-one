@@ -20,9 +20,21 @@ class FellowshipController extends Controller
     }
     public function store(Request $request)
     {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'fellowship' . time() . '.' . $image->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/fellowship')) {
+                mkdir('assets/uploads/fellowship', 0777, true);
+            }
+            $image->move('assets/uploads/fellowship', $imageFileName);
+            //            Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
+        } else {
+            $imageFileName = 'default_logo.png';
+        }
         $fellowship = Fellowship::create([
             'title' => $request->title,
             'description' => $request->description,
+            'image' => $imageFileName,
         ]);
 
 
@@ -42,9 +54,26 @@ class FellowshipController extends Controller
     }
     public function update(Request $request, Fellowship $fellowship)
     {
+        $imageFileName = $fellowship->image;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'fellowship' . time() . '.' . $image->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/fellowship')) {
+                mkdir('assets/uploads/fellowship', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/fellowship/' . $fellowship->image) and $fellowship->image != 'default.png') {
+                unlink('assets/uploads/fellowship/'.$fellowship->image);
+            }
+            $image->move('assets/uploads/fellowship', $imageFileName);
+        }
         $fellowship->update([
             'title' => $request->title,
             'description' => $request->description,
+            'image' => $imageFileName,
 
         ]);
 
