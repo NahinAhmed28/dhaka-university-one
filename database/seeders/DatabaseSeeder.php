@@ -47,14 +47,14 @@ class DatabaseSeeder extends Seeder
         DB::table('missions')->insert([
             'title' => 'title',
             'description' => 'description description description description',
-            'image' => Null ,
+            'image' => 'default.png' ,
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
         DB::table('services')->insert([
             'title' => 'title',
             'description' => 'description description description description',
-            'image' => Null,
+            'image' => 'default.png',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
