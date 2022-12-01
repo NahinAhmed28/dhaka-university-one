@@ -79,6 +79,7 @@ class DatabaseSeeder extends Seeder
         DB::table('trainings')->insert([
             'title' => 'title',
             'description' => 'description description description description',
+            'image' => 'default.png',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
