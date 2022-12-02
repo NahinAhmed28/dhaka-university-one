@@ -28,15 +28,6 @@ class DatabaseSeeder extends Seeder
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
-        DB::table('users')->insert([
-            'name' => "user",
-            'email' => 'user'.'@gmail.com',
-            'password' =>Hash::make('password'),
-            'email_verified_at' => now(),
-            'created_at'=>	now(),
-            'updated_at'=>now(),
-        ]);
-
 
         DB::table('abouts')->insert([
             'description' => 'description description description description',
@@ -58,6 +49,15 @@ class DatabaseSeeder extends Seeder
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
+
+        DB::table('organizations')->insert([
+            'title' => 'title',
+            'description' => 'description description description description',
+            'image' => 'default.png',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+
         DB::table('completed_research')->insert([
             'title' => 'title',
             'description' => 'description description description description',

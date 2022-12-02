@@ -13,6 +13,7 @@ use App\Http\Controllers\FellowshipController;
 use App\Http\Controllers\CompletedResearchController;
 use App\Http\Controllers\OngoingResearchController;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\OrganizationController;
 
 
 
@@ -52,5 +53,6 @@ Route::resource('fellowship', FellowshipController::class);
 Route::resource('completed-research', CompletedResearchController::class);
 Route::resource('ongoing-research', OngoingResearchController::class);
 Route::resource('publication', PublicationController::class);
+Route::resource('organization', OrganizationController::class);
 
 

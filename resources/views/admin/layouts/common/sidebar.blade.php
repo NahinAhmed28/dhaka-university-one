@@ -211,6 +211,29 @@
                     </ul>
                 </li>
 
+                {{--Organization--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Organization
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('organization.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Create
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('organization.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 {{--Research--}}
                 <li>
