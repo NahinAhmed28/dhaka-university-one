@@ -71,6 +71,8 @@ class ExpertiseController extends Controller
                 unlink('assets/uploads/expertise/' . $expertise->image);
             }
             $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
+            Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
+
         }
 
         $expertise->update([

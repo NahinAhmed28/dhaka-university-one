@@ -71,6 +71,8 @@ class TrainingController extends Controller
                 unlink('assets/uploads/training/'.$training->image);
             }
             $trainingImage->move('assets/uploads/training', $trainingImageFileName);
+            Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
+
         }
 
         $training->update([
