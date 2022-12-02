@@ -70,12 +70,7 @@ class DatabaseSeeder extends Seeder
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
-        DB::table('fellowships')->insert([
-            'title' => 'title',
-            'description' => 'description description description description',
-            'created_at'=>	now(),
-            'updated_at'=>now(),
-        ]);
+
         DB::table('trainings')->insert([
             'title' => 'title',
             'description' => 'description description description description',
@@ -86,18 +81,21 @@ class DatabaseSeeder extends Seeder
         DB::table('fellowships')->insert([
             'title' => 'title',
             'description' => 'description description description description',
+            'image' => 'default.png',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
         DB::table('higher_education')->insert([
             'title' => 'title',
             'description' => 'description description description description',
+            'image' => 'default.png',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
         DB::table('internships')->insert([
             'title' => 'title',
             'description' => 'description description description description',
+            'image' => 'default.png',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);

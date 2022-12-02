@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fellowship;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class FellowshipController extends Controller
 {
@@ -27,7 +28,7 @@ class FellowshipController extends Controller
                 mkdir('assets/uploads/fellowship', 0777, true);
             }
             $image->move('assets/uploads/fellowship', $imageFileName);
-            //            Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
+                        Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }

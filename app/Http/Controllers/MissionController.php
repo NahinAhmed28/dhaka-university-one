@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Intervention\Image\Facades\Image;
 
 class MissionController extends Controller
 {
@@ -91,6 +92,7 @@ class MissionController extends Controller
                 unlink('assets/uploads/mission/'.$mission->image);
             }
             $missionImage->move('assets/uploads/mission', $missionImageFileName);
+            Image::make('assets/uploads/service/'.$missionImageFileName)->resize(150,150)->save('assets/uploads/service/'.$missionImageFileName);
         }
 
         $mission->update([

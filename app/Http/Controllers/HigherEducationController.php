@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HigherEducation;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class HigherEducationController extends Controller
 {
@@ -27,7 +28,7 @@ class HigherEducationController extends Controller
                 mkdir('assets/uploads/higher-education', 0777, true);
             }
             $image->move('assets/uploads/higher-education', $imageFileName);
-            //            Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
+                        Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }

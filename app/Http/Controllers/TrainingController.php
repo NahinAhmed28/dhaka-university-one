@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Training;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class TrainingController extends Controller
 {
@@ -28,7 +29,7 @@ class TrainingController extends Controller
                 mkdir('assets/uploads/training', 0777, true);
             }
             $trainingImage->move('assets/uploads/training', $trainingImageFileName);
-            //            Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
+                        Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
         } else {
             $trainingImageFileName = 'default_logo.png';
         }

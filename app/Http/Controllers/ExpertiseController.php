@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Expertise;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ExpertiseController extends Controller
 {
@@ -28,7 +29,7 @@ class ExpertiseController extends Controller
                 mkdir('assets/uploads/expertise', 0777, true);
             }
             $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
-            //            Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
+                        Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
         } else {
             $expertiseImageFileName = 'default_logo.png';
         }

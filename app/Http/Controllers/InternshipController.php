@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Internship;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class InternshipController extends Controller
 {
@@ -27,11 +28,11 @@ class InternshipController extends Controller
                 mkdir('assets/uploads/internship', 0777, true);
             }
             $image->move('assets/uploads/internship', $imageFileName);
-            //            Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
+                        Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
-        
+
         $internship = Internship::create([
             'title' => $request->title,
             'description' => $request->description,
