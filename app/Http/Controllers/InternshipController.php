@@ -20,9 +20,22 @@ class InternshipController extends Controller
     }
     public function store(Request $request)
     {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'internship' . time() . '.' . $image->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/internship')) {
+                mkdir('assets/uploads/internship', 0777, true);
+            }
+            $image->move('assets/uploads/internship', $imageFileName);
+            //            Image::make('assets/uploads/training/'.$imageFileName)->resize(150,150)->save('assets/uploads/training/'.$imageFileName);
+        } else {
+            $imageFileName = 'default_logo.png';
+        }
+        
         $internship = Internship::create([
             'title' => $request->title,
             'description' => $request->description,
+            'image' => $imageFileName,
         ]);
 
 
@@ -42,9 +55,26 @@ class InternshipController extends Controller
     }
     public function update(Request $request, Internship $internship)
     {
+        $imageFileName = $internship->image;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'internship' . time() . '.' . $image->getClientOriginalExtension();
+
+
+            if (!file_exists('assets/uploads/internship')) {
+                mkdir('assets/uploads/internship', 0777, true);
+            }
+
+            //delete old image if exist
+            if (file_exists('assets/uploads/internship/' . $internship->image) and $internship->image != 'default.png') {
+                unlink('assets/uploads/internship/'.$internship->image);
+            }
+            $image->move('assets/uploads/internship', $imageFileName);
+        }
         $internship->update([
             'title' => $request->title,
             'description' => $request->description,
+            'image' => $imageFileName,
 
         ]);
 
