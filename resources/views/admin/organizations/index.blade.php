@@ -16,16 +16,16 @@
 
         </thead>
         <tbody>
-                    @foreach($services as $service)
+                    @foreach($organizations as $organization)
                         <tr>
-                            <td>{{$service->id}}</td>
+                            <td>{{$organization->id}}</td>
                             <td>
                                 <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}" width="200px">
                             </td>
-                            <td>{{$service->title}}</td>
-                            <td>{{$service->description}}</td>
+                            <td>{{$organization->title}}</td>
+                            <td>{{$organization->description}}</td>
                             <td>
-                                <a href="{{ route('service.edit',[$service->id]) }}" title="Edit">
+                                <a href="{{ route('service.edit',[$organization->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
                             </td>
@@ -34,7 +34,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {!! $services->links() !!}
+        {!! $organizations->links() !!}
     </div>
 </div>
 </div>
