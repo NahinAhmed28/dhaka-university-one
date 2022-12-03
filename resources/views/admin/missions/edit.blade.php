@@ -32,10 +32,10 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12">
 
+                    <div class="col-xs-12 col-sm-12">
                         <div class="service-flex">
-                            <div class="form-group">
+                            <div class="form-group service-flex">
                                 <label class="form-control-label">Mission Image</label>
                                 <img class="img-thumbnail" src="{{ asset('assets/uploads/mission/'.$mission->image)}}"
                                     width="200px">
@@ -52,6 +52,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="m-portlet__foot m-portlet__foot--fit">
                         <div class="m-form__actions text-center flexbox">
                             <a href="{{ route('mission.index') }}" class="btn btn-danger btn-flex"><i
