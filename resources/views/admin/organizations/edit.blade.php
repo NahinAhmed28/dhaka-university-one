@@ -34,12 +34,12 @@
                     </div>
 
 
-                    {{-- service image area --}}
+                    {{-- organization image area --}}
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group">
                             <div class="service-flex">
                                 <label class="form-control-label">Organization Image</label>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/service/'.$service->image)}}"
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/organization/'.$organization->image)}}"
                                     width="200px">
                             </div>
                             <div class="custom-file">

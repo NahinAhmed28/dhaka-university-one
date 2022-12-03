@@ -18,7 +18,7 @@ class OrganizationController extends Controller
     public function index()
     {
         $data = [
-            'services' => Organization::get()->toQuery()->paginate(5),
+            'organizations' => Organization::get()->toQuery()->paginate(5),
         ];
         return view('admin.organizations.index', $data);
     }
@@ -48,7 +48,7 @@ class OrganizationController extends Controller
                 mkdir('assets/uploads/organization', 0777, true);
             }
             $organizationImage->move('assets/uploads/organization', $organizationImageFileName);
-            Image::make('assets/uploads/organization/'.$organizationImage)->resize(150,150)->save('assets/uploads/organization/'.$serviceImageFileName);
+            Image::make('assets/uploads/organization/'.$organizationImage)->resize(150,150)->save('assets/uploads/organization/'.$organizationImageFileName);
         }else{
             $organizationImageFileName = 'default_logo.png';
         }
@@ -117,13 +117,13 @@ class OrganizationController extends Controller
                 unlink('assets/uploads/organization/'.$organization->image);
             }
             $organizationImage->move('assets/uploads/organization', $organizationImageFileName);
-            Image::make('assets/uploads/organization/'.$organizationImageFileName)->resize(150,150)->save('assets/uploads/organization/'.$serviceImageFileName);
+            Image::make('assets/uploads/organization/'.$organizationImageFileName)->resize(150,150)->save('assets/uploads/organization/'.$organizationImageFileName);
         }
 
         $organization->update([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $serviceImageFileName,
+            'image' => $organizationImageFileName,
 
         ]);
 

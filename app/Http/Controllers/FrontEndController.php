@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Company;
-use App\Models\Product;
+use App\Models\About;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
 {
     public function index()
     {
-//        $data = [
-//            'categories' => Category::get()->toQuery()->paginate(15),
-//            'companies' => Company::get()->toQuery()->paginate(10),
-//            'products' => Product::orderBy('id','asc')->paginate(10),
-//        ];
+        $data = [
+            'about' => About::first(),
+            'organizations' => Organization::get(),
+        ];
 
-//        return view('frontend.layouts.main', $data);
-        return view('frontend.layouts.main');
+        return view('frontend.layouts.main', $data);
+//        return view('frontend.layouts.main');
     }
 
     public function searchData (Request $request)

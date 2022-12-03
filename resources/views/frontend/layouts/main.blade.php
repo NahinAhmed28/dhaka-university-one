@@ -69,29 +69,9 @@
                     </div>
 
                     <div class="col-lg-6 pt-3 pt-lg-0 content">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <h3>About Us</h3>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </li>
-                            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</li>
-                            <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis
-                                sint.</li>
-                            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
-                                fugiat nulla pariatur.</li>
-                        </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                            in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
+                            {!!$about->description!!}
                         </p>
                     </div>
 
@@ -153,34 +133,36 @@
         </section><!-- End About Boxes Section -->
 
         <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients">
+        <section id="organization" class="clients">
             <div class="container" data-aos="zoom-in">
 
                 <div class="row">
 
+                    @foreach($organizations as $organization)
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/uploads/organization/'.$organization->image)}}" class="img-fluid" alt="">
                     </div>
+                    @endforeach
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
-                    </div>
+{{--                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">--}}
+{{--                        <img src="{{ asset('frontend/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
-                    </div>
+{{--                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">--}}
+{{--                        <img src="{{ asset('frontend/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
-                    </div>
+{{--                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">--}}
+{{--                        <img src="{{ asset('frontend/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
-                    </div>
+{{--                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">--}}
+{{--                        <img src="{{ asset('frontend/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
-                    </div>
+{{--                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">--}}
+{{--                        <img src="{{ asset('frontend/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">--}}
+{{--                    </div>--}}
 
                 </div>
 
