@@ -146,6 +146,8 @@ h6 {
 }
 
 #header .logo img {
+  min-height: 50px;
+  min-width: 30px;
   max-height: 100px;
 }
 
