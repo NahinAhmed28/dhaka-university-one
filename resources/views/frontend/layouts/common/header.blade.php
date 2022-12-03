@@ -39,10 +39,9 @@
                     <ul>
                         <li><a href="#">Ongoing Research</a></li>
                         <li><a href="#">Completed Research</a></li>
+                        <li><a href="#">Publication</a></li>
                     </ul>
                 </li>
-
-                <li><a class="nav-link scrollto" href="#publication">Publication</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
