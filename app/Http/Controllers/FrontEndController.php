@@ -24,52 +24,52 @@ class FrontEndController extends Controller
     }
     public function service()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.service');
 
     }
     public function expertise()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.expertise');
 
     }
     public function mission()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.mission');
 
     }
     public function contact()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.contact');
 
     }
     public function higherEducation()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.higher-education');
 
     }
     public function internship()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.internship');
 
     }
     public function training()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.training');
 
     }
     public function fellowship()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.fellowship');
 
     }
     public function completedResearch()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.completed-research');
 
     }
     public function ongoingResearch()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.ongoing-research');
 
     }
     public function organization()
@@ -83,7 +83,7 @@ class FrontEndController extends Controller
     }
     public function publication()
     {
-        return view('frontend.layouts.about');
+        return view('frontend.layouts.publication');
 
     }
 
