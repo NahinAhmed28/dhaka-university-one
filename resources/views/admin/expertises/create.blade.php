@@ -33,8 +33,9 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="description">Expertise description</label>
-                        <input type="text" name="description" class="form-control md-2 summernote d-none{{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
-                        @if ($errors->has('title'))
+                        <textarea class="form-control summernote d-none" id="description" placeholder="" rows="12" name="description"
+                                  cols="80"></textarea>
+                        @if ($errors->has('description'))
                             <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                         @endif
                     </div>
