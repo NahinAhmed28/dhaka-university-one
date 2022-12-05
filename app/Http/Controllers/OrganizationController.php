@@ -41,24 +41,23 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('image')){
-            $organizationImage = $request->file('image');
-            $organizationImageFileName = 'organization'.time() . '.' . $organizationImage->getClientOriginalExtension();
-            if (!file_exists('assets/uploads/organization')){
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageFileName = 'organization' . time() . '.' . $image->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/organization')) {
                 mkdir('assets/uploads/organization', 0777, true);
             }
-            $organizationImage->move('assets/uploads/organization', $organizationImageFileName);
-            Image::make('assets/uploads/organization/'.$organizationImage)->resize(150,150)->save('assets/uploads/organization/'.$organizationImageFileName);
-        }else{
-            $organizationImageFileName = 'default_logo.png';
+            $image->move('assets/uploads/organization', $imageFileName);
+            Image::make('assets/uploads/organization/'.$imageFileName)->resize(150,150)->save('assets/uploads/organization/'.$imageFileName);
+        } else {
+            $imageFileName = 'default_logo.png';
         }
 
 //        dd($request->all());
-
         $organization = Organization::create([
             'title' => $request->title,
             'description' => $request->description,
-            'image' => $organizationImageFileName,
+            'image' => $imageFileName,
         ]);
 
 
