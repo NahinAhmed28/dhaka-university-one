@@ -34,7 +34,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('front');
-Route::post('/search', [App\Http\Controllers\FrontEndController::class, 'searchData'])->name('search');
 
 Auth::routes();
 
@@ -56,3 +55,18 @@ Route::resource('publication', PublicationController::class);
 Route::resource('organization', OrganizationController::class);
 
 
+Route::group(['prefix'=>'public'], function(){
+    Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
+    Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
+    Route::get('/expertise', [App\Http\Controllers\FrontEndController::class, 'expertise'])->name('expertise');
+    Route::get('/mission', [App\Http\Controllers\FrontEndController::class, 'mission'])->name('mission');
+    Route::get('/contact', [App\Http\Controllers\FrontEndController::class, 'contact'])->name('contact');
+    Route::get('/higher-education', [App\Http\Controllers\FrontEndController::class, 'higher-education'])->name('higher-education');
+    Route::get('/internship', [App\Http\Controllers\FrontEndController::class, 'internship'])->name('internship');
+    Route::get('/training', [App\Http\Controllers\FrontEndController::class, 'training'])->name('training');
+    Route::get('/fellowship', [App\Http\Controllers\FrontEndController::class, 'fellowship'])->name('fellowship');
+    Route::get('/completed-research', [App\Http\Controllers\FrontEndController::class, 'completed-research'])->name('completed-research');
+    Route::get('/ongoing-research', [App\Http\Controllers\FrontEndController::class, 'service'])->name('ongoing-research');
+    Route::get('/publication', [App\Http\Controllers\FrontEndController::class, 'service'])->name('publication');
+    Route::get('/organization', [App\Http\Controllers\FrontEndController::class, 'service'])->name('organization');
+});
