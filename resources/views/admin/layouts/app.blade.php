@@ -37,7 +37,12 @@
 <script>
     $('.summernote').summernote({
         tabsize: 2,
-        height: 200
+        height: 200,
+        toolbar: [
+            ['font', ['bold', 'underline','italic','clear',]],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ]
     });
 </script>
 
