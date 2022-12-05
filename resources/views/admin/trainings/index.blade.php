@@ -20,7 +20,7 @@
                         <tr>
                             <td>{{$training->id}}</td>
                             <td>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/training/'.$training->image)}}" width="200px">
+                                <img class="img-thumbnail image-height" src="{{ asset('assets/uploads/training/'.$training->image)}}">
                             </td>
                             <td>{{$training->title}}</td>
                             <td>{!!$value->description!!}</td>

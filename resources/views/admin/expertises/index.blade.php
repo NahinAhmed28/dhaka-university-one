@@ -20,7 +20,7 @@
                         <tr>
                             <td>{{$expertise->id}}</td>
                             <td>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" width="200px">
+                                <img class="img-thumbnail image-height" src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" >
                             </td>
                             <td>{{$expertise->title}}</td>
                             <td>{!!$expertise->description!!}</td>
