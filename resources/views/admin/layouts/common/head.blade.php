@@ -7,8 +7,16 @@
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
 <meta name="description" content="Highly configurable boxes best used for showing numbers in an user friendly way.">
 <meta name="msapplication-tap-highlight" content="no">
+
 <link href="{{asset('backend/main.css')}}" rel="stylesheet">
 <link href="{{asset('backend/custom.css')}}" rel="stylesheet">
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" />
+
+
 
 <!-- Scripts -->
 {{--@vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
