@@ -7,7 +7,7 @@
     @endpush
 
     <!-- ======= Hero Section ======= -->
-    @include('frontend.layouts.common.hero')
+    @include('frontend.layouts.common.heroheader')
     <!-- End Hero -->
 
     <!-- Start #main -->
