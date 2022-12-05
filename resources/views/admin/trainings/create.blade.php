@@ -33,7 +33,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="description">Training description</label>
-                        <input type="text" name="description" class="form-control md-2 summernote d-none{{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
+                        <textarea class="form-control summernote d-none" name="description">{{ old('description') }}</textarea>
                         @if ($errors->has('description'))
                             <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                         @endif
