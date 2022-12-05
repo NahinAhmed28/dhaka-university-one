@@ -28,7 +28,7 @@
                                 <a href="{{ route('service.edit',[$service->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
-                                <form method="POST" action="{{ route('expertise.service' ,  [$service->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                <form method="POST" action="{{ route('service.destroy' ,  [$service->id]) }}" accept-charset="UTF-8" style="display:inline">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete service"
