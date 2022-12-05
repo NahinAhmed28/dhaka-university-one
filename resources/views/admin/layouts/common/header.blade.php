@@ -45,9 +45,9 @@
                 {{-- </div>--}}
             <ul class="header-menu nav">
                 <li class="dropdown nav-item">
-                    <a href="{{route('front')}}" class="nav-link text-success">
+                    <a href="{{route('public')}}" class="nav-link text-success">
                         <i class="nav-link-icon fa fa-anchor"></i>
-                        Front End
+                        Public Panel
                     </a>
                 </li>
             </ul>
