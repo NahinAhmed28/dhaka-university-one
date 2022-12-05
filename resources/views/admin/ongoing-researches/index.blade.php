@@ -24,7 +24,7 @@ n@extends('admin.layouts.app')
                                 <a href="{{ route('ongoing-research.edit',[$value->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
-                                <form method="POST" action="{{ route('ongoing-research.destroy' ,  [$expertise->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                <form method="POST" action="{{ route('ongoing-research.destroy' ,  [$value->id]) }}" accept-charset="UTF-8" style="display:inline">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Research"
