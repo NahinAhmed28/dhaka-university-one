@@ -23,7 +23,7 @@
                                 <img class="img-thumbnail image-height src="{{ asset('assets/uploads/service/'.$service->image)}}">
                             </td>
                             <td>{{$service->title}}</td>
-                            <td>{!!$value->description!!}</td>
+                            <td>{!!$service->description!!}</td>
                             <td>
                                 <a href="{{ route('service.edit',[$service->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
