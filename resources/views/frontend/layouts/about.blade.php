@@ -7,9 +7,7 @@
     @endpush
 
 
-    <section id="hero" style="max-height: 15vh">
-
-    </section>
+    @include('frontend.layouts.common.heroheader')
     <!-- Start #main -->
     <main id="main">
 

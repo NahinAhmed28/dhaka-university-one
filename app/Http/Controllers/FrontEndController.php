@@ -12,7 +12,7 @@ class FrontEndController extends Controller
     {
         $data = [
             'about' => About::first(),
-            'organizations' => Organization::get(),
+            'organizations' => Organization::get(['image']),
         ];
 
         return view('frontend.layouts.main', $data);
@@ -74,7 +74,11 @@ class FrontEndController extends Controller
     }
     public function organization()
     {
-        return view('frontend.layouts.about');
+        $data = [
+            'organizations' => Organization::get(['image']),
+        ];
+
+        return view('frontend.layouts.organization',$data);
 
     }
     public function publication()
