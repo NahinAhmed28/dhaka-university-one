@@ -20,7 +20,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="title">Higher Education Description</label>
-                        <textarea class="form-control" id="description" placeholder="Write Your Description" rows="3" name="description" cols="50"></textarea>
+                        <textarea class="form-control summernote d-none" id="description" placeholder="Write Your Description" rows="3" name="description" cols="50"></textarea>
                         @if ($errors->has('description'))
                             <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                         @endif
@@ -47,3 +47,25 @@
     </div>
 
 @endsection
+
+@push('scripts')
+
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script>
+@endpush

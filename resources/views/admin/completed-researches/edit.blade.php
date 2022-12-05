@@ -26,7 +26,7 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control" id="description" placeholder="" rows="3" name="description"
+                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="3" name="description"
                                 cols="50">{{ old('description', $data->description) }}</textarea>
                             @if ($errors->has('description'))
                             <div class="form-control-feedback">{{ $errors->first('description') }}</div>
@@ -48,3 +48,24 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script>
+@endpush

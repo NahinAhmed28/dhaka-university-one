@@ -15,7 +15,7 @@
                     <div class="col-sm-12">
                         <div class="form-group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control summernote" id="description" placeholder="" rows="12" name="description"
+                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="12" name="description"
                                 cols="80">{{ old('description', $about->description) }}</textarea>
                             @if ($errors->has('description'))
                             <div class="form-control-feedback">{{ $errors->first('description') }}</div>

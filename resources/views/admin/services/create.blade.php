@@ -33,7 +33,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="description">Service Title</label>
-                        <input type="text" name="description" class="form-control md-2 {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
+                        <input type="text" name="description" class="form-control md-2 summernote d-none{{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description') }}" placeholder="Write Description" />
                         @if ($errors->has('title'))
                             <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                         @endif
@@ -47,3 +47,24 @@
     </div>
 
 @endsection
+@push('scripts')
+
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Hello stand alone ui',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script>
+@endpush
