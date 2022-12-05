@@ -7,7 +7,9 @@
     @endpush
 
 
+    <section id="hero" style="max-height: 15vh">
 
+    </section>
     <!-- Start #main -->
     <main id="main">
 

@@ -8,18 +8,18 @@
         <nav id="navbar" class="navbar">
 
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                <li><a class="nav-link scrollto active" href="{{route('public')}}">Home</a></li>
+                <li><a class="nav-link scrollto" href="{{route('public.about')}}">About</a></li>
+                <li><a class="nav-link scrollto" href="{{route('public.service')}}">Services</a></li>
                 <li class="dropdown"><a href="#"><span>Approach</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Mission And Vision</a></li>
+                        <li><a href="{{route('public.mission')}}">Mission And Vision</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#team">Expertise</a></li>
+                <li><a class="nav-link scrollto" href="{{route('public.expertise')}}">Expertise</a></li>
                 <li class="dropdown"><a href="#"><span>Academic</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Higher Education</a></li>
+                        <li><a href="{{route('public.higher-education')}}">Higher Education</a></li>
 {{--                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>--}}
 {{--                            <ul>--}}
 {{--                                <li><a href="#">Deep Drop Down 1</a></li>--}}
@@ -29,20 +29,20 @@
 {{--                                <li><a href="#">Deep Drop Down 5</a></li>--}}
 {{--                            </ul>--}}
 {{--                        </li>--}}
-                        <li><a href="#">Training</a></li>
-                        <li><a href="#">Internship</a></li>
-                        <li><a href="#">Fellowship</a></li>
+                        <li><a href="{{route('public.training')}}">Training</a></li>
+                        <li><a href="{{route('public.internship')}}">Internship</a></li>
+                        <li><a href="{{route('public.fellowship')}}">Fellowship</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#organization">Organization</a></li>
+                <li><a class="nav-link scrollto" href="{{route('public.fellowship')}}">Organization</a></li>
                 <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Ongoing Research</a></li>
-                        <li><a href="#">Completed Research</a></li>
-                        <li><a href="#">Publication</a></li>
+                        <li><a href="{{route('public.ongoing-research')}}">Ongoing Research</a></li>
+                        <li><a href="{{route('public.completed-research')}}">Completed Research</a></li>
+                        <li><a href="{{route('public.publication')}}">Publication</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="{{route('public.contact')}}">Contact</a></li>
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth

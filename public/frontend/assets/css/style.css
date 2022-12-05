@@ -432,6 +432,8 @@ h6 {
   padding: 0;
 }
 
+
+
 #hero:before {
   content: "";
   background: rgba(13, 20, 26, 0.7);
