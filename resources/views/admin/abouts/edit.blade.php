@@ -11,12 +11,12 @@
             @csrf
             @method('PUT')
             <div class="row">
-                <div class="row col-md-6 flexbox">
+                <div class="row col-md-9 flexbox">
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control" id="description" placeholder="" rows="3" name="description"
-                                cols="50">{{ old('description', $about->description) }}</textarea>
+                            <textarea class="form-control" id="description" placeholder="" rows="12" name="description"
+                                cols="80">{{ old('description', $about->description) }}</textarea>
                             @if ($errors->has('description'))
                             <div class="form-control-feedback">{{ $errors->first('description') }}</div>
                             @endif
