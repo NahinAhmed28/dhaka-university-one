@@ -19,7 +19,10 @@ class FrontEndController extends Controller
     }
     public function about()
     {
-        return view('frontend.layouts.about');
+        $data = [
+            'about' => About::first(),
+        ];
+        return view('frontend.layouts.about', $data);
 
     }
     public function service()
