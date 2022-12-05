@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+n@extends('admin.layouts.app')
 
 @section('content')
 
@@ -24,6 +24,13 @@
                                 <a href="{{ route('ongoing-research.edit',[$value->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
+                                <form method="POST" action="{{ route('ongoing-research.destroy' ,  [$expertise->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Research"
+                                        {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
+                                    ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

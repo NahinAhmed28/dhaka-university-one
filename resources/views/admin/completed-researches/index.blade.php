@@ -24,6 +24,13 @@
                         <a href="{{ route('completed-research.edit',[$value->id]) }}" title="Edit">
                             <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                             </button></a>
+                        <form method="POST" action="{{ route('completed-research.destroy' ,  [$value->id]) }}" accept-charset="UTF-8" style="display:inline">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Research"
+                                {{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
+                            ><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
