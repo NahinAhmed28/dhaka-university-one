@@ -23,7 +23,7 @@
                                 <img class="img-thumbnail" src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" width="200px">
                             </td>
                             <td>{{$expertise->title}}</td>
-                            <td>{{$expertise->description}}</td>
+                            <td>{!!$expertise->description!!}</td>
                             <td>
                                 <a href="{{ route('expertise.edit',[$expertise->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>

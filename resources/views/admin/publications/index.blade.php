@@ -19,7 +19,7 @@
                         <tr>
                             <td>{{$value->id}}</td>
                             <td>{{$value->title}}</td>
-                            <td>{{$value->description}}</td>
+                            <td>{!!$value->description!!}</td>
                             <td>
                                 <a href="{{ route('publication.edit',[$value->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
