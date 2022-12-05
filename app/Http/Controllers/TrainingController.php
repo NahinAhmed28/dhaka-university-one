@@ -84,8 +84,9 @@ class TrainingController extends Controller
 
         return redirect()->route('training.index');
     }
-    public function destroy(Training $training)
+    public function destroy($id)
     {
-        //
+        Training::destroy($id);
+        return redirect()->back();
     }
 }

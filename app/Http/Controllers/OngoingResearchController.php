@@ -48,7 +48,9 @@ class OngoingResearchController extends Controller
 
         return redirect()->route('ongoing-research.index');
     }
-    public function destroy(OngoingResearch $data)
+    public function destroy($id)
     {
+        OngoingResearch::destroy($id);
+        return redirect()->back();
     }
 }

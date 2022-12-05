@@ -54,7 +54,9 @@ class ContactController extends Controller
 
         return redirect()->route('contact.index');
     }
-    public function destroy(Contact $data)
+    public function destroy($id)
     {
+        Contact::destroy($id);
+        return redirect()->back();
     }
 }

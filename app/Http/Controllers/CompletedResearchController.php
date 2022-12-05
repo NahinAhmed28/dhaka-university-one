@@ -48,7 +48,9 @@ class CompletedResearchController extends Controller
 
         return redirect()->route('completed-research.index');
     }
-    public function destroy(CompletedResearch $data)
+    public function destroy($id)
     {
+        CompletedResearch::destroy($id);
+        return redirect()->back();
     }
 }

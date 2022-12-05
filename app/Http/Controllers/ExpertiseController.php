@@ -84,8 +84,9 @@ class ExpertiseController extends Controller
 
         return redirect()->route('expertise.index');
     }
-    public function destroy(Expertise $expertise)
+    public function destroy($id)
     {
-        //
+        Expertise::destroy($id);
+        return redirect()->back();
     }
 }

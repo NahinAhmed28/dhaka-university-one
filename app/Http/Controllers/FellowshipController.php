@@ -82,7 +82,9 @@ class FellowshipController extends Controller
 
         return redirect()->route('fellowship.index');
     }
-    public function destroy(Fellowship $fellowship)
+    public function destroy($id)
     {
+        Fellowship::destroy($id);
+        return redirect()->back();
     }
 }

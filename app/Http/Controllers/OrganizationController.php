@@ -134,10 +134,11 @@ class OrganizationController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Organization  $organization
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Organization $organization)
+    public function destroy($id)
     {
-        //
+        Organization::destroy($id);
+        return redirect()->back();
     }
 }

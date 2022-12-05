@@ -83,7 +83,9 @@ class InternshipController extends Controller
 
         return redirect()->route('internship.index');
     }
-    public function destroy(Internship $internship)
+    public function destroy($id)
     {
+        Internship::destroy($id);
+        return redirect()->back();
     }
 }

@@ -109,10 +109,11 @@ class MissionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Mission  $mission
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Mission $mission)
+    public function destroy($id)
     {
-        //
+        Mission::destroy($id);
+        return redirect()->back();
     }
 }

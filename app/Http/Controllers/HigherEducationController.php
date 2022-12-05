@@ -82,7 +82,9 @@ class HigherEducationController extends Controller
 
         return redirect()->route('higher-education.index');
     }
-    public function destroy(HigherEducation $higherEducation)
+    public function destroy($id)
     {
+        HigherEducation::destroy($id);
+        return redirect()->back();
     }
 }

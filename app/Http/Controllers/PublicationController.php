@@ -48,7 +48,9 @@ class PublicationController extends Controller
 
         return redirect()->route('publication.index');
     }
-    public function destroy(Publication $data)
+    public function destroy($id)
     {
+        Publication::destroy($id);
+        return redirect()->back();
     }
 }
