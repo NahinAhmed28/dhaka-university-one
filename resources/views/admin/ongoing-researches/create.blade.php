@@ -10,8 +10,8 @@
 
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="title">Ongoing Research Title</label>
-                        <input type="text" name="title" class="form-control md-2 d-none{{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" placeholder="Write Your Title" />
+                        <label for="title">OnGoing Research Title</label>
+                        <input type="text" name="title" class="form-control md-2 {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" placeholder="Write Your Title" />
                         @if ($errors->has('title'))
                             <div class="invalid-feedback">{{ $errors->first('title') }}</div>
                         @endif
