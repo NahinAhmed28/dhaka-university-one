@@ -225,6 +225,29 @@
                     </ul>
                 </li>
 
+                {{--Galleries--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-usb"></i>
+                        Galleries
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('gallery.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Add Image
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('gallery.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 {{--Organization--}}
                 <li>
                     <a href="#">

@@ -15,6 +15,7 @@ use App\Http\Controllers\OngoingResearchController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\VisionController;
+use App\Http\Controllers\GalleryController;
 
 
 
@@ -55,6 +56,7 @@ Route::resource('ongoing-research', OngoingResearchController::class);
 Route::resource('publication', PublicationController::class);
 Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
+Route::resource('gallery', GalleryController::class);
 
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
