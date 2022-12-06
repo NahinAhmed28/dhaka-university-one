@@ -14,98 +14,57 @@
     <main id="main">
 
 
-        <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials">
-            <div class="container" data-aos="zoom-in">
+        <!-- ======= About Boxes Section ======= -->
+        <section id="about-boxes" class="about-boxes">
+            <div class="container" data-aos="fade-up">
 
-                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('frontend/assets/img/testimonials/testimonials-1.jpg') }}"
-                                     class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="{{ asset('frontend/assets/img/about-boxes-1.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-icon">
+                                <i class="ri-brush-4-line"></i>
                             </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('frontend/assets/img/testimonials/testimonials-2.jpg') }}"
-                                     class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Mission</a></h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                             </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('frontend/assets/img/testimonials/testimonials-3.jpg') }}"
-                                     class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
-                                    duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('frontend/assets/img/testimonials/testimonials-4.jpg') }}"
-                                     class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
-                                    minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
-                                    labore illum veniam.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ asset('frontend/assets/img/testimonials/testimonials-5.jpg') }}"
-                                     class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                    culpa fore nisi cillum quid.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
+                        </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card">
+                            <img src="{{ asset('frontend/assets/img/about-boxes-2.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-icon">
+                                <i class="ri-calendar-check-line"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Plan</a></h5>
+                                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                    quasi architecto beatae vitae dicta sunt explicabo. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card">
+                            <img src="{{ asset('frontend/assets/img/about-boxes-3.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-icon">
+                                <i class="ri-movie-2-line"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">Our Vision</a></h5>
+                                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed
+                                    quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est,
+                                    qui dolorem ipsum quia dolor sit amet. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </section><!-- End Testimonials Section -->
+        </section><!-- End About Boxes Section -->
 
 
     </main><!-- End #main -->
