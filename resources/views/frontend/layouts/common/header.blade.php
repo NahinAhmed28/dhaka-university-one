@@ -9,14 +9,16 @@
 
             <ul>
                 <li><a class="nav-link scrollto active" href="{{route('public')}}">Home</a></li>
-                <li><a class="nav-link scrollto" href="{{route('public.about')}}">About</a></li>
+
                 <li><a class="nav-link scrollto" href="{{route('public.service')}}">Services</a></li>
                 <li class="dropdown"><a href="#"><span>Approach</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
+                        <li><a href="{{route('public.about')}}">About</a></li>
                         <li><a href="{{route('public.mission')}}">Mission And Vision</a></li>
+                        <li><a href="{{route('public.expertise')}}">Expertise</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="{{route('public.expertise')}}">Expertise</a></li>
+
                 <li class="dropdown"><a href="#"><span>Academic</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="{{route('public.higher-education')}}">Higher Education</a></li>
@@ -42,6 +44,7 @@
                         <li><a href="{{route('public.publication')}}">Publication</a></li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="#">Gallery</a></li>
                 <li><a class="nav-link scrollto" href="{{route('public.contact')}}">Contact</a></li>
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
