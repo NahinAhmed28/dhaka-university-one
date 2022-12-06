@@ -84,11 +84,25 @@
                         <li>
                             <a href="#">
                                 <i class="metismenu-icon">
-                                </i>Mission & Vision
+                                </i>Mission
                             </a>
                             <ul>
                                 <li>
                                     <a href="{{route('mission.index')}}">
+                                        <i class="metismenu-icon">
+                                        </i>Edit
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="metismenu-icon">
+                                </i> Vision
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('vision.index')}}">
                                         <i class="metismenu-icon">
                                         </i>Edit
                                     </a>

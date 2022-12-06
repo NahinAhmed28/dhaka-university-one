@@ -14,6 +14,7 @@ use App\Http\Controllers\CompletedResearchController;
 use App\Http\Controllers\OngoingResearchController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\VisionController;
 
 
 
@@ -53,6 +54,7 @@ Route::resource('completed-research', CompletedResearchController::class);
 Route::resource('ongoing-research', OngoingResearchController::class);
 Route::resource('publication', PublicationController::class);
 Route::resource('organization', OrganizationController::class);
+Route::resource('vision', VisionController::class);
 
 
 Route::group(['prefix'=>'public','as'=>'public.'], function(){
