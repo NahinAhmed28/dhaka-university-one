@@ -1,6 +1,6 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-        <a href="#">
+        <a href="{{route('home')}}">
             <img class='logo-src'
                src ="{{asset('frontend/assets/img/cti_logo.png')}}"
                 style="width: 100px; height:50px " alt="">
