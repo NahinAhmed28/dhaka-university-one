@@ -89,6 +89,11 @@ class FrontEndController extends Controller
         return view('frontend.layouts.publication');
 
     }
+    public function gallery()
+    {
+        return view('frontend.layouts.gallery');
+
+    }
 
 
 }

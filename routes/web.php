@@ -69,4 +69,5 @@ Route::group(['prefix'=>'public','as'=>'public.'], function(){
     Route::get('/ongoing-research', [App\Http\Controllers\FrontEndController::class, 'ongoingResearch'])->name('ongoing-research');
     Route::get('/publication', [App\Http\Controllers\FrontEndController::class, 'publication'])->name('publication');
     Route::get('/organization', [App\Http\Controllers\FrontEndController::class, 'organization'])->name('organization');
+    Route::get('/gallery', [App\Http\Controllers\FrontEndController::class, 'gallery'])->name('gallery');
 });
