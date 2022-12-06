@@ -130,7 +130,6 @@
             </div>
         </section><!-- End About Boxes Section -->
 
-
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
