@@ -21,10 +21,6 @@
                     <h2>Research</h2>
                     <p>Completed Research</p>
                 </div>
-                <div class="section-title">
-                    <h2>Services</h2>
-                    <p>Check our Services</p>
-                </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="200">
                     <div class="col-md-6">
