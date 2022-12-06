@@ -17,7 +17,10 @@
         <!-- ======= About Boxes Section ======= -->
         <section id="about-boxes" class="about-boxes">
             <div class="container" data-aos="fade-up">
-
+                <div class="section-title">
+                    <h2>Academic</h2>
+                    <p>Training</p>
+                </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="card">
