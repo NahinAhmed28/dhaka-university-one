@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
+
 
 Auth::routes();
 
@@ -57,6 +57,7 @@ Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
 
 
+Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
 Route::group(['prefix'=>'public','as'=>'public.'], function(){
     Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
     Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
