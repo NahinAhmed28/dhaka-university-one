@@ -17,7 +17,10 @@
         <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
             <div class="container" data-aos="fade-up">
-
+                <div class="section-title">
+                    <h2>Research</h2>
+                    <p>Ongoing Research</p>
+                </div>
                 <div class="section-title">
                     <h2>Services</h2>
                     <p>Check our Services</p>
