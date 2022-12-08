@@ -1,3 +1,3 @@
-<section id="hero" style="max-height: 15vh">
+<section id="hero" style="max-height: 5vh">
 
 </section>
