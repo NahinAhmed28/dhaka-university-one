@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Internship;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class InternshipController extends Controller
 {
@@ -43,6 +44,7 @@ class InternshipController extends Controller
         $data = [
             'internships' => Internship::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Internships info Added', 'Internships Info Added Successfully');
         return view('admin.internships.index', $data);
     }
     public function show(Internship $internship)
@@ -80,7 +82,7 @@ class InternshipController extends Controller
             'image' => $imageFileName,
 
         ]);
-
+        Alert::success('Internships info Updated', 'Internships Info Updated Successfully');
         return redirect()->route('internship.index');
     }
     public function destroy($id)

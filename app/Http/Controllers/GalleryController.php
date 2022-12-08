@@ -6,6 +6,7 @@ use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GalleryController extends Controller
 {
@@ -62,6 +63,7 @@ class GalleryController extends Controller
         $data = [
             'galleries' => Gallery::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Image Added', 'New Image Added Successfully');
         return view('admin.galleries.index', $data);
     }
 
@@ -121,7 +123,7 @@ class GalleryController extends Controller
             'category' => $request->category,
 
         ]);
-
+        Alert::success('Image Updated', 'New Image Updated Successfully');
         return Redirect::back();
     }
 

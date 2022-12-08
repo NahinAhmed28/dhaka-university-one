@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\HigherEducation;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HigherEducationController extends Controller
 {
@@ -42,6 +43,7 @@ class HigherEducationController extends Controller
         $data = [
             'higherEducation' => HigherEducation::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Higher Education Added', 'Higher Education Added Successfully');
         return view('admin.higher-educations.index', $data);
     }
     public function show(HigherEducation $higherEducation)
@@ -80,6 +82,7 @@ class HigherEducationController extends Controller
 
         ]);
 
+        Alert::success('Higher Education Updated', 'Higher Education Updated Successfully');
         return redirect()->route('higher-education.index');
     }
     public function destroy($id)

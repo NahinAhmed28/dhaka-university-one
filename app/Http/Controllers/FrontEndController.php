@@ -19,6 +19,7 @@ use App\Models\Training;
 use App\Models\Vision;
 use Illuminate\Http\Request;
 
+
 class FrontEndController extends Controller
 {
     public function index()
@@ -35,6 +36,7 @@ class FrontEndController extends Controller
         $data = [
             'about' => About::first(),
         ];
+
         return view('frontend.layouts.about', $data);
 
     }

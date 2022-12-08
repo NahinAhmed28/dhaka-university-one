@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ServiceController extends Controller
 {
@@ -66,6 +67,7 @@ class ServiceController extends Controller
         $data = [
             'services' => Service::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Service info Added', 'Service Info Added Successfully');
         return view('admin.services.index', $data);
 
     }
@@ -130,6 +132,7 @@ class ServiceController extends Controller
 
         ]);
 
+        Alert::success('Service info Updated', 'Service Info Updated Successfully');
         return Redirect::back();
     }
 

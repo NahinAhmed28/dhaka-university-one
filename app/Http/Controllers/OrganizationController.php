@@ -7,6 +7,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrganizationController extends Controller
 {
@@ -64,6 +65,7 @@ class OrganizationController extends Controller
         $data = [
             'organizations' => Organization::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Organization info Added', 'Organization Info Added Successfully');
         return view('admin.organizations.index', $data);
     }
 
@@ -125,7 +127,7 @@ class OrganizationController extends Controller
             'image' => $organizationImageFileName,
 
         ]);
-
+        Alert::success('Organization info Updated', 'Organization Info Updated Successfully');
         return Redirect::back();
     }
 

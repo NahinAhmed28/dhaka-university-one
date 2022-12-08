@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expertise;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ExpertiseController extends Controller
 {
@@ -41,6 +42,7 @@ class ExpertiseController extends Controller
         $data = [
             'expertises' => Expertise::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Expertise created', 'Expertise  info created successfully');
         return view('admin.expertises.index', $data);
     }
     public function show(Expertise $expertise)
@@ -81,7 +83,7 @@ class ExpertiseController extends Controller
             'image' => $expertiseImageFileName,
 
         ]);
-
+        Alert::success('Expertise updated', 'Expertise  info updated successfully');
         return redirect()->route('expertise.index');
     }
     public function destroy($id)

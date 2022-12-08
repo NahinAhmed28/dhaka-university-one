@@ -6,6 +6,7 @@ use App\Models\Mission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MissionController extends Controller
 {
@@ -101,7 +102,7 @@ class MissionController extends Controller
             'image' => $missionImageFileName,
 
         ]);
-
+        Alert::success('Mission info Updated', 'Mission Info Updated Successfully');
         return Redirect::back();
     }
 

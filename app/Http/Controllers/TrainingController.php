@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Training;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TrainingController extends Controller
 {
@@ -41,6 +42,7 @@ class TrainingController extends Controller
         $data = [
             'trainings' => Training::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Training info Added', 'Training Info Added Successfully');
         return view('admin.trainings.index', $data);
     }
     public function show(Training $training)
@@ -81,7 +83,7 @@ class TrainingController extends Controller
             'image' => $trainingImageFileName,
 
         ]);
-
+        Alert::success('Training info Updated', 'Training Info Updated Successfully');
         return redirect()->route('training.index');
     }
     public function destroy($id)

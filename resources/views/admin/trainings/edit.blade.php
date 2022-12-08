@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-
+    @include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
         <h4> Training Details Edit</h4>

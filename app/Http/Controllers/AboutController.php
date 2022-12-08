@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\About;
 use Illuminate\Http\Request;
 
@@ -82,6 +83,8 @@ class AboutController extends Controller
         $data = [
             'about' => About::first(),
         ];
+
+        Alert::success('About Info updated', 'information updated successfully');
         return view('admin.abouts.edit',$data);
     }
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Hero;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HeroController extends Controller
 {
@@ -61,6 +62,7 @@ class HeroController extends Controller
         $data = [
             'heroes' => Hero::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Hero Content Added', 'Hero Content Added Successfully');
         return view('admin.heroes.index', $data);
     }
 
@@ -117,7 +119,7 @@ class HeroController extends Controller
         $hero->update([
             'image' => $heroImageFileName,
         ]);
-
+        Alert::success('Hero Content Updated', 'Hero Content Updated Successfully');
         return Redirect::back();
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publication;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PublicationController extends Controller
 {
@@ -27,6 +28,7 @@ class PublicationController extends Controller
         $data = [
             'rows' => Publication::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Publication info Added', 'Publication Info Added Successfully');
         return view('admin.publications.index', $data);
     }
     public function show(Publication $data)
@@ -46,6 +48,7 @@ class PublicationController extends Controller
 
         ]);
 
+        Alert::success('Publication info Updated', 'Publication Info Updated Successfully');
         return redirect()->route('publication.index');
     }
     public function destroy($id)

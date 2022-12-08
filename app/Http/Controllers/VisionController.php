@@ -6,6 +6,7 @@ use App\Models\Vision;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VisionController extends Controller
 {
@@ -99,7 +100,7 @@ class VisionController extends Controller
             'image' => $visionImageFileName,
 
         ]);
-
+        Alert::success('Vision info Updated', 'Vision Info Updated Successfully');
         return Redirect::back();
     }
 

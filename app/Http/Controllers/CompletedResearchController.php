@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CompletedResearch;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CompletedResearchController extends Controller
 {
@@ -27,6 +28,7 @@ class CompletedResearchController extends Controller
         $data = [
             'rows' => CompletedResearch::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Information Created', 'Completed Research info added successfully');
         return view('admin.completed-researches.index', $data);
     }
     public function show(CompletedResearch $data)
@@ -46,6 +48,7 @@ class CompletedResearchController extends Controller
 
         ]);
 
+        Alert::success('Information Updated', 'Completed Research info updated successfully');
         return redirect()->route('completed-research.index');
     }
     public function destroy($id)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fellowship;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FellowshipController extends Controller
 {
@@ -42,6 +43,7 @@ class FellowshipController extends Controller
         $data = [
             'fellowships' => Fellowship::get()->toQuery()->paginate(5),
         ];
+        Alert::success('Fellowship created', 'Fellowship  info created successfully');
         return view('admin.fellowships.index', $data);
     }
     public function show(Fellowship $internship)
@@ -79,7 +81,7 @@ class FellowshipController extends Controller
             'image' => $imageFileName,
 
         ]);
-
+        Alert::success('fellowship updated', 'fellowship  info updated successfully');
         return redirect()->route('fellowship.index');
     }
     public function destroy($id)

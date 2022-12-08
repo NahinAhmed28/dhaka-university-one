@@ -1,6 +1,7 @@
  @extends('admin.layouts.app')
 
 @section('content')
+    @include('sweetalert::alert')
     <div class="main-card mb-3 card">
         <div class="m-3" style="margin-bottom: 20px">
             <h4>Create Completed Research</h4>

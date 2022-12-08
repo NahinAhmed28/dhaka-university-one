@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    @include('sweetalert::alert')
 <div class="main-card card">
     <div class="card-body table-full-width table-responsive">
         <h4> About Details </h4>
