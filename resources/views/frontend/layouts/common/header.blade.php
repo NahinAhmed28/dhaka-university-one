@@ -1,9 +1,11 @@
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top header-scrolled">
     <div class="container d-flex align-items-center justify-content-between">
 
 {{--        <h1 class="logo"><a href="#">Public Side</a></h1>--}}
         <!-- Uncomment below if you prefer to use an image logo -->
-     <a href="{{route('public')}}" class="logo"><img src="{{asset('frontend/assets/img/cti_logo.png')}}" style=" background-color: rgba(255,255,255,0.44);" alt="" class="img-fluid"></a>
+     <a href="{{route('public')}}" class="logo"><img src="{{asset('frontend/assets/img/cti_logo.png')}}"
+{{--                                                     style=" background-color: rgba(255,255,255,0.44);" --}}
+                                                     alt="" class="img-fluid"></a>
 
         <nav id="navbar" class="navbar">
 
