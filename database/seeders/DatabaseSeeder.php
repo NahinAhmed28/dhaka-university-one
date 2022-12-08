@@ -55,6 +55,11 @@ class DatabaseSeeder extends Seeder
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
+        DB::table('heroes')->insert([
+            'image' => 'default.png' ,
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
         DB::table('services')->insert([
             'title' => 'title',
             'description' => 'description description description description',
