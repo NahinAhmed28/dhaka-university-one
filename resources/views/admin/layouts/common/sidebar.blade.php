@@ -109,6 +109,20 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#">
+                                <i class="metismenu-icon">
+                                </i> Plan
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{{route('plan.index')}}">
+                                        <i class="metismenu-icon">
+                                        </i>Edit
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 {{--Accademic--}}
