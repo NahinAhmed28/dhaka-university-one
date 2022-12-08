@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
         <h4> Publication Edit</h4>
@@ -14,7 +14,7 @@
 
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('title') ? 'has-danger' : '' }}">
-                            <label class="form-control-label"><span class="text-danger">*</span> Titile </label>
+                            <label class="form-control-label"><span class="text-danger">*</span> Title </label>
                             <textarea class="form-control" id="title" placeholder="" rows="3" name="title" cols="50">{{
                                 old('title', $data->title) }}</textarea>
                             @if ($errors->has('title'))
@@ -25,8 +25,8 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="3" name="description"
-                                cols="50">{{ old('description', $data->description) }}</textarea>
+                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="3"
+                                name="description" cols="50">{{ old('description', $data->description) }}</textarea>
                             @if ($errors->has('description'))
                             <div class="form-control-feedback">{{ $errors->first('description') }}</div>
                             @endif
@@ -47,4 +47,3 @@
     </div>
 </div>
 @endsection
-

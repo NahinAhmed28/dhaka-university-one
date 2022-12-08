@@ -34,10 +34,15 @@
                             made with love and care
                         </a>
                     </li>
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>
+
+                    <li class="nav-item nav-link disabled" id="date">
+
+                    </li>
                 </ul>
+                <script>
+                    dateId = document.getElementById("date")
+                    dateId.innerHTML = new Date().getFullYear()                        
+                </script>
             </div>
         </div>
     </div>
