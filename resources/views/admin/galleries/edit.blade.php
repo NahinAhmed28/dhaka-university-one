@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
         <h4> Internship Edit</h4>
@@ -26,8 +26,8 @@
                         <div class="service-flex">
                             <div class="form-group service-flex">
                                 <label class="form-control-label">Image</label>
-                                <img class="img-thumbnail"
-                                    src="{{ asset('assets/uploads/gallery/'.$gallery->image)}}" width="200px">
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/gallery/'.$gallery->image)}}"
+                                    width="200px">
                             </div>
                             <div class="custom-file">
                                 <input type="file" name="image"
@@ -42,8 +42,8 @@
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
-                        <div class="m-form__actions text-center">
-                            <a href="{{ route('gallery.index') }}" class="btn btn-outline-warning"><i
+                        <div class="m-form__actions text-center flexbox">
+                            <a href="{{ route('gallery.index') }}" class="btn btn-danger btn-flex"><i
                                     class="fa fa-times"></i> Cancel</a>
                             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                         </div>
@@ -56,4 +56,3 @@
 
 </div>
 @endsection
-
