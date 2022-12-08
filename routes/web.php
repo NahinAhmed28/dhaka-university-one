@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::middleware(['auth'])->group(function () {
 
 Route::resource('about', AboutController::class);
 Route::resource('service', ServiceController::class);
@@ -59,7 +59,7 @@ Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
 Route::resource('gallery', GalleryController::class);
 Route::resource('hero', HeroController::class);
-
+});
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
 Route::group(['prefix'=>'public','as'=>'public.'], function(){
