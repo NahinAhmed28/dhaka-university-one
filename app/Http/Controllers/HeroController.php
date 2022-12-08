@@ -18,7 +18,7 @@ class HeroController extends Controller
     public function index()
     {
         $data = [
-            'galleries' => Hero::get()->toQuery()->paginate(10),
+            'heroes' => Hero::get()->toQuery()->paginate(10),
         ];
 
         return view('admin.heroes.index', $data);
@@ -49,7 +49,7 @@ class HeroController extends Controller
                 mkdir('assets/uploads/hero', 0777, true);
             }
             $image->move('assets/uploads/hero', $imageFileName);
-            Image::make('assets/uploads/hero/'.$imageFileName)->resize(150,150)->save('assets/uploads/hero/'.$imageFileName);
+            Image::make('assets/uploads/hero/'.$imageFileName)->resize(1920,1088)->save('assets/uploads/hero/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -111,7 +111,7 @@ class HeroController extends Controller
                 unlink('assets/uploads/hero/'.$hero->image);
             }
             $heroImage->move('assets/uploads/hero', $heroImageFileName);
-            Image::make('assets/uploads/hero/'.$heroImageFileName)->resize(150,150)->save('assets/uploads/hero/'.$heroImageFileName);
+            Image::make('assets/uploads/hero/'.$heroImageFileName)->resize(1920,1088)->save('assets/uploads/hero/'.$heroImageFileName);
         }
 
         $hero->update([

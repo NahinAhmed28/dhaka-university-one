@@ -21,10 +21,10 @@
                                 <img class="img-thumbnail image-height" src="{{ asset('assets/uploads/gallery/'.$value->image)}}" >
                             </td>
                             <td>
-                                <a href="{{ route('gallery.edit',[$value->id]) }}" title="Edit">
+                                <a href="{{ route('hero.edit',[$value->id]) }}" title="Edit">
                                     <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
                                     </button></a>
-                                <form method="POST" action="{{ route('gallery.destroy' ,  [$value->id]) }}" accept-charset="UTF-8" style="display:inline">
+                                <form method="POST" action="{{ route('hero.destroy' ,  [$value->id]) }}" accept-charset="UTF-8" style="display:inline">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete gallery"
