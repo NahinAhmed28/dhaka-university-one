@@ -17,6 +17,7 @@ use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\VisionController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\PlanController;
 
 
 
@@ -59,6 +60,7 @@ Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
 Route::resource('gallery', GalleryController::class);
 Route::resource('hero', HeroController::class);
+Route::resource('plan', PlanController::class);
 });
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
