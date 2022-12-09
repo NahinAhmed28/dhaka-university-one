@@ -27,7 +27,15 @@
     padding-bottom: 10px;
 }
 
-.image-height{
+.image-height {
     max-height: 100px;
     max-width: 250px;
+}
+
+.button-list-flex {
+    display: flex;
+
+    justify-content: start;
+
+    gap: 0px 13%;
 }

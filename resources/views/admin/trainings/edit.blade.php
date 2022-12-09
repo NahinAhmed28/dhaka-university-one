@@ -4,7 +4,17 @@
 @include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-        <h4> Training Details Edit</h4>
+
+        <div class="button-list-flex">
+            <h4> Training Details Edit</h4>
+
+            <a href="#">
+                <button class="btn btn-primary" href>
+                    Training List
+                </button>
+            </a>
+        </div>
+
         <!--begin::Form-->
         <form action="{{route('training.update', $training->id)}}" method="post" enctype="multipart/form-data">
             @csrf
