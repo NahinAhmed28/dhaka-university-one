@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4>Create Expertise</h4>
 
-            <a href="#">
+            <a href="{{ route('expertise.index') }}">
                 <button class="btn btn-primary" href>
                     Expertise List
                 </button>

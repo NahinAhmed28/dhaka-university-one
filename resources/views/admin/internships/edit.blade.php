@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4> Internship Edit</h4>
 
-            <a href="#">
+            <a href="{{ route('internship.index') }}">
                 <button class="btn btn-primary" href>
                     Internship List
                 </button>

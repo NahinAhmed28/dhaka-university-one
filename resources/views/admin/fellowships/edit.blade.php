@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4> Fellowship Edit </h4>
 
-            <a href="#">
+            <a href="{{ route('fellowship.index') }}">
                 <button class="btn btn-primary" href>
                     Fellowship List
                 </button>

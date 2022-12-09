@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4>Create Training</h4>
 
-            <a href="#">
+            <a href="{{ route('training.index') }}">
                 <button class="btn btn-primary" href>
                     Training List
                 </button>

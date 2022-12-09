@@ -9,7 +9,7 @@
             <h4> Service Details Edit</h4>
 
 
-            <a href="#">
+            <a href="{{ route('service.index') }}">
                 <button class="btn btn-primary" href>
                     Service List
                 </button>

@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4> Organization Details Edit</h4>
 
-            <a href="#">
+            <a href="{{ route('organization.index') }}">
                 <button class="btn btn-primary" href>
                     Organization List
                 </button>

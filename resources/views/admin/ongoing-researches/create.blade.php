@@ -9,7 +9,7 @@
         <div class="button-list-flex">
             <h4>Create Ongoing Research</h4>
 
-            <a href="#">
+            <a href="{{ route('ongoing-research.index') }}">
                 <button class="btn btn-primary" href>
                     Ongoing Research List
                 </button>

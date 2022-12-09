@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4> Create Higher Education</h4>
 
-            <a href="#">
+            <a href="{{ route('higher-education.index') }}">
                 <button class="btn btn-primary" href>
                     Higher Education List
                 </button>

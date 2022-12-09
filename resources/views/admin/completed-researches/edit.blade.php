@@ -8,7 +8,7 @@
         <div class="button-list-flex">
             <h4> Completed Research Edit</h4>
 
-            <a href="#">
+            <a href="{{ route('completed-research.index') }}">
                 <button class="btn btn-primary" href>
                     Completed Research List
                 </button>
