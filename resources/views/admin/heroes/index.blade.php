@@ -19,7 +19,7 @@
                     <td>{{$value->id}}</td>
                     <td>
                         <img class="img-thumbnail image-height"
-                            src="{{ asset('assets/uploads/gallery/'.$value->image)}}">
+                            src="{{ asset('assets/uploads/hero/'.$value->image)}}">
                     </td>
                     <td>
                         <a href="{{ route('hero.edit',[$value->id]) }}" title="Edit">
