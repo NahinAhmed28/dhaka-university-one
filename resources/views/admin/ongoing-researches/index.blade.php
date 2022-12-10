@@ -12,7 +12,7 @@
 
             <a href="{{ route('ongoing-research.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Ongoing Research
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Ongoing Research
                 </button>
             </a>
         </div>

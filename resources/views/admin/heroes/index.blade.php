@@ -13,7 +13,7 @@
 
             <a href="{{ route('hero.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Hero
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Hero
                 </button>
             </a>
         </div>
@@ -31,8 +31,7 @@
                 <tr>
                     <td>{{$value->id}}</td>
                     <td>
-                        <img class="img-thumbnail image-height"
-                            src="{{ asset('assets/uploads/hero/'.$value->image)}}">
+                        <img class="img-thumbnail image-height" src="{{ asset('assets/uploads/hero/'.$value->image)}}">
                     </td>
                     <td>
                         <a href="{{ route('hero.edit',[$value->id]) }}" title="Edit">

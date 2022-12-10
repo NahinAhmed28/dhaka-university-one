@@ -11,7 +11,7 @@
 
             <a href="{{ route('organization.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Organization
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Organization
                 </button>
             </a>
         </div>

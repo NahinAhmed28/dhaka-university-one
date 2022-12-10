@@ -12,7 +12,7 @@
 
             <a href="{{ route('gallery.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Gallery
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Gallery
                 </button>
             </a>
         </div>
