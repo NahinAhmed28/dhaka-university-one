@@ -4,7 +4,19 @@
 @include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-        <h4> <strong class="text-bg-primary">Fellowship Edit</strong></h4>
+
+        <div class="button-list-flex">
+            <h4> Fellowship Edit </h4>
+
+            <a href="{{ route('fellowship.index') }}">
+                <button class="btn btn-primary" href>
+                    Fellowship List
+                </button>
+            </a>
+        </div>
+
+
+
         <!--begin::Form-->
         <form action="{{route('fellowship.update', $fellowship->id)}}" method="post" enctype="multipart/form-data">
             @csrf

@@ -30,7 +30,7 @@ class ExpertiseController extends Controller
                 mkdir('assets/uploads/expertise', 0777, true);
             }
             $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
-                        Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
+                        Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(480,480)->save('assets/uploads/expertise/'.$expertiseImageFileName);
         } else {
             $expertiseImageFileName = 'default_logo.png';
         }
@@ -73,7 +73,7 @@ class ExpertiseController extends Controller
                 unlink('assets/uploads/expertise/' . $expertise->image);
             }
             $expertiseImage->move('assets/uploads/expertise', $expertiseImageFileName);
-            Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(150,150)->save('assets/uploads/expertise/'.$expertiseImageFileName);
+            Image::make('assets/uploads/expertise/'.$expertiseImageFileName)->resize(480,480)->save('assets/uploads/expertise/'.$expertiseImageFileName);
 
         }
 

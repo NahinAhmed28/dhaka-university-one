@@ -4,7 +4,17 @@
 @include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-        <h4> Completed Research Edit</h4>
+
+        <div class="button-list-flex">
+            <h4> Completed Research Edit</h4>
+
+            <a href="{{ route('completed-research.index') }}">
+                <button class="btn btn-primary" href>
+                    Completed Research List
+                </button>
+            </a>
+        </div>
+
         <!--begin::Form-->
         <form action="{{route('completed-research.update', $data->id)}}" method="post" enctype="multipart/form-data">
             @csrf

@@ -91,7 +91,7 @@ class VisionController extends Controller
                 unlink('assets/uploads/vision/'.$vision->image);
             }
             $visionImage->move('assets/uploads/vision', $visionImageFileName);
-            Image::make('assets/uploads/vision/'.$visionImageFileName)->resize(150,150)->save('assets/uploads/vision/'.$visionImageFileName);
+            Image::make('assets/uploads/vision/'.$visionImageFileName)->resize(600,400)->save('assets/uploads/vision/'.$visionImageFileName);
         }
 
         $vision->update([

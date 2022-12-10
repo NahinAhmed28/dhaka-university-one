@@ -29,7 +29,7 @@ class FellowshipController extends Controller
                 mkdir('assets/uploads/fellowship', 0777, true);
             }
             $image->move('assets/uploads/fellowship', $imageFileName);
-                        Image::make('assets/uploads/fellowship/'.$imageFileName)->resize(150,150)->save('assets/uploads/fellowship/'.$imageFileName);
+                        Image::make('assets/uploads/fellowship/'.$imageFileName)->resize(600,400)->save('assets/uploads/fellowship/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -72,7 +72,7 @@ class FellowshipController extends Controller
                 unlink('assets/uploads/fellowship/'.$fellowship->image);
             }
             $image->move('assets/uploads/fellowship', $imageFileName);
-            Image::make('assets/uploads/fellowship/'.$imageFileName)->resize(150,150)->save('assets/uploads/fellowship/'.$imageFileName);
+            Image::make('assets/uploads/fellowship/'.$imageFileName)->resize(600,400)->save('assets/uploads/fellowship/'.$imageFileName);
 
         }
         $fellowship->update([

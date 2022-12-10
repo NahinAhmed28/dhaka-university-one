@@ -29,7 +29,7 @@ class InternshipController extends Controller
                 mkdir('assets/uploads/internship', 0777, true);
             }
             $image->move('assets/uploads/internship', $imageFileName);
-                        Image::make('assets/uploads/internship/'.$imageFileName)->resize(150,150)->save('assets/uploads/internship/'.$imageFileName);
+                        Image::make('assets/uploads/internship/'.$imageFileName)->resize(600,400)->save('assets/uploads/internship/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -73,7 +73,7 @@ class InternshipController extends Controller
                 unlink('assets/uploads/internship/'.$internship->image);
             }
             $image->move('assets/uploads/internship', $imageFileName);
-            Image::make('assets/uploads/internship/'.$imageFileName)->resize(150,150)->save('assets/uploads/internship/'.$imageFileName);
+            Image::make('assets/uploads/internship/'.$imageFileName)->resize(600,400)->save('assets/uploads/internship/'.$imageFileName);
 
         }
         $internship->update([
