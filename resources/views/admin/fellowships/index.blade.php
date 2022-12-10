@@ -14,7 +14,7 @@
 
             <a href="{{ route('fellowship.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Fellowship
+                    <i class="fa fa-plus" aria-hidden="true"></i>  Create New Fellowship
                 </button>
             </a>
         </div>
