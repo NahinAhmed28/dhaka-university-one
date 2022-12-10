@@ -27,6 +27,7 @@ class FrontEndController extends Controller
         $data = [
             'about' => About::first(),
             'organizations' => Organization::get(['image']),
+            'services' => Service::get(),
         ];
 
         return view('frontend.layouts.main', $data);
