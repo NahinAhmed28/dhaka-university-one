@@ -30,7 +30,7 @@ class TrainingController extends Controller
                 mkdir('assets/uploads/training', 0777, true);
             }
             $trainingImage->move('assets/uploads/training', $trainingImageFileName);
-                        Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
+                        Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(600,400)->save('assets/uploads/training/'.$trainingImageFileName);
         } else {
             $trainingImageFileName = 'default_logo.png';
         }
@@ -73,7 +73,7 @@ class TrainingController extends Controller
                 unlink('assets/uploads/training/'.$training->image);
             }
             $trainingImage->move('assets/uploads/training', $trainingImageFileName);
-            Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(150,150)->save('assets/uploads/training/'.$trainingImageFileName);
+            Image::make('assets/uploads/training/'.$trainingImageFileName)->resize(600,400)->save('assets/uploads/training/'.$trainingImageFileName);
 
         }
 

@@ -49,7 +49,7 @@ class OrganizationController extends Controller
                 mkdir('assets/uploads/organization', 0777, true);
             }
             $image->move('assets/uploads/organization', $imageFileName);
-            Image::make('assets/uploads/organization/'.$imageFileName)->resize(150,150)->save('assets/uploads/organization/'.$imageFileName);
+            Image::make('assets/uploads/organization/'.$imageFileName)->resize(600,600)->save('assets/uploads/organization/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -118,7 +118,7 @@ class OrganizationController extends Controller
                 unlink('assets/uploads/organization/'.$organization->image);
             }
             $organizationImage->move('assets/uploads/organization', $organizationImageFileName);
-            Image::make('assets/uploads/organization/'.$organizationImageFileName)->resize(150,150)->save('assets/uploads/organization/'.$organizationImageFileName);
+            Image::make('assets/uploads/organization/'.$organizationImageFileName)->resize(600,600)->save('assets/uploads/organization/'.$organizationImageFileName);
         }
 
         $organization->update([

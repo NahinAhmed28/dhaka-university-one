@@ -29,7 +29,7 @@ class HigherEducationController extends Controller
                 mkdir('assets/uploads/higher-education', 0777, true);
             }
             $image->move('assets/uploads/higher-education', $imageFileName);
-                        Image::make('assets/uploads/higher-education/'.$imageFileName)->resize(150,150)->save('assets/uploads/higher-education/'.$imageFileName);
+                        Image::make('assets/uploads/higher-education/'.$imageFileName)->resize(600,400)->save('assets/uploads/higher-education/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
@@ -72,7 +72,7 @@ class HigherEducationController extends Controller
                 unlink('assets/uploads/higher-education/'.$higherEducation->image);
             }
             $image->move('assets/uploads/higher-education', $imageFileName);
-            Image::make('assets/uploads/higher-education/'.$imageFileName)->resize(150,150)->save('assets/uploads/higher-education/'.$imageFileName);
+            Image::make('assets/uploads/higher-education/'.$imageFileName)->resize(600,400)->save('assets/uploads/higher-education/'.$imageFileName);
 
         }
         $higherEducation->update([
