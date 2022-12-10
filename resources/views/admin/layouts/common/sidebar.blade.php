@@ -289,7 +289,7 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-users"></i>
-                        Organization
+                        Partner Organization
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
@@ -301,6 +301,28 @@
                         </li>
                         <li>
                             <a href="{{route('organization.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{--Members--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Organization Members
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('member.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Create
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('member.index')}}">
                                 <i class="metismenu-icon">
                                 </i>List
                             </a>

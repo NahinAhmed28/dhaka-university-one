@@ -137,6 +137,14 @@ class DatabaseSeeder extends Seeder
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
+        DB::table('members')->insert([
+            'name' => 'name1',
+            'designation' => 'designation',
+            'message' => 'message',
+            'image' => 'default.png',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
         DB::table('contacts')->insert([
             'name' => 'title',
             'email' => 'description description description description',
