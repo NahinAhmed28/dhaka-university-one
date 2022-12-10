@@ -34,8 +34,11 @@
 
 .button-list-flex {
     display: flex;
-
-    justify-content: start;
-
+    justify-content: space-between;
     gap: 0px 13%;
+}
+
+.button-list-flex>a {
+    margin-top: -20px;
+    margin-right: 2%;
 }
