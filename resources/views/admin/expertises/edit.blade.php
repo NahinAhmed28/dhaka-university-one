@@ -45,9 +45,11 @@
                     </div>
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group">
-                            <label class="form-control-label">Expertise Image</label>
-                            <img class="img-thumbnail" src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}"
-                                width="200px">
+                            <div class="service-flex">
+                                <label class="form-control-label">Expertise Image</label>
+                                <img class="img-thumbnail"
+                                    src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" width="200px">
+                            </div>
                             <div class="custom-file">
                                 <input type="file" name="image"
                                     class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}"

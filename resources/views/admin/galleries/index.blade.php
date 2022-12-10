@@ -5,7 +5,19 @@
 @include('sweetalert::alert')
 <div class="main-card mb-3 card">
     <div class="card-body table-full-width table-responsive">
-        <h4> <strong class="text-bg-primary">Galleries LIST</strong></h4>
+
+        <div class="button-list-flex">
+            <h4> <strong class="text-bg-primary">Galleries LIST</strong></h4>
+
+
+            <a href="{{ route('gallery.create') }}">
+                <button class="btn btn-primary" href>
+                    Create New Gallery
+                </button>
+            </a>
+        </div>
+
+
         <table class="table table-hover table-striped">
             <thead class="badge-light">
                 <th>ID</th>

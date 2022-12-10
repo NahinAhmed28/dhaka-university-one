@@ -36,7 +36,7 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="service-flex">
                             <div class="form-group service-flex">
-                                <label class="form-control-label">Vision Image</label>
+                                <label class="form-control-label">Plan Image</label>
                                 <img class="img-thumbnail" src="{{ asset('assets/uploads/plan/'.$plan->image)}}"
                                     width="200px">
                             </div>
