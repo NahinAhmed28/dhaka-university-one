@@ -24,6 +24,7 @@
         <table class="table table-hover table-striped">
             <thead class="badge-light">
                 <th>ID</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Action </th>

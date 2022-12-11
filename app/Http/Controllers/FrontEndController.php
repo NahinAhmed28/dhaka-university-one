@@ -77,7 +77,7 @@ class FrontEndController extends Controller
     public function higherEducation()
     {
         $data = [
-            'contact' => HigherEducation::get(),
+            'highereducations' => HigherEducation::get(),
         ];
         return view('frontend.layouts.higher-education', $data);
     }

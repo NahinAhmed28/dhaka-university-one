@@ -63,8 +63,8 @@
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
-                        <div class="m-form__actions text-center">
-                            <a href="{{ route('internship.index') }}" class="btn btn-outline-warning"><i
+                        <div class="m-form__actions text-center flexbox">
+                            <a href="{{ route('internship.index') }}" class="btn btn-danger btn-flex"><i
                                     class="fa fa-times"></i> Cancel</a>
                             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                         </div>
