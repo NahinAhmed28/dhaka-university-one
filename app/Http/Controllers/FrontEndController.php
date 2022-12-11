@@ -13,6 +13,7 @@ use App\Models\Internship;
 use App\Models\Mission;
 use App\Models\OngoingResearch;
 use App\Models\Organization;
+use App\Models\Plan;
 use App\Models\Publication;
 use App\Models\Service;
 use App\Models\Training;
@@ -36,10 +37,12 @@ class FrontEndController extends Controller
     {
         $data = [
             'about' => About::first(),
+            'mission' => Mission::first(),
+            'vision' => Vision::first(),
+            'plan' => Plan::first(),
         ];
 
         return view('frontend.layouts.about', $data);
-
     }
     public function service()
     {
@@ -47,8 +50,6 @@ class FrontEndController extends Controller
             'services' => Service::get(),
         ];
         return view('frontend.layouts.service', $data);
-
-
     }
     public function expertise()
     {
@@ -56,18 +57,15 @@ class FrontEndController extends Controller
             'expertises' => Expertise::get(),
         ];
         return view('frontend.layouts.expertise', $data);
-
-
     }
     public function mission()
     {
         $data = [
             'mission' => Mission::first(),
             'vision' => Vision::first(),
+            'plan' => Plan::first()
         ];
         return view('frontend.layouts.mission', $data);
-
-
     }
     public function contact()
     {
@@ -75,17 +73,13 @@ class FrontEndController extends Controller
             'contact' => Contact::get(),
         ];
         return view('frontend.layouts.contact', $data);
-
-
     }
     public function higherEducation()
     {
         $data = [
-            'contact' => HigherEducation::get(),
+            'highereducations' => HigherEducation::get(),
         ];
         return view('frontend.layouts.higher-education', $data);
-
-
     }
     public function internship()
     {
@@ -93,8 +87,6 @@ class FrontEndController extends Controller
             'internships' => Internship::get(),
         ];
         return view('frontend.layouts.internship', $data);
-
-
     }
     public function training()
     {
@@ -102,17 +94,13 @@ class FrontEndController extends Controller
             'trainings' => Training::get(),
         ];
         return view('frontend.layouts.training', $data);
-
-
     }
     public function fellowship()
     {
         $data = [
-            'internships' => Fellowship::get(),
+            'fellowships' => Fellowship::get(),
         ];
         return view('frontend.layouts.fellowship', $data);
-
-
     }
     public function completedResearch()
     {
@@ -120,8 +108,6 @@ class FrontEndController extends Controller
             'internships' => CompletedResearch::get(),
         ];
         return view('frontend.layouts.completed-research', $data);
-
-
     }
     public function ongoingResearch()
     {
@@ -129,8 +115,6 @@ class FrontEndController extends Controller
             'internships' => OngoingResearch::get(),
         ];
         return view('frontend.layouts.ongoing-research', $data);
-
-
     }
     public function organization()
     {
@@ -138,8 +122,7 @@ class FrontEndController extends Controller
             'organizations' => Organization::get(['image']),
         ];
 
-        return view('frontend.layouts.organization',$data);
-
+        return view('frontend.layouts.organization', $data);
     }
     public function publication()
     {
@@ -147,8 +130,6 @@ class FrontEndController extends Controller
             'internships' => Publication::get(),
         ];
         return view('frontend.layouts.publication', $data);
-
-
     }
     public function gallery()
     {
@@ -156,10 +137,5 @@ class FrontEndController extends Controller
             'gallerys' => Gallery::get(),
         ];
         return view('frontend.layouts.gallery', $data);
-
-
     }
-
-
 }
-

@@ -12,7 +12,7 @@
 
             <a href="{{ route('higher-education.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Higher Education
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Higher Education
                 </button>
             </a>
         </div>
@@ -21,6 +21,7 @@
         <table class="table table-hover table-striped">
             <thead class="badge-light">
                 <th>ID</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Action </th>

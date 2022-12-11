@@ -13,7 +13,7 @@
 
             <a href="{{ route('publication.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Publication
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Publication
                 </button>
             </a>
         </div>

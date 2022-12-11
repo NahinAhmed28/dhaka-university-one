@@ -12,7 +12,7 @@
 
             <a href="{{ route('training.create') }}">
                 <button class="btn btn-primary" href>
-                    Create New Training
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Training
                 </button>
             </a>
         </div>
