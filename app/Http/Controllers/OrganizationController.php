@@ -49,12 +49,12 @@ class OrganizationController extends Controller
                 mkdir('assets/uploads/organization', 0777, true);
             }
             $image->move('assets/uploads/organization', $imageFileName);
-            Image::make('assets/uploads/organization/'.$imageFileName)->resize(600,600)->save('assets/uploads/organization/'.$imageFileName);
+            Image::make('assets/uploads/organization/' . $imageFileName)->resize(400, 400)->save('assets/uploads/organization/' . $imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
 
-//        dd($request->all());
+        //        dd($request->all());
         $organization = Organization::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -102,23 +102,23 @@ class OrganizationController extends Controller
     public function update(Request $request, Organization $organization)
     {
         $organizationImageFileName = $organization->image;
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $organizationImage = $request->file('image');
-            $organizationImageFileName = 'organization'.time() . '.' . $organizationImage->getClientOriginalExtension();
+            $organizationImageFileName = 'organization' . time() . '.' . $organizationImage->getClientOriginalExtension();
 
 
-            if (!file_exists('assets/uploads/organization')){
+            if (!file_exists('assets/uploads/organization')) {
                 mkdir('assets/uploads/organization', 0777, true);
             }
 
             //delete old image if exist
 
 
-            if (file_exists('assets/uploads/organization/'.$organization->image) and $organization->image != 'default.png'){
-                unlink('assets/uploads/organization/'.$organization->image);
+            if (file_exists('assets/uploads/organization/' . $organization->image) and $organization->image != 'default.png') {
+                unlink('assets/uploads/organization/' . $organization->image);
             }
             $organizationImage->move('assets/uploads/organization', $organizationImageFileName);
-            Image::make('assets/uploads/organization/'.$organizationImageFileName)->resize(600,600)->save('assets/uploads/organization/'.$organizationImageFileName);
+            Image::make('assets/uploads/organization/' . $organizationImageFileName)->resize(600, 600)->save('assets/uploads/organization/' . $organizationImageFileName);
         }
 
         $organization->update([

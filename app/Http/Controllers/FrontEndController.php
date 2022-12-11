@@ -98,7 +98,7 @@ class FrontEndController extends Controller
     public function fellowship()
     {
         $data = [
-            'internships' => Fellowship::get(),
+            'fellowships' => Fellowship::get(),
         ];
         return view('frontend.layouts.fellowship', $data);
     }
