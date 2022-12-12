@@ -42,6 +42,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member">
+                        <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-2.jpg') }}" class="img-fluid"
+                                alt=""></div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member">
+                        <div class="pic"><img src="{{ asset('frontend/assets/img/team/team-3.jpg') }}" class="img-fluid"
+                                alt=""></div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -53,11 +86,11 @@
 
             <div class="row">
 
-                {{-- @foreach($organizations as $organization)
+                @foreach($organizations as $organization)
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                     <img src="{{ asset('assets/uploads/organization/'.$organization->image)}}" class="img-fluid" alt="">
                 </div>
-                @endforeach --}}
+                @endforeach
 
             </div>
 
@@ -70,10 +103,9 @@
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-                    @foreach($organizations as $organization)
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="{{ asset('assets/uploads/organization/'.$organization->image) }}"
+                            <img src="{{ asset('frontend/assets/img/testimonials/testimonials-1.jpg') }}"
                                 class="testimonial-img" alt="">
                             <h3>Saul Goodman</h3>
                             <h4>Ceo &amp; Founder</h4>
@@ -86,7 +118,69 @@
                             </p>
                         </div>
                     </div><!-- End testimonial item -->
-                    @endforeach
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{{ asset('frontend/assets/img/testimonials/testimonials-2.jpg') }}"
+                                class="testimonial-img" alt="">
+                            <h3>Sara Wilsson</h3>
+                            <h4>Designer</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                legam anim culpa.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{{ asset('frontend/assets/img/testimonials/testimonials-3.jpg') }}"
+                                class="testimonial-img" alt="">
+                            <h3>Jena Karlis</h3>
+                            <h4>Store Owner</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
+                                duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{{ asset('frontend/assets/img/testimonials/testimonials-4.jpg') }}"
+                                class="testimonial-img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
+                                minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
+                                labore illum veniam.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{{ asset('frontend/assets/img/testimonials/testimonials-5.jpg') }}"
+                                class="testimonial-img" alt="">
+                            <h3>John Larson</h3>
+                            <h4>Entrepreneur</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                culpa fore nisi cillum quid.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
 
 
                 </div>

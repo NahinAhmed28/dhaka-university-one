@@ -29,6 +29,10 @@ class FrontEndController extends Controller
             'about' => About::first(),
             'organizations' => Organization::get(['image']),
             'services' => Service::get(),
+            'mission' => Mission::first(),
+            'vision' => Vision::first(),
+            'plan' => Plan::first(),
+            'expertises' => Expertise::get(),
         ];
 
         return view('frontend.layouts.main', $data);
@@ -105,14 +109,14 @@ class FrontEndController extends Controller
     public function completedResearch()
     {
         $data = [
-            'internships' => CompletedResearch::get(),
+            'completedresearches' => CompletedResearch::get(),
         ];
         return view('frontend.layouts.completed-research', $data);
     }
     public function ongoingResearch()
     {
         $data = [
-            'internships' => OngoingResearch::get(),
+            'ongoingresearches' => OngoingResearch::get(),
         ];
         return view('frontend.layouts.ongoing-research', $data);
     }
@@ -127,7 +131,7 @@ class FrontEndController extends Controller
     public function publication()
     {
         $data = [
-            'internships' => Publication::get(),
+            'publications' => Publication::get(),
         ];
         return view('frontend.layouts.publication', $data);
     }
