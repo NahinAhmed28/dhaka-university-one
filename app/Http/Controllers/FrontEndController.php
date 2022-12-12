@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Expertise;
 use App\Models\Fellowship;
 use App\Models\Gallery;
+use App\Models\Hero;
 use App\Models\HigherEducation;
 use App\Models\Internship;
 use App\Models\Mission;
@@ -34,6 +35,7 @@ class FrontEndController extends Controller
             'mission' => Mission::first(),
             'vision' => Vision::first(),
             'plan' => Plan::first(),
+            'hero' => Hero::first(),
             'expertises' => Expertise::get(),
             'members' => Member::get(),
 
