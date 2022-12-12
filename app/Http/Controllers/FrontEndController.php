@@ -18,6 +18,8 @@ use App\Models\Publication;
 use App\Models\Service;
 use App\Models\Training;
 use App\Models\Vision;
+use App\Models\Member;
+
 use Illuminate\Http\Request;
 
 
@@ -33,6 +35,8 @@ class FrontEndController extends Controller
             'vision' => Vision::first(),
             'plan' => Plan::first(),
             'expertises' => Expertise::get(),
+            'members' => Member::get(),
+
         ];
 
         return view('frontend.layouts.main', $data);
@@ -124,6 +128,7 @@ class FrontEndController extends Controller
     {
         $data = [
             'organizations' => Organization::get(['image']),
+            'members' => Member::get(),
         ];
 
         return view('frontend.layouts.organization', $data);
@@ -138,7 +143,7 @@ class FrontEndController extends Controller
     public function gallery()
     {
         $data = [
-            'gallerys' => Gallery::get(),
+            'galleries' => Gallery::get(),
         ];
         return view('frontend.layouts.gallery', $data);
     }
