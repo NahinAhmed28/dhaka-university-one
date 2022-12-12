@@ -32,6 +32,7 @@ class FrontEndController extends Controller
             'mission' => Mission::first(),
             'vision' => Vision::first(),
             'plan' => Plan::first(),
+            'expertises' => Expertise::get(),
         ];
 
         return view('frontend.layouts.main', $data);
