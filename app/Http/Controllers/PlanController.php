@@ -91,7 +91,7 @@ class PlanController extends Controller
                 unlink('assets/uploads/plan/'.$plan->image);
             }
             $planImage->move('assets/uploads/plan', $planImageFileName);
-            Image::make('assets/uploads/plan/'.$planImageFileName)->resize(150,150)->save('assets/uploads/plan/'.$planImageFileName);
+            Image::make('assets/uploads/plan/'.$planImageFileName)->resize(600,400)->save('assets/uploads/plan/'.$planImageFileName);
         }
 
         $plan->update([
