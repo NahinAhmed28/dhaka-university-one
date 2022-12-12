@@ -9,7 +9,7 @@
         <div class="button-list-flex">
             <h4> <strong class="text-bg-primary">Members LIST</strong></h4>
 
-            <a href="{{ route('organization.create') }}">
+            <a href="{{ route('member.create') }}">
                 <button class="btn btn-primary" href>
                     Create New Member
                 </button>
