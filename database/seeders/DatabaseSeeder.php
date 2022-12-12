@@ -64,23 +64,13 @@ intellectual input of over two hundred faculty members of the Faculty of</span><
 mso-bidi-theme-font:minor-latin;color:black"><br>
 </span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Business Studies
-of the university.<o:p></o:p></span></span></p>
-
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:12.0pt;
-line-height:107%;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+of the university.</span></span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">In addition to
 trade and investment issues, CTI is currently also focusing on sectoral</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin;color:black"><br>
 </span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">and skills
-development research and training.<o:p></o:p></span></span></p>
-
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:12.0pt;
-line-height:107%;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+development research and training.</span></span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">CTI conducts
 needs assessment studies, skill-gap analyses, etc. and works with</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin;color:black"><br>
@@ -94,23 +84,9 @@ chambers of commerce and sector associations to promote skill</span></span><span
 mso-bidi-theme-font:minor-latin;color:black"><br>
 </span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">upgrading of
-human resources.<o:p></o:p></span></span></p>
-
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:12.0pt;
-line-height:107%;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">CTI is also
-involved in promoting academia-industry collaboration for mutually</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">beneficial
-results.<o:p></o:p></span></span></p>
-
-<p class="MsoNormal" style="text-align:justify"><span style="font-size:12.0pt;
-line-height:107%;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+human resources.&nbsp;</span></span><span style="font-size: 12pt;">CTI is also
+involved in promoting academia-industry collaboration for mutually&nbsp;</span><span style="font-size: 12pt;">beneficial
+results.</span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Current
 collaboration partners on skill development issues include International</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin;color:black"><br>
