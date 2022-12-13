@@ -18,12 +18,13 @@
     <section id="features" class="features">
         <div class="container" data-aos="fade-up">
 
-            <ul class="nav nav-tabs row d-flex">
+            <ul class="nav nav-tabs row d-flex ">
                 @foreach ($expertises as $expertise)
-                <li class="nav-item col-3">
-                    <a class="nav-link show" data-bs-toggle="tab" href={{"#tab-".$loop->index+1}}>
+                <li class="nav-item col-3 pt-3">
+                    <a class="nav-link show {{($loop->index+1 == 1)?'active':''}}" data-bs-toggle="tab"
+                        href={{"#tab-".$loop->index+1}}>
                         <i class="ri-gps-line"></i>
-                        <h4 class="d-none d-lg-block">{{ $expertise->title }} {{$loop->index+1}}</h4>
+                        <h4 class="d-none d-lg-block">{{ $expertise->title }}</h4>
                     </a>
                 </li>
                 @endforeach
@@ -31,10 +32,10 @@
 
             <div class="tab-content">
                 @foreach ($expertises as $expertise)
-                <div class="tab-pane active show" id={{"tab-".$loop->index+1}}>
+                <div class="tab-pane show {{($loop->index+1 == 1)?'active':''}}" id={{"tab-".$loop->index+1}}>
                     <div class="row">
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                            {!!$expertise->description!!} {{$loop->index+1}}
+                            {!!$expertise->description!!}
                             {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
                             <p class="fst-italic">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

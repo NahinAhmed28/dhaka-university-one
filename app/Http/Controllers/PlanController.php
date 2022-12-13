@@ -77,21 +77,21 @@ class PlanController extends Controller
     public function update(Request $request, Plan $plan)
     {
         $planImageFileName = $plan->image;
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $planImage = $request->file('image');
-            $planImageFileName = 'plan'.time() . '.' . $planImage->getClientOriginalExtension();
+            $planImageFileName = 'plan' . time() . '.' . $planImage->getClientOriginalExtension();
 
 
-            if (!file_exists('assets/uploads/plan')){
+            if (!file_exists('assets/uploads/plan')) {
                 mkdir('assets/uploads/plan', 0777, true);
             }
 
             //delete old image if exist
-            if (file_exists('assets/uploads/plan/'.$plan->image) and $plan->image != 'default.png'){
-                unlink('assets/uploads/plan/'.$plan->image);
+            if (file_exists('assets/uploads/plan/' . $plan->image) and $plan->image != 'default.png') {
+                unlink('assets/uploads/plan/' . $plan->image);
             }
             $planImage->move('assets/uploads/plan', $planImageFileName);
-            Image::make('assets/uploads/plan/'.$planImageFileName)->resize(600,400)->save('assets/uploads/plan/'.$planImageFileName);
+            Image::make('assets/uploads/plan/' . $planImageFileName)->resize(600, 400)->save('assets/uploads/plan/' . $planImageFileName);
         }
 
         $plan->update([
