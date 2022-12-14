@@ -52,7 +52,9 @@
                         <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                         @endif
                     </div>
-
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x400) px </div>
+                    {{-- this one --}}
+                    <img class="mt-2" src="#" id="image_tag" width="200px" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -63,3 +65,23 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#PartnersImageFile").change(function(){
+            readURL(this);
+        });
+</script>
+
+@endpush

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('sweetalert::alert')
+@include('sweetalert::alert')
 <div class="main-card card">
     <div class="card-body table-full-width table-responsive">
         <h4> About Details </h4>
@@ -15,8 +15,8 @@
                     <div class="col-sm-12">
                         <div class="form-group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="12" name="description"
-                                cols="80">{{ old('description', $about->description) }}</textarea>
+                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="12"
+                                name="description" cols="80">{{ old('description', $about->description) }}</textarea>
                             @if ($errors->has('description'))
                             <div class="form-control-feedback">{{ $errors->first('description') }}</div>
                             @endif
@@ -24,13 +24,12 @@
                     </div>
 
 
-                        <div class=" text-center flexbox">
-                            <a href="{{ route('about.index') }}" class="btn btn-danger btn-flex"><i
-                                    class="fa fa-times"></i>
-                                Cancel</a>
-                            <button type="submit" class="btn btn-success btn-flex"><i class="fa fa-save"></i>
-                                Save</button>
-                        </div>
+                    <div class=" text-center flexbox">
+                        <a href="{{ route('about.index') }}" class="btn btn-danger btn-flex"><i class="fa fa-times"></i>
+                            Cancel</a>
+                        <button type="submit" class="btn btn-success btn-flex"><i class="fa fa-save"></i>
+                            Save</button>
+                    </div>
 
                 </div>
             </div>
@@ -40,5 +39,3 @@
 </div>
 
 @endsection
-
-

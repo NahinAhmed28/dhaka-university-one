@@ -47,8 +47,8 @@
                                 @if ($errors->has('image'))
                                 <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                                 @endif
-                                <img src="#" id="image_tag" width="200px" />
                             </div>
+                            <img src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
@@ -68,8 +68,8 @@
 @endsection
 
 @push('scripts')
-    <script>
-        function readURL(input) {
+<script>
+    function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
@@ -83,6 +83,6 @@
         $("#image").change(function(){
             readURL(this);
         });
-    </script>
+</script>
 
 @endpush

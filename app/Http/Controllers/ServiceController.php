@@ -43,19 +43,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $serviceImage = $request->file('image');
-            $serviceImageFileName = 'service'.time() . '.' . $serviceImage->getClientOriginalExtension();
-            if (!file_exists('assets/uploads/service')){
+            $serviceImageFileName = 'service' . time() . '.' . $serviceImage->getClientOriginalExtension();
+            if (!file_exists('assets/uploads/service')) {
                 mkdir('assets/uploads/service', 0777, true);
             }
             $serviceImage->move('assets/uploads/service', $serviceImageFileName);
-            Image::make('assets/uploads/service/'.$serviceImageFileName)->resize(150,150)->save('assets/uploads/service/'.$serviceImageFileName);
-        }else{
+            Image::make('assets/uploads/service/' . $serviceImageFileName)->resize(600, 400)->save('assets/uploads/service/' . $serviceImageFileName);
+        } else {
             $serviceImageFileName = 'default_logo.png';
         }
 
-//        dd($request->all());
+        //        dd($request->all());
 
         $service = Service::create([
             'title' => $request->title,
@@ -69,7 +69,6 @@ class ServiceController extends Controller
         ];
         Alert::success('Service info Added', 'Service Info Added Successfully');
         return view('admin.services.index', $data);
-
     }
 
     /**
@@ -106,26 +105,26 @@ class ServiceController extends Controller
     {
 
         $serviceImageFileName = $service->image;
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $serviceImage = $request->file('image');
-            $serviceImageFileName = 'service'.time() . '.' . $serviceImage->getClientOriginalExtension();
+            $serviceImageFileName = 'service' . time() . '.' . $serviceImage->getClientOriginalExtension();
 
 
-            if (!file_exists('assets/uploads/service')){
+            if (!file_exists('assets/uploads/service')) {
                 mkdir('assets/uploads/service', 0777, true);
             }
 
             //delete old image if exist
 
 
-            if (file_exists('assets/uploads/service/'.$service->image) and $service->image != 'default.png'){
-                unlink('assets/uploads/service/'.$service->image);
+            if (file_exists('assets/uploads/service/' . $service->image) and $service->image != 'default.png') {
+                unlink('assets/uploads/service/' . $service->image);
             }
             $serviceImage->move('assets/uploads/service', $serviceImageFileName);
-            Image::make('assets/uploads/service/'.$serviceImageFileName)->resize(150,150)->save('assets/uploads/service/'.$serviceImageFileName);
+            Image::make('assets/uploads/service/' . $serviceImageFileName)->resize(150, 150)->save('assets/uploads/service/' . $serviceImageFileName);
         }
 
-         $service->update([
+        $service->update([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $serviceImageFileName,

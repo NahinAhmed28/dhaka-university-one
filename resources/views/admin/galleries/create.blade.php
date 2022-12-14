@@ -35,6 +35,8 @@
                 <div class="form-group">
                     <label>Image</label>
                     <div class="custom-file">
+
+                        {{-- id image eita boshan lagbe --}}
                         <input type="file" name="image"
                             class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}"
                             id="image" />
@@ -42,9 +44,14 @@
                         @if ($errors->has('image'))
                         <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                         @endif
-                        <img src="#" id="image_tag" width="200px" />
+
                     </div>
+                    {{-- this needs to be reciprocated --}}
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x400) px </div>
+                    {{-- this one --}}
+                    <img class="mt-2" src="#" id="image_tag" width="200px" />
                 </div>
+
             </div>
             <div class="col-sm-12 col-md-6">
                 <button class="btn btn-success mt-2" type="submit">Submit Info</button>
@@ -55,9 +62,11 @@
 
 @endsection
 
+
+{{-- this script --}}
 @push('scripts')
-    <script>
-        function readURL(input) {
+<script>
+    function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
@@ -71,6 +80,6 @@
         $("#image").change(function(){
             readURL(this);
         });
-    </script>
+</script>
 
 @endpush

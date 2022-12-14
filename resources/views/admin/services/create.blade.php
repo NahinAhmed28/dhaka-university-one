@@ -44,6 +44,12 @@
                         @endif
                     </div>
 
+
+                    {{-- this needs to be reciprocated --}}
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(1260x720) px </div>
+                    {{-- this one --}}
+                    <img src="#" id="image_tag" width="200px" />
+
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -64,3 +70,25 @@
 </div>
 
 @endsection
+
+
+{{-- this script --}}
+@push('scripts')
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#PartnersImageFile").change(function(){
+            readURL(this);
+        });
+</script>
+
+@endpush
