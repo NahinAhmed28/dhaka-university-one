@@ -79,7 +79,9 @@
                                       required></textarea>
                             </div>
                             @include('sweetalert::alert')
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="my-3">
+                                <div class="text-center"><button type="submit" class="btn btn-warning">Send Message</button></div>
+                            </div>
                         </form>
                     </div>
 
