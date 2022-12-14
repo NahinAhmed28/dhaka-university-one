@@ -37,11 +37,12 @@
                     <div class="custom-file">
                         <input type="file" name="image"
                             class="custom-file-input form-control {{ $errors->has('image') ? 'is-invalid' : '' }}"
-                            id="PartnersImageFile" />
+                            id="gallery_image" />
                         <label class="custom-file-label" for="PartnersImageFile">Choose file</label>
                         @if ($errors->has('image'))
                         <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                         @endif
+                        <img src="#" id="gallery_image_tag" width="200px" />
                     </div>
                 </div>
             </div>
@@ -53,3 +54,23 @@
 </div>
 
 @endsection
+
+@push('scripts')
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#gallery_image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#gallery_image").change(function(){
+            readURL(this);
+        });
+    </script>
+
+@endpush
