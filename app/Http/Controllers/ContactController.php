@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
@@ -30,7 +31,8 @@ class ContactController extends Controller
         $data = [
             'rows' => Contact::get()->toQuery()->paginate(5),
         ];
-        return view('admin.contacts.index', $data);
+        Alert::success('Message Submitted', 'You Message has been sent successfully');
+        return redirect()->back();
     }
     public function show(Contact $data)
     {
