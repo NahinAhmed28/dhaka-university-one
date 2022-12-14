@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="col-lg-6 mt-4 mt-lg-0">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{route('contact.store')}}" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
@@ -66,7 +66,11 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                <input type="text" class="form-control" name="address" id="address" placeholder="address"
+                                       required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="phone"
                                        required>
                             </div>
                             <div class="form-group mt-3">
