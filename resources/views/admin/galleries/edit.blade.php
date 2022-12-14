@@ -48,7 +48,7 @@
                                 <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                                 @endif
                             </div>
-                            <img src="#" id="image_tag" width="200px" />
+                            <img class="mt-4" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">

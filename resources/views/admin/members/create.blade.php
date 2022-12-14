@@ -42,7 +42,9 @@
                         <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                         @endif
                     </div>
-
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x600) px </div>
+                    {{-- this one --}}
+                    <img class="mt-2" src="#" id="image_tag" width="200px" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -59,9 +61,9 @@
                 <div class="form-group">
                     <label for="title">Message</label>
                     <textarea class="form-control" id="message" placeholder="Write Your message"
-                              name="message"></textarea>
+                        name="message"></textarea>
                     @if ($errors->has('message'))
-                        <div class="invalid-feedback">{{ $errors->first('message') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                     @endif
                 </div>
             </div>
@@ -73,3 +75,23 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#PartnersImageFile").change(function(){
+            readURL(this);
+        });
+</script>
+
+@endpush

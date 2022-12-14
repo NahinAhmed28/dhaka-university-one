@@ -35,8 +35,8 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('designation') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
-                            <textarea class="form-control" id="designation" placeholder="" rows="3"
-                                name="designation" cols="50">{{ old('designation', $member->designation)
+                            <textarea class="form-control" id="designation" placeholder="" rows="3" name="designation"
+                                cols="50">{{ old('designation', $member->designation)
                                 }}</textarea>
                             @if ($errors->has('designation'))
                             <div class="form-control-feedback">{{ $errors->first('designation') }}</div>
@@ -46,11 +46,11 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group {{ $errors->has('message') ? 'has-danger' : '' }}">
                             <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
-                            <textarea class="form-control" id="message" placeholder="" rows="3"
-                                      name="message" cols="50">{{ old('message', $member->message)
+                            <textarea class="form-control" id="message" placeholder="" rows="3" name="message"
+                                cols="50">{{ old('message', $member->message)
                                 }}</textarea>
                             @if ($errors->has('message'))
-                                <div class="form-control-feedback">{{ $errors->first('message') }}</div>
+                            <div class="form-control-feedback">{{ $errors->first('message') }}</div>
                             @endif
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                         <div class="form-group">
                             <div class="service-flex">
                                 <label class="form-control-label">Member Image</label>
-                                <img class="img-thumbnail"
-                                    src="{{ asset('assets/uploads/member/'.$member->image)}}" width="200px">
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/member/'.$member->image)}}"
+                                    width="200px">
                             </div>
                             <div class="custom-file">
                                 <input type="file" name="image"
@@ -74,6 +74,7 @@
                                 @endif
 
                             </div>
+                            <img class="mt-4" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
@@ -91,3 +92,22 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#PartnersImageFile").change(function(){
+            readURL(this);
+        });
+</script>
+
+@endpush

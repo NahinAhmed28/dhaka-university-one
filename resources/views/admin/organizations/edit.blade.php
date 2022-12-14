@@ -63,6 +63,7 @@
                                 @endif
 
                             </div>
+                            <img class="mt-4" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
@@ -80,3 +81,23 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image_tag').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#PartnersImageFile").change(function(){
+            readURL(this);
+        });
+</script>
+
+@endpush
