@@ -50,7 +50,7 @@ class HeroController extends Controller
                 mkdir('assets/uploads/hero', 0777, true);
             }
             $image->move('assets/uploads/hero', $imageFileName);
-            Image::make('assets/uploads/hero/'.$imageFileName)->fit(1920,1088)->save('assets/uploads/hero/'.$imageFileName);
+            Image::make('assets/uploads/hero/'.$imageFileName)->resize(1024,768)->save('assets/uploads/hero/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
