@@ -52,7 +52,9 @@
     <!-- ======= Clients Section ======= -->
     <section id="organization" class="clients">
         <div class="container" data-aos="zoom-in">
-
+            <div class="section-title">
+                <h2>Partners</h2>
+            </div>
             <div class="row">
 
                 @foreach($organizations as $organization)
