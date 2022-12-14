@@ -143,61 +143,34 @@
         </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <!-- ======= About Boxes Section ======= -->
+    <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
-
-            <ul class="nav nav-tabs row d-flex">
+            <div class="section-title">
+                <h2>Our</h2>
+                <p>Expertises</p>
+            </div>
+            <div class="row">
                 @foreach ($expertises as $expertise)
-                <li class="nav-item col-3">
-                    <a class="nav-link show" data-bs-toggle="tab" href={{"#tab-".$loop->index+1}}>
-                        <i class="ri-gps-line"></i>
-                        <h4 class="d-none d-lg-block">{{ $expertise->title }} {{$loop->index+1}}</h4>
-                    </a>
-                </li>
-                @endforeach
-            </ul>
-
-            <div class="tab-content">
-                @foreach ($expertises as $expertise)
-                <div class="tab-pane active show" id={{"tab-".$loop->index+1}}>
-                    <div class="row">
-                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                            {!!$expertise->description!!} {{$loop->index+1}}
-                            {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                            <p class="fst-italic">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore
-                                magna aliqua.
-                            </p>
-                            <ul>
-                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</li>
-                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
-                                    voluptate velit.</li>
-                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                    storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                            </ul>
-                            <p>
-                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum
-                            </p> --}}
-                        </div>
-                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="img-fluid"
-                                alt="">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top"
+                                 alt="...">
+                            <div class="card-icon">
+                                <i class="ri-brush-4-line"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">{!!$expertise->title!!}</a></h5>
+                                <p class="card-text">{!!$expertise->description!!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
 
         </div>
-    </section><!-- End Features Section -->
+    </section><!-- End About Boxes Section -->
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
