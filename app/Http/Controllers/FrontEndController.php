@@ -22,6 +22,7 @@ use App\Models\Vision;
 use App\Models\Member;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class FrontEndController extends Controller
@@ -150,4 +151,20 @@ class FrontEndController extends Controller
         ];
         return view('frontend.layouts.gallery', $data);
     }
+    public function contactStore(Request $request)
+    {
+        $data = Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'message' => $request->message
+        ]);
+        $data = [
+            'rows' => Contact::get()->toQuery()->paginate(5),
+        ];
+        Alert::success('Message Submitted', 'You Message has been sent successfully');
+        return redirect()->back();
+    }
+
 }
