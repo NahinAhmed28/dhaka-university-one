@@ -121,7 +121,7 @@ class ServiceController extends Controller
                 unlink('assets/uploads/service/' . $service->image);
             }
             $serviceImage->move('assets/uploads/service', $serviceImageFileName);
-            Image::make('assets/uploads/service/' . $serviceImageFileName)->resize(150, 150)->save('assets/uploads/service/' . $serviceImageFileName);
+            Image::make('assets/uploads/service/' . $serviceImageFileName)->resize(600, 400)->save('assets/uploads/service/' . $serviceImageFileName);
         }
 
         $service->update([

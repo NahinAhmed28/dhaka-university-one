@@ -74,6 +74,7 @@
                                 @endif
 
                             </div>
+                            <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x600) px </div>
                             <img class="mt-4" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
