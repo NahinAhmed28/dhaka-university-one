@@ -17,55 +17,15 @@
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
 
-            {{-- <div class="row justify-content-end">--}}
-                {{-- <div class="col-lg-11">--}}
-                    {{-- <div class="row justify-content-end">--}}
-
-                        {{-- <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">--}}
-                            {{-- <div class="count-box">--}}
-                                {{-- <i class="bi bi-emoji-smile"></i>--}}
-                                {{-- <span data-purecounter-start="0" data-purecounter-end="125" --}} {{--
-                                    data-purecounter-duration="1" class="purecounter"></span>--}}
-                                {{-- <p>Happy Clients</p>--}}
-                                {{-- </div>--}}
-                            {{-- </div>--}}
-
-                        {{-- <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">--}}
-                            {{-- <div class="count-box">--}}
-                                {{-- <i class="bi bi-journal-richtext"></i>--}}
-                                {{-- <span data-purecounter-start="0" data-purecounter-end="85"
-                                    data-purecounter-duration="1" --}} {{-- class="purecounter"></span>--}}
-                                {{-- <p>Projects</p>--}}
-                                {{-- </div>--}}
-                            {{-- </div>--}}
-
-                        {{-- <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">--}}
-                            {{-- <div class="count-box">--}}
-                                {{-- <i class="bi bi-clock"></i>--}}
-                                {{-- <span data-purecounter-start="0" data-purecounter-end="35"
-                                    data-purecounter-duration="1" --}} {{-- class="purecounter"></span>--}}
-                                {{-- <p>Years of experience</p>--}}
-                                {{-- </div>--}}
-                            {{-- </div>--}}
-
-                        {{-- <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">--}}
-                            {{-- <div class="count-box">--}}
-                                {{-- <i class="bi bi-award"></i>--}}
-                                {{-- <span data-purecounter-start="0" data-purecounter-end="48"
-                                    data-purecounter-duration="1" --}} {{-- class="purecounter"></span>--}}
-                                {{-- <p>Awards</p>--}}
-                                {{-- </div>--}}
-                            {{-- </div>--}}
-
-                        {{-- </div>--}}
-                    {{-- </div>--}}
-                {{-- </div>--}}
-
             <div class="row">
 
                 <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ asset('frontend/assets/img/about.jpg') }}" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+
+                    <iframe style="width: 100%; min-height: 300px"  src="https://www.youtube.com/embed/{{getOwnYoutubeIdForEmbed($about->video)}}"
+{{--                            style="height:700px;width:1280px;"--}}
+                            title="YouTube video player" allowfullscreen></iframe>
+{{--                    <img src="{{ asset('frontend/assets/img/about.jpg') }}" class="img-fluid" alt="">--}}
+{{--                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>--}}
                 </div>
 
                 <div class="col-lg-6 pt-3 pt-lg-0 content">

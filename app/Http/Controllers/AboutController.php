@@ -78,6 +78,7 @@ class AboutController extends Controller
 
          $about->update([
             'description' => $request->description,
+            'video' => $request->video,
         ]);
 
         $data = [
@@ -98,4 +99,6 @@ class AboutController extends Controller
     {
         //
     }
+
+
 }

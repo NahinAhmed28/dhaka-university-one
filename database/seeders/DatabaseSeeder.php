@@ -100,7 +100,8 @@ Commission, State Electricity Company, Dhaka Metropolitan Police, Rapid Action
 Battalion, Ministry of Labor and Employment and Ministry of Information
 Technology.<o:p></o:p></span></span></p>',
             'created_at'=>	now(),
-            'updated_at'=>now(),
+            'updated_at'=> now(),
+            'video'=> 'https://www.youtube.com/watch?v=T7BMndEDYLc',
         ]);
 
         DB::table('missions')->insert([
