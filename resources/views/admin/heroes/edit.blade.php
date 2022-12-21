@@ -7,13 +7,13 @@
 
 
         <div class="button-list-flex">
-            <h4>Heroes Edit</h4>
+            <h4>Home Page Slider Edit</h4>
 
-            <a href="{{ route('hero.index') }}">
-                <button class="btn btn-primary" href>
-                    Heroes List
-                </button>
-            </a>
+{{--            <a href="{{ route('hero.index') }}">--}}
+{{--                <button class="btn btn-primary" href>--}}
+{{--                    Heroes List--}}
+{{--                </button>--}}
+{{--            </a>--}}
         </div>
 
         <!--begin::Form-->
@@ -41,7 +41,7 @@
 
                             </div>
                             <div id="emailHelp" class="form-text text-info">Recommended image shape:(1024x768) px </div>
-                            <img class="mt-4" src="#" id="image_tag" width="200px" />
+                            <img class="mt-4" style="display: none" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
@@ -74,6 +74,7 @@
             }
         }
         $("#PartnersImageFile").change(function(){
+            document.getElementById('image_tag').style.display = "block";
             readURL(this);
         });
 </script>

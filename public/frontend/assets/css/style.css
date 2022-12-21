@@ -129,12 +129,12 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 20px 0;
-    background: rgba(21, 34, 43, 0.85);
+    background: rgba(245, 245, 245, 0.85);
 }
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(21, 34, 43, 0.85);
+  background: rgba(255, 255, 255, 0.78);
   padding: 10px 0;
 }
 
@@ -194,7 +194,7 @@ h6 {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(178, 65, 4, 0.9);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -230,7 +230,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #fff;
+  color: #983939;
 }
 
 .navbar .getstarted,
@@ -439,9 +439,9 @@ h6 {
 /*}*/
 
 #hero {
-    margin-top: 8rem;
+    margin-top: 10rem;
     width: 100%;
-    height: 100vh;
+    max-height: 60vh;
     /*background: url(../img/hero-bg.jpg) top center;*/
     background-size: cover;
     position: relative;
@@ -450,7 +450,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(13, 20, 26, 0.7);
+  /*background: rgba(13, 20, 26, 0.7);*/
   position: absolute;
   bottom: 0;
   top: 0;

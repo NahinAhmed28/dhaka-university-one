@@ -81,10 +81,16 @@ class FrontEndController extends Controller
     }
     public function contact()
     {
-        $data = [
-            'contact' => Contact::get(),
+        $locations = [
+            ["lat" => 12.9716, "lng" => 77.5946],
         ];
-        return view('frontend.layouts.contact', $data);
+
+
+//        $data = [
+//            'contact' => Contact::get(),
+//        ];
+
+        return view('frontend.layouts.contact', ['locations'=>$locations]);
     }
     public function higherEducation()
     {

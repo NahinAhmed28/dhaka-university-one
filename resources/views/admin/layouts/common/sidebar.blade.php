@@ -126,95 +126,95 @@
                     </ul>
                 </li>
                 {{--Accademic--}}
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-notebook"></i>
-                        Accademic
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon"></i>
-                                Higher Education
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="{{route('higher-education.create')}}">
-                                        <i class="metismenu-icon">
-                                        </i>Create
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('higher-education.index')}}">
-                                        <i class="metismenu-icon">
-                                        </i>List
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Training
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="{{route('training.create')}}">
-                                        <i class="metismenu-icon">
-                                        </i>Create
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('training.index')}}">
-                                        <i class="metismenu-icon">
-                                        </i>List
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Internship
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="{{route('internship.create')}}">
-                                        <i class="metismenu-icon">
-                                        </i>Create
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('internship.index')}}">
-                                        <i class="metismenu-icon">
-                                        </i>List
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="metismenu-icon">
-                                </i>Fellowship
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="{{route('fellowship.create')}}">
-                                        <i class="metismenu-icon">
-                                        </i>Create
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{route('fellowship.index')}}">
-                                        <i class="metismenu-icon">
-                                        </i>List
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="#">--}}
+{{--                        <i class="metismenu-icon pe-7s-notebook"></i>--}}
+{{--                        Accademic--}}
+{{--                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>--}}
+{{--                    </a>--}}
+{{--                    <ul>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="metismenu-icon"></i>--}}
+{{--                                Higher Education--}}
+{{--                            </a>--}}
+{{--                            <ul>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('higher-education.create')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>Create--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('higher-education.index')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>List--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="metismenu-icon">--}}
+{{--                                </i>Training--}}
+{{--                            </a>--}}
+{{--                            <ul>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('training.create')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>Create--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('training.index')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>List--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="metismenu-icon">--}}
+{{--                                </i>Internship--}}
+{{--                            </a>--}}
+{{--                            <ul>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('internship.create')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>Create--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('internship.index')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>List--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="metismenu-icon">--}}
+{{--                                </i>Fellowship--}}
+{{--                            </a>--}}
+{{--                            <ul>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('fellowship.create')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>Create--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="{{route('fellowship.index')}}">--}}
+{{--                                        <i class="metismenu-icon">--}}
+{{--                                        </i>List--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
 
                 {{--Expertise--}}
                 <li>
@@ -266,20 +266,20 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-usb"></i>
-                        Heroes Section
+                        Home Carousel Image
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
-                        <li>
-                            <a href="{{route('hero.create')}}">
-                                <i class="metismenu-icon">
-                                </i>Add Image
-                            </a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="{{route('hero.create')}}">--}}
+{{--                                <i class="metismenu-icon">--}}
+{{--                                </i>Add Image--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li>
                             <a href="{{route('hero.index')}}">
                                 <i class="metismenu-icon">
-                                </i>List
+                                </i>Edit
                             </a>
                         </li>
                     </ul>

@@ -28,25 +28,11 @@
                     <div class="col-lg-6">
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-12">
                                 <div class="info-box">
                                     <i class="bx bx-map"></i>
                                     <h3>Our Address</h3>
-                                    <p>A108 Adam Street, New York, NY 535022</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box mt-4">
-                                    <i class="bx bx-envelope"></i>
-                                    <h3>Email Us</h3>
-                                    <p>info@example.com<br>contact@example.com</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box mt-4">
-                                    <i class="bx bx-phone-call"></i>
-                                    <h3>Call Us</h3>
-                                    <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                                    <div id="map" style='height:400px'></div>
                                 </div>
                             </div>
                         </div>
@@ -97,5 +83,31 @@
         <script>
             flatpickr("input[type=datetime-local]");
         </script>
+        <script type="text/javascript">
+            function initializeMap() {
+                const locations = <?php echo json_encode($locations) ?>;
+
+                const map = new google.maps.Map(document.getElementById("map"));
+                var infowindow = new google.maps.InfoWindow();
+                var bounds = new google.maps.LatLngBounds();
+                for (var location of locations) {
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(location.lat, location.lng),
+                        map: map
+                    });
+                    bounds.extend(marker.position);
+                    google.maps.event.addListener(marker, 'click', (function(marker, location) {
+                        return function() {
+                            infowindow.setContent(location.lat + " & " + location.lng);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, location));
+
+                }
+                map.fitBounds(bounds);
+            }
+        </script>
+
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initializeMap"></script>
     @endpush
 @endsection

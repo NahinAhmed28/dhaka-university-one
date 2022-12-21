@@ -4,8 +4,8 @@
         <h1>This Website is Under Construction</h1>
         <h2>In order to see results</h2>
         <div class="d-flex">
-            <a href="#team" class="btn-get-started scrollto">See Below</a>
-            {{--            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>--}}
+            <a href="#about" class="btn-get-started scrollto">See Below</a>
+{{--                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>--}}
         </div>
     </div>
 </section>

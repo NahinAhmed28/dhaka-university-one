@@ -19,10 +19,10 @@ class HeroController extends Controller
     public function index()
     {
         $data = [
-            'heroes' => Hero::get()->toQuery()->paginate(10),
+            'hero' => Hero::first(),
         ];
 
-        return view('admin.heroes.index', $data);
+        return view('admin.heroes.edit', $data);
     }
 
     /**
