@@ -49,7 +49,7 @@
                     {{-- this needs to be reciprocated --}}
                     <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x400) px </div>
                     {{-- this one --}}
-                    <img class="mt-2" src="#" id="image_tag" width="200px" />
+                    <img class="mt-2" style="display: none" src="#" id="image_tag" width="200px" />
                 </div>
 
             </div>
@@ -78,6 +78,7 @@
             }
         }
         $("#image").change(function(){
+            document.getElementById('image_tag').style.display = "block";
             readURL(this);
         });
 </script>

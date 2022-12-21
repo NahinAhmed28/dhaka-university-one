@@ -44,7 +44,7 @@
                     </div>
                     <div id="emailHelp" class="form-text text-info">Recommended image shape:(480x480) px </div>
                     {{-- this one --}}
-                    <img class="mt-2" src="#" id="image_tag" width="200px" />
+                    <img class="mt-2" style="display: none" src="#" id="image_tag" width="200px" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -80,6 +80,7 @@
             }
         }
         $("#PartnersImageFile").change(function(){
+            document.getElementById('image_tag').style.display = "block";
             readURL(this);
         });
 </script>

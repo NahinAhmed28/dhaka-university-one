@@ -49,7 +49,7 @@
                                 @endif
                             </div>
                             <div id="emailHelp" class="form-text text-info">Recommended image shape:(600x400) px </div>
-                            <img class="mt-4" src="#" id="image_tag" width="200px" />
+                            <img class="mt-4" style="display: none" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
@@ -82,6 +82,7 @@
             }
         }
         $("#image").change(function(){
+            document.getElementById('image_tag').style.display = "block";
             readURL(this);
         });
 </script>
