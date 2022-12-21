@@ -26,7 +26,7 @@
                     <div class="col-sm-12">
                         <div class="form-group {{ $errors->has('video') ? 'has-danger' : '' }}">
                             <label><span class="text-danger">*</span>Youtube Video Url</label>
-                            <input type="text" class="form-control m-input" name="video" placeholder="{{ old('description', $about->video) }}"/>
+                            <input required type="text" class="form-control m-input" name="video" placeholder="{{ old('description', $about->video) }}"/>
                             @if ($errors->has('video'))
                                 <div class="form-control-feedback">{{ $errors->first('video') }}</div>
                             @endif

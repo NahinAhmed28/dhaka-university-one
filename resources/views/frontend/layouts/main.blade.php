@@ -165,29 +165,33 @@
     </section><!-- End Features Section -->
 
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <!-- ======= About Boxes Section ======= -->
+    <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
-
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Check our Services</p>
+                <h2>Our</h2>
+                <p>Services</p>
             </div>
-
-            <div class="row" data-aos="fade-up" data-aos-delay="200">
-                @foreach($services as $service)
-                <div class="col-md-6 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <i class="bi bi-clock"></i>
-                        <h4><a href="#">{{$service->title}}</a></h4>
-                        <p>{!!$service->description!!}</p>
+            <div class="row">
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="{{ asset('assets/uploads/service/'.$service->image)}}" class="card-img-top"
+                                 alt="...">
+                            <div class="card-icon">
+                                <i class="ri-brush-4-line"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">{!!$service->title!!}</a></h5>
+                                <p class="card-text">{!!$service->description!!}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
 
         </div>
-    </section><!-- End Services Section -->
+    </section><!-- End About Boxes Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
