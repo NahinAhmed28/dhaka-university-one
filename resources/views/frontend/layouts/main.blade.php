@@ -315,7 +315,9 @@
                             <div class="info-box">
                                 <i class="bx bx-map"></i>
                                 <h3>Our Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>Room: 9050-52, 8th Floor, MBA Building <br>
+                                    Faculty of Business Studies <br>
+                                  <strong>University of Dhaka</strong>  </p>
                             </div>
                         </div>
 

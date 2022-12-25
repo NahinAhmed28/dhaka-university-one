@@ -32,6 +32,9 @@
                                 <div class="info-box">
                                     <i class="bx bx-map"></i>
                                     <h3>Our Address</h3>
+                                    <p>Room: 9050-52, 8th Floor, MBA Building <br>
+                                        Faculty of Business Studies <br>
+                                        <strong>University of Dhaka</strong>  </p>
                                     <div id="map" style='height:400px'></div>
                                 </div>
                             </div>
