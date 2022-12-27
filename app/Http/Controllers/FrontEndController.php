@@ -40,6 +40,9 @@ class FrontEndController extends Controller
             'expertises' => Expertise::get(),
             'members' => Member::get(),
             'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
+            'locations' => [
+                [ 12.9716,  77.5946],
+            ]
 
         ];
 
@@ -82,13 +85,8 @@ class FrontEndController extends Controller
     public function contact()
     {
         $locations = [
-            ["lat" => 12.9716, "lng" => 77.5946],
+            [ 12.9716,  77.5946],
         ];
-
-
-//        $data = [
-//            'contact' => Contact::get(),
-//        ];
 
         return view('frontend.layouts.contact', ['locations'=>$locations]);
     }
