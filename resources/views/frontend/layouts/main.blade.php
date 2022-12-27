@@ -379,14 +379,14 @@
     function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 13,
-            center: { lat: 59.325, lng: 18.07 },
+            center: {  lat: 23.733860, lng: 90.392869 },
         });
 
         marker = new google.maps.Marker({
             map,
             draggable: true,
             animation: google.maps.Animation.DROP,
-            position: { lat: 59.327, lng: 18.067 },
+            position: { lat: 23.733860, lng: 90.392869 },
         });
         marker.addListener("click", toggleBounce);
     }
