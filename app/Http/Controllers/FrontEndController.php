@@ -39,7 +39,7 @@ class FrontEndController extends Controller
             'hero' => Hero::first(),
             'expertises' => Expertise::get(),
             'members' => Member::get(),
-            'galleries' => Gallery::orderBy('id', 'DESC')->take(3)->get(),
+            'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
 
         ];
 
