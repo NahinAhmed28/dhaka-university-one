@@ -84,11 +84,13 @@ class FrontEndController extends Controller
     }
     public function contact()
     {
-        $locations = [
-            [ 12.9716,  77.5946],
-        ];
+//        $locations = [
+//            [ 12.9716,  77.5946],
+//        ];
 
-        return view('frontend.layouts.contact', ['locations'=>$locations]);
+//        return view('frontend.layouts.contact', ['locations'=>$locations]);
+
+        return view('frontend.layouts.contact');
     }
     public function higherEducation()
     {

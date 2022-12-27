@@ -87,244 +87,272 @@
         <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 
         <script>
-        //location map start
 
+            function initMap() {
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 13,
+                    center: { lat: 59.325, lng: 18.07 },
+                });
 
-        var file_path = "{{asset('frontend/assets/marker/m1.png')}}";
-        var style =[
-        {
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#f5f5f5"
-        }
-        ]
-        },
-        {
-        "elementType": "geometry.fill",
-        "stylers": [
-        {
-        "visibility": "on"
-        }
-        ]
-        },
-        {
-        "elementType": "geometry.stroke",
-        "stylers": [
-        {
-        "visibility": "on"
-        }
-        ]
-        },
-        {
-        "elementType": "labels.icon",
-        "stylers": [
-        {
-        "visibility": "on"
-        }
-        ]
-        },
-        {
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#616161"
-        }
-        ]
-        },
-        {
-        "elementType": "labels.text.stroke",
-        "stylers": [
-        {
-        "color": "#f5f5f5"
-        }
-        ]
-        },
-        {
-        "featureType": "administrative.country",
-        "elementType": "geometry.stroke",
-        "stylers": [
-        {
-        "color": "#808080"
-        },
-        {
-        "visibility": "on"
-        }
-        ]
-        },
-        {
-        "featureType": "administrative.land_parcel",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#bdbdbd"
-        }
-        ]
-        },
-        {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#eeeeee"
-        }
-        ]
-        },
-        {
-        "featureType": "poi",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#757575"
-        }
-        ]
-        },
-        {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#e5e5e5"
-        }
-        ]
-        },
-        {
-        "featureType": "poi.park",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#9e9e9e"
-        }
-        ]
-        },
-        {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#ffffff"
-        }
-        ]
-        },
-        {
-        "featureType": "road.arterial",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#757575"
-        }
-        ]
-        },
-        {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#dadada"
-        }
-        ]
-        },
-        {
-        "featureType": "road.highway",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#616161"
-        }
-        ]
-        },
-        {
-        "featureType": "road.local",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#9e9e9e"
-        }
-        ]
-        },
-        {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#e5e5e5"
-        }
-        ]
-        },
-        {
-        "featureType": "transit.station",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#eeeeee"
-        }
-        ]
-        },
-        {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-        {
-        "color": "#c9c9c9"
-        }
-        ]
-        },
-        {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [
-        {
-        "color": "#9e9e9e"
-        }
-        ]
-        }
-        ];
+                marker = new google.maps.Marker({
+                    map,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP,
+                    position: { lat: 59.327, lng: 18.067 },
+                });
+                marker.addListener("click", toggleBounce);
+            }
 
-        function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 23.6850, lng: 90.3563},
-        zoom: 6.8,
-        styles: style,
-        streetViewControl: false,
-        zoomControl: true,
-        fullscreenControl: true,
-        });
+            function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
 
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        var markers = locations.map(function (location, i) {
-        return new google.maps.Marker({
-        position: location,
-        label: labels[i % labels.length]
-        });
-        });
-
-        var clusterStyles = [
-        {
-        textColor: 'white',
-        url: file_path,
-        height: 60,
-        width: 60
-        },
-
-        ];
-
-        var mcOptions = {
-        gridSize: 60,
-        styles: clusterStyles,
-        maxZoom: 15
-        };
-        var markerCluster= new MarkerClusterer(map, markers, mcOptions);
-
-        }
-
-        const locations = [
-        @foreach($locations as $location)
-            {lat: -33.8669710, lng: 151.1958750,}
-        @endforeach
-        ];
-        //location map end
+            window.initMap = initMap;
 
         </script>
+
+
+{{--        <script>--}}
+{{--        //location map start--}}
+{{--        var file_path = "{{asset('frontend/assets/marker/m1.png')}}";--}}
+{{--        var style =[--}}
+{{--        {--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#f5f5f5"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "elementType": "geometry.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "visibility": "on"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "elementType": "geometry.stroke",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "visibility": "on"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "elementType": "labels.icon",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "visibility": "on"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#616161"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "elementType": "labels.text.stroke",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#f5f5f5"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "administrative.country",--}}
+{{--        "elementType": "geometry.stroke",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#808080"--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "visibility": "on"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "administrative.land_parcel",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#bdbdbd"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "poi",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#eeeeee"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "poi",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#757575"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "poi.park",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#e5e5e5"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "poi.park",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#9e9e9e"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "road",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#ffffff"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "road.arterial",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#757575"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "road.highway",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#dadada"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "road.highway",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#616161"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "road.local",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#9e9e9e"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "transit.line",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#e5e5e5"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "transit.station",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#eeeeee"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "water",--}}
+{{--        "elementType": "geometry",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#c9c9c9"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        },--}}
+{{--        {--}}
+{{--        "featureType": "water",--}}
+{{--        "elementType": "labels.text.fill",--}}
+{{--        "stylers": [--}}
+{{--        {--}}
+{{--        "color": "#9e9e9e"--}}
+{{--        }--}}
+{{--        ]--}}
+{{--        }--}}
+{{--        ];--}}
+
+{{--        function initMap() {--}}
+{{--        var map = new google.maps.Map(document.getElementById('map'), {--}}
+{{--        center: {lat: 23.6850, lng: 90.3563},--}}
+{{--        zoom: 6.8,--}}
+{{--        styles: style,--}}
+{{--        streetViewControl: false,--}}
+{{--        zoomControl: true,--}}
+{{--        fullscreenControl: true,--}}
+{{--        });--}}
+
+{{--        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';--}}
+
+{{--        var markers = locations.map(function (location, i) {--}}
+{{--        return new google.maps.Marker({--}}
+{{--        position: location,--}}
+{{--        label: labels[i % labels.length]--}}
+{{--        });--}}
+{{--        });--}}
+
+{{--        var clusterStyles = [--}}
+{{--        {--}}
+{{--        textColor: 'white',--}}
+{{--        url: file_path,--}}
+{{--        height: 60,--}}
+{{--        width: 60--}}
+{{--        },--}}
+
+{{--        ];--}}
+
+{{--        var mcOptions = {--}}
+{{--        gridSize: 60,--}}
+{{--        styles: clusterStyles,--}}
+{{--        maxZoom: 15--}}
+{{--        };--}}
+{{--        var markerCluster= new MarkerClusterer(map, markers, mcOptions);--}}
+
+{{--        }--}}
+
+{{--        const locations = [--}}
+{{--        @foreach($locations as $location)--}}
+{{--            {lat: -33.8669710, lng: 151.1958750,}--}}
+{{--        @endforeach--}}
+{{--        ];--}}
+{{--        //location map end--}}
+
+{{--        </script>--}}
   @endpush
 @endsection
