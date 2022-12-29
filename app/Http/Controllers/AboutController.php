@@ -74,7 +74,12 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
+//        dd($request->all());
 
+        $request->validate([
+            'description' => 'required',
+            'video' => 'required',
+        ]);
 
          $about->update([
             'description' => $request->description,

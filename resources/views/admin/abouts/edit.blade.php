@@ -15,10 +15,10 @@
                     <div class="col-sm-12">
                         <div class="form-group {{ $errors->has('description') ? 'has-danger' : '' }}">
                             <label><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="12"
+                            <textarea class="form-control summernote d-none {{ $errors->has('description') ? 'is-invalid' : '' }}" id="description" placeholder="" rows="12"
                                 name="description" cols="80">{{ old('description', $about->description) }}</textarea>
                             @if ($errors->has('description'))
-                            <div class="form-control-feedback">{{ $errors->first('description') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                             @endif
                         </div>
                     </div>
@@ -26,9 +26,9 @@
                     <div class="col-sm-12">
                         <div class="form-group {{ $errors->has('video') ? 'has-danger' : '' }}">
                             <label><span class="text-danger">*</span>Youtube Video Url</label>
-                            <input  type="text" class="form-control m-input" name="video" value="{{ old('video', $about->video) }}" placeholder="Youtube Url"/>
+                            <input  type="text" class="form-control m-input {{ $errors->has('video') ? 'is-invalid' : '' }}" name="video" value="{{ old('video', $about->video) }}" placeholder="Youtube Url"/>
                             @if ($errors->has('video'))
-                                <div class="form-control-feedback">{{ $errors->first('video') }}</div>
+                                <div class="invalid-feedback">{{ $errors->first('video') }}</div>
                             @endif
                         </div>
                     </div>

@@ -55,10 +55,10 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="description">Service Title</label>
-                    <textarea class="form-control summernote d-none" name="description">{{ old('description')
+                    <textarea class="form-control summernote d-none  {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description">{{ old('description')
                         }}</textarea>
                     @if ($errors->has('description'))
-                    <div class="form-control-feedback">{{ $errors->first('description') }}</div>
+                    <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                     @endif
                 </div>
             </div>

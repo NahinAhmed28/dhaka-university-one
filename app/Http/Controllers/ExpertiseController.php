@@ -23,6 +23,11 @@ class ExpertiseController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         if ($request->hasFile('image')) {
             $expertiseImage = $request->file('image');
             $expertiseImageFileName = 'expertise' . time() . '.' . $expertiseImage->getClientOriginalExtension();
@@ -57,6 +62,11 @@ class ExpertiseController extends Controller
 
     public function update(Request $request, Expertise $expertise)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
 
         $expertiseImageFileName = $expertise->image;
         if ($request->hasFile('image')) {

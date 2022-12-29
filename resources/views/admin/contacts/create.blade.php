@@ -39,7 +39,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="title">Address</label>
-                        <textarea class="form-control" id="address" placeholder="Write Your address" rows="3" name="address" cols="50"></textarea>
+                        <textarea class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" id="address"  placeholder="Write Your address" rows="3" name="address" cols="50" ></textarea>
                         @if ($errors->has('address'))
                             <div class="invalid-feedback">{{ $errors->first('address') }}</div>
                         @endif
@@ -48,7 +48,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="title">Message</label>
-                        <textarea class="form-control" id="message" placeholder="Write Your message" rows="3" name="message" cols="50"></textarea>
+                        <textarea class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}" id="message" placeholder="Write Your message" rows="3" name="message" cols="50"></textarea>
                         @if ($errors->has('message'))
                             <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                         @endif

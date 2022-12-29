@@ -43,6 +43,11 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         if ($request->hasFile('image')) {
             $serviceImage = $request->file('image');
             $serviceImageFileName = 'service' . time() . '.' . $serviceImage->getClientOriginalExtension();
@@ -103,6 +108,10 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
 
         $serviceImageFileName = $service->image;
         if ($request->hasFile('image')) {
