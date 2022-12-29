@@ -76,6 +76,12 @@ class PlanController extends Controller
      */
     public function update(Request $request, Plan $plan)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+
         $planImageFileName = $plan->image;
         if ($request->hasFile('image')) {
             $planImage = $request->file('image');

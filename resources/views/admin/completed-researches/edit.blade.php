@@ -23,23 +23,23 @@
                 <div class="row col-md-6 flexbox">
 
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('title') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Title </label>
                             <input type="text" name="title"
                                 class="form-control md-2 {{ $errors->has('title') ? 'is-invalid' : '' }}"
                                 value="{{ old('title', $data->title) }}" placeholder={{ old('title', $data->title) }} />
                             @if ($errors->has('title'))
-                            <div class="form-control-feedback">{{ $errors->first('title') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('title') }}</div>
                             @endif
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('description') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Description </label>
-                            <textarea class="form-control summernote d-none" id="description" placeholder="" rows="3"
+                            <textarea class="form-control summernote d-none {{ $errors->has('description') ? 'is-invalid' : '' }}" id="description" placeholder="" rows="3"
                                 name="description" cols="50">{{ old('description', $data->description) }}</textarea>
                             @if ($errors->has('description'))
-                            <div class="form-control-feedback">{{ $errors->first('description') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('description') }}</div>
                             @endif
                         </div>
                     </div>

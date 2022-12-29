@@ -34,7 +34,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="title">Ongoing Research Description</label>
-                    <textarea class="form-control summernote" id="description" placeholder="Write Your Description"
+                    <textarea class="form-control summernote {{ $errors->has('description') ? 'is-invalid' : '' }}" id="description" placeholder="Write Your Description"
                         rows="3" name="description" cols="50"></textarea>
                     @if ($errors->has('description'))
                     <div class="invalid-feedback">{{ $errors->first('description') }}</div>

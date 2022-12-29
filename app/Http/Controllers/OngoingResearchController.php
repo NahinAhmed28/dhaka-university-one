@@ -21,6 +21,11 @@ class OngoingResearchController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $data = OngoingResearch::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -42,6 +47,11 @@ class OngoingResearchController extends Controller
     }
     public function update(Request $request, OngoingResearch $ongoingResearch)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $ongoingResearch->update([
             'title' => $request->title,
             'description' => $request->description,

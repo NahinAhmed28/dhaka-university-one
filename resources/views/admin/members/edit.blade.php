@@ -23,34 +23,34 @@
                 <div class="row col-md-6 flexbox">
 
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('name') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Name </label>
-                            <textarea class="form-control" id="name" placeholder="" rows="3" name="name" cols="50">{{
+                            <textarea class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name" placeholder="" rows="3" name="name" cols="50">{{
                                 old('name', $member->name) }}</textarea>
                             @if ($errors->has('name'))
-                            <div class="form-control-feedback">{{ $errors->first('name') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                             @endif
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('designation') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
-                            <textarea class="form-control" id="designation" placeholder="" rows="3" name="designation"
+                            <textarea class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}" id="designation" placeholder="" rows="3" name="designation"
                                 cols="50">{{ old('designation', $member->designation)
                                 }}</textarea>
                             @if ($errors->has('designation'))
-                            <div class="form-control-feedback">{{ $errors->first('designation') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('designation') }}</div>
                             @endif
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('message') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
-                            <textarea class="form-control" id="message" placeholder="" rows="3" name="message"
+                            <textarea class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}" id="message" placeholder="" rows="3" name="message"
                                 cols="50">{{ old('message', $member->message)
                                 }}</textarea>
                             @if ($errors->has('message'))
-                            <div class="form-control-feedback">{{ $errors->first('message') }}</div>
+                            <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                             @endif
                         </div>
                     </div>

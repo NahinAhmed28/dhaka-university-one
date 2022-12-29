@@ -41,6 +41,13 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'designation' => 'required',
+            'message' => 'required',
+        ]);
+
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageFileName = 'member' . time() . '.' . $image->getClientOriginalExtension();

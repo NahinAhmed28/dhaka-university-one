@@ -23,12 +23,12 @@
                 <div class="row col-md-6 flexbox">
 
                     <div class="col-xs-12 col-sm-12">
-                        <div class="form-group  m-form__group {{ $errors->has('category') ? 'has-danger' : '' }}">
+                        <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Category </label>
-                            <textarea class="form-control" id="category" placeholder="" rows="3" name="category"
+                            <textarea class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}" id="category" placeholder="" rows="3" name="category"
                                 cols="50">{{ old('category', $gallery->category) }}</textarea>
                             @if ($errors->has('category'))
-                            <div class="form-control-feedback">{{ $errors->first('category') }}</div>
+                                <div class="invalid-feedback">{{ $errors->first('category') }}</div>
                             @endif
                         </div>
                     </div>

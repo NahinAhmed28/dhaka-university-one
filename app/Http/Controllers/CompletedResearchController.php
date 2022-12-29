@@ -21,6 +21,12 @@ class CompletedResearchController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+
         $data = CompletedResearch::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -42,6 +48,12 @@ class CompletedResearchController extends Controller
     }
     public function update(Request $request, CompletedResearch $completedResearch)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+
         $completedResearch->update([
             'title' => $request->title,
             'description' => $request->description,

@@ -21,6 +21,11 @@ class PublicationController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $data = Publication::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -42,6 +47,11 @@ class PublicationController extends Controller
     }
     public function update(Request $request, Publication $publication)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $publication->update([
             'title' => $request->title,
             'description' => $request->description,

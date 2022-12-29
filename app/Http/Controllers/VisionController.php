@@ -76,6 +76,11 @@ class VisionController extends Controller
      */
     public function update(Request $request, Vision $vision)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $visionImageFileName = $vision->image;
         if ($request->hasFile('image')){
             $visionImage = $request->file('image');

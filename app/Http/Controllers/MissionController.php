@@ -78,6 +78,11 @@ class MissionController extends Controller
     {
 //        dd($request->all());
 
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $missionImageFileName = $mission->image;
         if ($request->hasFile('image')){
             $missionImage = $request->file('image');

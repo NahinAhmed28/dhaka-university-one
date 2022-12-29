@@ -24,7 +24,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="title">Category</label>
-                    <textarea class="form-control" id="category" placeholder="Write Your category" rows="3"
+                    <textarea class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }} " id="category" placeholder="Write Your category" rows="3"
                         name="category" cols="50"></textarea>
                     @if ($errors->has('category'))
                     <div class="invalid-feedback">{{ $errors->first('category') }}</div>

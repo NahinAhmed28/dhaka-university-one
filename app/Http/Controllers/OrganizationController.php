@@ -42,6 +42,11 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageFileName = 'organization' . time() . '.' . $image->getClientOriginalExtension();
@@ -101,6 +106,11 @@ class OrganizationController extends Controller
      */
     public function update(Request $request, Organization $organization)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
         $organizationImageFileName = $organization->image;
         if ($request->hasFile('image')) {
             $organizationImage = $request->file('image');

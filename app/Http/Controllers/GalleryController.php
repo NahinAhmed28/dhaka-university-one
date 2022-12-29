@@ -42,6 +42,10 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'category' => 'required',
+        ]);
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageFileName = 'gallery' . time() . '.' . $image->getClientOriginalExtension();
@@ -54,7 +58,6 @@ class GalleryController extends Controller
             $imageFileName = 'default_logo.png';
         }
         $gallery = Gallery::create([
-            'title' => $request->title,
             'category' => $request->category,
             'image' => $imageFileName,
         ]);
@@ -99,6 +102,10 @@ class GalleryController extends Controller
      */
     public function update(Request $request, Gallery $gallery)
     {
+        $request->validate([
+            'category' => 'required',
+        ]);
+
         $galleryImageFileName = $gallery->image;
         if ($request->hasFile('image')){
             $galleryImage = $request->file('image');
@@ -118,7 +125,6 @@ class GalleryController extends Controller
         }
 
         $gallery->update([
-            'title' => $request->title,
             'image' => $galleryImageFileName,
             'category' => $request->category,
 
