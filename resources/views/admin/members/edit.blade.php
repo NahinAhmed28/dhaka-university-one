@@ -35,7 +35,7 @@
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
-                            <textarea class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}" id="designation" placeholder="" rows="3" name="designation"
+                            <textarea class="form-control d-none summernote{{ $errors->has('designation') ? 'is-invalid' : '' }}" id="designation" placeholder="" rows="3" name="designation"
                                 cols="50">{{ old('designation', $member->designation)
                                 }}</textarea>
                             @if ($errors->has('designation'))
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12">
                         <div class="form-group  m-form__group">
-                            <label class="form-control-label"><span class="text-danger">*</span> Designation </label>
+                            <label class="form-control-label"><span class="text-danger">*</span> Message </label>
                             <textarea class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}" id="message" placeholder="" rows="3" name="message"
                                 cols="50">{{ old('message', $member->message)
                                 }}</textarea>

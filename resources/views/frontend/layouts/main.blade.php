@@ -209,7 +209,7 @@
                             <h4>{{$member->designation}}</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                {{$member->message}}
+                                {!!$member->message!!}
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
