@@ -27,8 +27,8 @@
                             <td>{{$value->address}}</td>
                             <td>{{$value->message}}</td>
                             <td>
-                                <a href="{{ route('contact.edit',[$value->id]) }}" title="Edit">
-                                    <button class="btn btn-outline-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i>
+                                <a href="{{ route('contact.show',[$value->id]) }}" title="Edit">
+                                    <button class="btn btn-outline-primary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>
                                     </button></a>
                                 <form method="POST" action="{{ route('contact.destroy' ,  [$value->id]) }}" accept-charset="UTF-8" style="display:inline">
                                     @method('DELETE')
