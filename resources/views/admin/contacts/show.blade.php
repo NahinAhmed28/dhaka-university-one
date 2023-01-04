@@ -7,13 +7,19 @@
     <div class="card-body table-full-width table-responsive">
     <h4> <strong class="text-bg-primary">Contacts Info</strong></h4>
 
-       ID  : {{$data->id}}
-       Name :{{$data->name}}
-       Email :{{$data->email}}
-       Phone :{{$data->phone}}
-       Address : {{$data->address}}
-       Message  :{{$data->message}}
-
+     <strong>ID :</strong> {{$data->id}} <br>
+     <strong>Name :</strong> {{$data->name}} <br>
+     <strong>Email :</strong> {{$data->email}} <br>
+     <strong>Phone :</strong> {{$data->phone}} <br>
+     <strong>Address :</strong> {{$data->address}} <br>
+     <strong>Message :</strong> {{$data->message}} <br><br> <br>
+{{--        <form method="POST" action="{{ route('contact.destroy' ,  [$data->id]) }}" accept-charset="UTF-8" style="display:inline">--}}
+{{--            @method('DELETE')--}}
+{{--            @csrf--}}
+{{--            <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box" title="Delete Research"--}}
+{{--                --}}{{--                                    onclick="return confirm(&quot;Confirm delete?&quot;)"--}}
+{{--            ><i class="fa fa-trash" aria-hidden="true"> Delete Contact Info</i></button>--}}
+{{--        </form>--}}
 
 </div>
 </div>
