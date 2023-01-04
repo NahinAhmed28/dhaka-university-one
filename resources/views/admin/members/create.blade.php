@@ -50,7 +50,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="title">Designation</label>
-                    <textarea class="form-control {{ $errors->has('designation') ? 'is-invalid' : '' }}" id="designation" placeholder="Write Your Designation"
+                    <textarea class="form-control d-none summernote{{ $errors->has('designation') ? 'is-invalid' : '' }}" id="designation" placeholder="Write Your Designation"
                         name="designation"></textarea>
                     @if ($errors->has('designation'))
                     <div class="invalid-feedback">{{ $errors->first('designation') }}</div>
@@ -60,7 +60,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                     <label for="title">Message</label>
-                    <textarea class="form-control d-none summernote{{ $errors->has('message') ? 'is-invalid' : '' }}" id="message" placeholder="Write Your message"
+                    <textarea class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}" id="message" placeholder="Write Your message"
                         name="message"></textarea>
                     @if ($errors->has('message'))
                     <div class="invalid-feedback">{{ $errors->first('message') }}</div>

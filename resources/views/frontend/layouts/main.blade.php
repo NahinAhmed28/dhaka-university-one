@@ -206,10 +206,10 @@
                             <img src="{{ asset('assets/uploads/member/'. $member->image) }}" class="testimonial-img"
                                 alt="">
                             <h3>{{$member->name}}</h3>
-                            <h4>{{$member->designation}}</h4>
+                            <h4>{!! $member->designation !!}</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                {!!$member->message!!}
+                                {{$member->message}}
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -271,7 +271,7 @@
                                 class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>{{$member->name}}</h4>
-                            <span>{{$member->designation}}</span>
+                            <span>{!! $member->designation !!}</span>
                             <div class="social">
 {{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
