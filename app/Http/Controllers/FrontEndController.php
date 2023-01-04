@@ -41,7 +41,7 @@ class FrontEndController extends Controller
             'members' => Member::get(),
             'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
             'locations' => [
-                [ 12.9716,  77.5946],
+                [23.735708,  90.392929],
             ]
 
         ];

@@ -87,15 +87,15 @@
 
             function initMap() {
                 const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 16,
-                    center: { lat: 23.733860, lng: 90.392869 },
+                    zoom: 18,
+                    center: {  lat: 23.735708, lng: 90.392929 },
                 });
 
                 marker = new google.maps.Marker({
                     map,
                     draggable: true,
                     animation: google.maps.Animation.DROP,
-                    position: { lat: 23.733860, lng: 90.392869 },
+                    position: {  lat: 23.735708, lng: 90.392929 },
                 });
                 marker.addListener("click", toggleBounce);
             }
