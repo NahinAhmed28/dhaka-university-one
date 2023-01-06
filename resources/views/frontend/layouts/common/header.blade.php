@@ -3,14 +3,14 @@
 
 {{--        <h1 class="logo"><a href="#">Public Side</a></h1>--}}
         <!-- Uncomment below if you prefer to use an image logo -->
-     <a href="{{route('public')}}" class="logo"><img src="{{asset('frontend/assets/img/cti_logo.png')}}"
+     <a href="{{route('front')}}" class="logo"><img src="{{asset('frontend/assets/img/cti_logo.png')}}"
 {{--                                                     style=" background-color: rgba(255,255,255,0.44);" --}}
                                                      alt="" class="img-fluid"></a>
 
         <nav id="navbar" class="navbar">
 
             <ul>
-                <li><a class="nav-link scrollto active" href="{{route('public')}}">Home</a></li>
+                <li><a class="nav-link scrollto active" href="{{route('front')}}">Home</a></li>
 
                 <li><a class="nav-link scrollto" href="{{route('public.service')}}">Services</a></li>
                 <li class="dropdown"><a href="#"><span>Approach</span> <i class="bi bi-chevron-down"></i></a>

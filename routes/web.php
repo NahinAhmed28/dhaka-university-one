@@ -21,8 +21,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\MemberController;
 
 
-
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -66,7 +65,7 @@ Route::resource('member', MemberController::class);
 });
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('front');
-Route::group(['prefix'=>'front','as'=>'front.'], function(){
+Route::group(['prefix'=>'front','as'=>'public.'], function(){
     Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
     Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
     Route::get('/expertise', [App\Http\Controllers\FrontEndController::class, 'expertise'])->name('expertise');
@@ -82,4 +81,14 @@ Route::group(['prefix'=>'front','as'=>'front.'], function(){
     Route::get('/organization', [App\Http\Controllers\FrontEndController::class, 'organization'])->name('organization');
     Route::get('/gallery', [App\Http\Controllers\FrontEndController::class, 'gallery'])->name('gallery');
     Route::post('/contactStore', [App\Http\Controllers\FrontEndController::class, 'contactStore'])->name('contactStore');
+});
+Route::get('/clear', function() {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+
+    return "Cleared!";
+
 });
