@@ -106,33 +106,31 @@
     </section><!-- End Clients Section -->
 
     <!-- ======= Expertises Section ======= -->
-    <section id="features" class="features">
+
+    <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Expertises</h2>
+                <h2>Our</h2>
+                <p>Expertises</p>
             </div>
             <div class="row">
-
                 @foreach ($expertises as $expertise)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="pic"> <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="img-fluid"
-                                                   alt=""></div>
-                            <div class="member-info">
-                                <h4>{{$expertise->title}}</h4>
-                                <span>{!! $expertise->designation !!}</span>
-                                <div class="social">
-                                    {{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
-                                    {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
-                                    {{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
-                                    {{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
-                                </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top"
+                                 alt="...">
+                            <div class="card-icon">
+                                <i class="ri-brush-4-line"></i>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">{!!$expertise->title!!}</a></h5>
+                                <p class="card-text">{!!$expertise->description!!}</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
+
         </div>
     </section><!-- End Expertises Section -->
 
