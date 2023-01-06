@@ -53,7 +53,7 @@ class GalleryController extends Controller
                 mkdir('assets/uploads/gallery', 0777, true);
             }
             $image->move('assets/uploads/gallery', $imageFileName);
-            Image::make('assets/uploads/gallery/'.$imageFileName)->resize(600,400)->save('assets/uploads/gallery/'.$imageFileName);
+            Image::make('assets/uploads/gallery/'.$imageFileName)->resize(1000,800)->save('assets/uploads/gallery/'.$imageFileName);
         } else {
             $imageFileName = 'default_logo.png';
         }
