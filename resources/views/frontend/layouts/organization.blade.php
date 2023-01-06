@@ -27,23 +27,33 @@
             <div class="row">
 
                 @foreach ($members as $member)
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="pic"><img src="{{ asset('assets/uploads/member/'. $member->image) }}"
-                                class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>{{$member->name}}</h4>
-                            <span>{!! $member->designation !!}</span>
-                            <div class="social">
-{{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
-{{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
-{{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
-{{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="pic"><img src="{{ asset('assets/uploads/member/'. $member->image) }}"
+                                                  class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>{{$member->name}}</h4>
+                                <span>{!! $member->designation !!}</span>
+                                <div class="social">
+                                    {{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
+
+                                </div>
+                                <div class="portfolio-info">
+                                    <a href="{{ asset('assets/uploads/member/'.$member->image) }}"
+                                       data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$member->message}}">More
+                                        {{--                                    <i class="bx bx-zoom-in"></i>--}}
+                                    </a>
+                                    {{--                            <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+                                    {{--                                    class="bx bx-link"></i></a>--}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
+
             </div>
 
         </div>

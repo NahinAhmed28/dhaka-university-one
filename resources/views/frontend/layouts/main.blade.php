@@ -105,64 +105,36 @@
         </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Features Section ======= -->
+    <!-- ======= Expertises Section ======= -->
     <section id="features" class="features">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Expertises</h2>
             </div>
-            <ul class="nav nav-tabs row d-flex ">
-                @foreach ($expertises as $expertise)
-                    <li class="nav-item col-3 pt-3">
-                        <a class="nav-link show {{($loop->index+1 == 1)?'active':''}}" data-bs-toggle="tab"
-                           href={{"#tab-".$loop->index+1}}>
-                            <i class="ri-gps-line"></i>
-                            <h4 class="d-none d-lg-block">{{ $expertise->title }}</h4>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+            <div class="row">
 
-            <div class="tab-content">
                 @foreach ($expertises as $expertise)
-                    <div class="tab-pane show {{($loop->index+1 == 1)?'active':''}}" id={{"tab-".$loop->index+1}}>
-                        <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                {!!$expertise->description!!}
-                                {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                                <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                    magna aliqua.
-                                </p>
-                                <ul>
-                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</li>
-                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
-                                        voluptate velit.</li>
-                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                        storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                                </ul>
-                                <p>
-                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate
-                                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum
-                                </p> --}}
-                            </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="img-fluid"
-                                     alt="">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="pic"> <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="img-fluid"
+                                                   alt=""></div>
+                            <div class="member-info">
+                                <h4>{{$expertise->title}}</h4>
+                                <span>{!! $expertise->designation !!}</span>
+                                <div class="social">
+                                    {{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
+                                    {{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-            </div>
 
+            </div>
         </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Expertises Section -->
 
 
     <!-- ======= About Boxes Section ======= -->
@@ -277,6 +249,15 @@
 {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
+
+                            </div>
+                            <div class="portfolio-info">
+                                <a href="{{ asset('assets/uploads/member/'.$member->image) }}"
+                                   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$member->message}}">More
+{{--                                    <i class="bx bx-zoom-in"></i>--}}
+                                </a>
+                                {{--                            <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+                                {{--                                    class="bx bx-link"></i></a>--}}
                             </div>
                         </div>
                     </div>
