@@ -9,11 +9,11 @@
         <div class="button-list-flex">
             <h4>Home Page Slider Edit</h4>
 
-{{--            <a href="{{ route('hero.index') }}">--}}
-{{--                <button class="btn btn-primary" href>--}}
-{{--                    Heroes List--}}
-{{--                </button>--}}
-{{--            </a>--}}
+            <a href="{{ route('hero.index') }}">
+                <button class="btn btn-primary" href>
+                    Slider List
+                </button>
+            </a>
         </div>
 
         <!--begin::Form-->

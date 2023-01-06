@@ -121,7 +121,7 @@ class GalleryController extends Controller
                 unlink('assets/uploads/gallery/'.$gallery->image);
             }
             $galleryImage->move('assets/uploads/gallery', $galleryImageFileName);
-            Image::make('assets/uploads/gallery/'.$galleryImageFileName)->resize(600,400)->save('assets/uploads/gallery/'.$galleryImageFileName);
+            Image::make('assets/uploads/gallery/'.$galleryImageFileName)->resize(1000,800)->save('assets/uploads/gallery/'.$galleryImageFileName);
         }
 
         $gallery->update([

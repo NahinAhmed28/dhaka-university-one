@@ -270,16 +270,16 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
-{{--                        <li>--}}
-{{--                            <a href="{{route('hero.create')}}">--}}
-{{--                                <i class="metismenu-icon">--}}
-{{--                                </i>Add Image--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li>
+                            <a href="{{route('hero.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Add Image
+                            </a>
+                        </li>
                         <li>
                             <a href="{{route('hero.index')}}">
                                 <i class="metismenu-icon">
-                                </i>Edit
+                                </i>List
                             </a>
                         </li>
                     </ul>

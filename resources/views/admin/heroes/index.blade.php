@@ -13,7 +13,7 @@
 
             <a href="{{ route('hero.create') }}">
                 <button class="btn btn-primary" href>
-                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Hero
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create New Slider
                 </button>
             </a>
         </div>
