@@ -82,7 +82,7 @@ Route::group(['prefix'=>'front','as'=>'public.'], function(){
     Route::get('/gallery', [App\Http\Controllers\FrontEndController::class, 'gallery'])->name('gallery');
     Route::post('/contactStore', [App\Http\Controllers\FrontEndController::class, 'contactStore'])->name('contactStore');
 });
-Route::get('/cache-clear', function() {
+Route::get('/clear', function() {
 
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
