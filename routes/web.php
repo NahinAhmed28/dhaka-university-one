@@ -66,7 +66,7 @@ Route::resource('member', MemberController::class);
 });
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
-Route::group(['prefix'=>'public','as'=>'public.'], function(){
+Route::group(['prefix'=>'front','as'=>'public.'], function(){
     Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
     Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
     Route::get('/expertise', [App\Http\Controllers\FrontEndController::class, 'expertise'])->name('expertise');
