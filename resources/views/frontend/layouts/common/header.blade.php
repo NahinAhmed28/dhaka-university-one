@@ -46,7 +46,13 @@
                         <li><a href="{{route('public.publication')}}">Publication</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="{{route('public.gallery')}}">Gallery</a></li>
+{{--                <li><a class="nav-link scrollto" href="{{route('public.gallery')}}">Gallery</a></li>--}}
+                <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{route('public.gallery')}}">Gallery</a></li>
+                        <li><a href="{{route('public.portfolio')}}">Portfolio</a></li>
+                    </ul>
+                </li>
                 <li><a class="nav-link scrollto" href="{{route('public.contact')}}">Contact</a></li>
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

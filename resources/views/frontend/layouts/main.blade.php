@@ -86,7 +86,7 @@
         </div>
     </section><!-- End About Boxes Section -->
 
-    <!-- ======= Clients Section ======= -->
+    <!-- ======= Clients and Organization Section ======= -->
     <section id="organization" class="clients">
         <div class="container" data-aos="zoom-in">
             <div class="section-title">
@@ -103,7 +103,7 @@
             </div>
 
         </div>
-    </section><!-- End Clients Section -->
+    </section><!-- End Clients and Organization Section -->
 
     <!-- ======= Expertises Section ======= -->
 
@@ -135,7 +135,7 @@
     </section><!-- End Expertises Section -->
 
 
-    <!-- ======= About Boxes Section ======= -->
+    <!-- ======= Services Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
@@ -161,7 +161,37 @@
             </div>
 
         </div>
-    </section><!-- End About Boxes Section -->
+    </section><!-- End Services Boxes Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="gallery" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p>Check our Portfolio</p>
+            </div>
+
+
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach($portfolios as $portfolio)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="{{ asset('assets/uploads/portfolio/'.$portfolio->image)}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{$portfolio->category}}</h4>
+                            <a href="{{ asset('assets/uploads/portfolio/'.$portfolio->image) }}"
+                               data-portfolio="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$portfolio->category}}"><i
+                                    class="bx bx-zoom-in"></i></a>
+                            {{--                            <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+                            {{--                                    class="bx bx-link"></i></a>--}}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">

@@ -6,17 +6,17 @@
     <div class="card-body table-full-width table-responsive">
 
         <div class="button-list-flex">
-            <h4> Galleries Edit</h4>
+            <h4> Portfolio Edit</h4>
 
-            <a href="{{ route('gallery.index') }}">
+            <a href="{{ route('portfolio.index') }}">
                 <button class="btn btn-primary" href>
-                    Galleries List
+                    Portfolio List
                 </button>
             </a>
         </div>
 
         <!--begin::Form-->
-        <form action="{{route('gallery.update', $gallery->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('portfolio.update', $portfolio->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
@@ -26,7 +26,7 @@
                         <div class="form-group  m-form__group">
                             <label class="form-control-label"><span class="text-danger">*</span> Category </label>
                             <textarea class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}" id="category" placeholder="" rows="3" name="category"
-                                cols="50">{{ old('category', $gallery->category) }}</textarea>
+                                cols="50">{{ old('category', $portfolio->category) }}</textarea>
                             @if ($errors->has('category'))
                                 <div class="invalid-feedback">{{ $errors->first('category') }}</div>
                             @endif
@@ -36,7 +36,7 @@
                         <div class="service-flex">
                             <div class="form-group service-flex">
                                 <label class="form-control-label">Image</label>
-                                <img class="img-thumbnail" src="{{ asset('assets/uploads/gallery/'.$gallery->image)}}"
+                                <img class="img-thumbnail" src="{{ asset('assets/uploads/portfolio/'.$portfolio->image)}}"
                                     width="200px">
                             </div>
                             <div class="custom-file">
@@ -48,13 +48,13 @@
                                 <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                                 @endif
                             </div>
-                            <div id="emailHelp" class="form-text text-info">Recommended image shape:(1000x800) px </div>
+                            <div id="emailHelp" class="form-text text-info">Recommended image shape:(640x1000) px </div>
                             <img class="mt-4" style="display: none" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>
                     <div class="m-portlet__foot m-portlet__foot--fit">
                         <div class="m-form__actions text-center flexbox">
-                            <a href="{{ route('gallery.index') }}" class="btn btn-danger btn-flex"><i
+                            <a href="{{ route('portfolio.index') }}" class="btn btn-danger btn-flex"><i
                                     class="fa fa-times"></i> Cancel</a>
                             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
                         </div>

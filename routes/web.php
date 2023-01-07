@@ -16,6 +16,7 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\VisionController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\MemberController;
@@ -59,6 +60,7 @@ Route::resource('publication', PublicationController::class);
 Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
 Route::resource('gallery', GalleryController::class);
+Route::resource('portfolio', PortfolioController::class);
 Route::resource('hero', HeroController::class);
 Route::resource('plan', PlanController::class);
 Route::resource('member', MemberController::class);
@@ -80,6 +82,7 @@ Route::group(['prefix'=>'front','as'=>'public.'], function(){
     Route::get('/publication', [App\Http\Controllers\FrontEndController::class, 'publication'])->name('publication');
     Route::get('/organization', [App\Http\Controllers\FrontEndController::class, 'organization'])->name('organization');
     Route::get('/gallery', [App\Http\Controllers\FrontEndController::class, 'gallery'])->name('gallery');
+    Route::get('/portfolio', [App\Http\Controllers\FrontEndController::class, 'portfolio'])->name('portfolio');
     Route::post('/contactStore', [App\Http\Controllers\FrontEndController::class, 'contactStore'])->name('contactStore');
 });
 Route::get('/clear', function() {

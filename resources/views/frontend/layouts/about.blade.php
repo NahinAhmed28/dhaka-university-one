@@ -14,15 +14,20 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
+
             <div class="row">
 
                 <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ asset('frontend/assets/img/about.jpg') }}" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+
+                    <iframe style="width: 100%; min-height: 300px"  src="https://www.youtube.com/embed/{{getOwnYoutubeIdForEmbed($about->video)}}"
+                            {{--                            style="height:700px;width:1280px;"--}}
+                            title="YouTube video player" allowfullscreen></iframe>
+                    {{--                    <img src="{{ asset('frontend/assets/img/about.jpg') }}" class="img-fluid" alt="">--}}
+                    {{--                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>--}}
                 </div>
 
                 <div class="col-lg-6 pt-3 pt-lg-0 content">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <h3>About Us</h3>
                     <p class="fst-italic">
                         {!!$about->description!!}
                     </p>

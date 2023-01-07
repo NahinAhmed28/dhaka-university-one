@@ -262,6 +262,29 @@
                     </ul>
                 </li>
 
+                {{--Portfolios--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-usb"></i>
+                        Portfolios
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('portfolio.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Add Image
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('portfolio.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 {{--Heroes--}}
                 <li>
                     <a href="#">

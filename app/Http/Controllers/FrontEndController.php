@@ -15,6 +15,7 @@ use App\Models\Mission;
 use App\Models\OngoingResearch;
 use App\Models\Organization;
 use App\Models\Plan;
+use App\Models\Portfolio;
 use App\Models\Publication;
 use App\Models\Service;
 use App\Models\Training;
@@ -40,6 +41,7 @@ class FrontEndController extends Controller
             'expertises' => Expertise::get(),
             'members' => Member::get(),
             'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
+            'portfolios' => Portfolio::orderBy('id', 'DESC')->take(6)->get(),
             'locations' => [
                 [23.735708,  90.392929],
             ]
@@ -157,6 +159,14 @@ class FrontEndController extends Controller
         ];
         return view('frontend.layouts.gallery', $data);
     }
+    public function portfolio()
+    {
+        $data = [
+            'portfolios' => Portfolio::get(),
+        ];
+        return view('frontend.layouts.portfolio', $data);
+    }
+
     public function contactStore(Request $request)
     {
         $data = Contact::create([

@@ -7,18 +7,18 @@
 
 
         <div class="button-list-flex">
-            <h4>Create Galleries</h4>
+            <h4>Create Portfolios</h4>
 
-            <a href="{{ route('gallery.index') }}">
+            <a href="{{ route('portfolio.index') }}">
                 <button class="btn btn-primary" href>
-                    Galleries List
+                    Portfolios List
                 </button>
             </a>
         </div>
 
 
 
-        <form action="{{route('gallery.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('portfolio.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="col-sm-12 col-md-6">
@@ -47,7 +47,7 @@
 
                     </div>
                     {{-- this needs to be reciprocated --}}
-                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(1000x800) px </div>
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(640x1000) px </div>
                     {{-- this one --}}
                     <img class="mt-2" style="display: none" src="#" id="image_tag" width="200px" />
                 </div>
