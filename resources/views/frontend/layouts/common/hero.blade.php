@@ -3,7 +3,7 @@
     <div class="carousel-inner" >
         @foreach($heroes as $hero)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}"  >
-                <img class="d-block w-100" src="{{asset('assets/uploads/hero/'.$hero->image)}}" alt="First slide" style="max-height: 500px; margin-top: 10rem;">
+                <img class="d-block w-100" src="{{asset('assets/uploads/hero/'.$hero->image)}}" alt="First slide" style="max-height: 600px; margin-top: 10rem;">
             </div>
         @endforeach
     </div>
