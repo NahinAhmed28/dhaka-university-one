@@ -6,16 +6,14 @@
     <div class="m-3" style="margin-bottom: 20px">
 
         <div class="button-list-flex">
-            <h4>Create Heroes</h4>
+            <h4>Create Slider</h4>
 
             <a href="{{ route('hero.index') }}">
                 <button class="btn btn-primary" href>
-                    Heroes List
+                    Slider List
                 </button>
             </a>
         </div>
-
-
         <form action="{{route('hero.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
