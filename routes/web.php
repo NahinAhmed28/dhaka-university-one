@@ -69,7 +69,7 @@ Route::resource('expert', ExpertController::class);
 });
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('front');
-Route::group(['prefix'=>'front','as'=>'public.'], function(){
+Route::group(['prefix'=>'front','as'=>'front.'], function(){
     Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
     Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
     Route::get('/expertise', [App\Http\Controllers\FrontEndController::class, 'expertise'])->name('expertise');

@@ -323,7 +323,7 @@
                 </div>
 
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <form action="{{route('public.contactStore')}}" method="post" role="form" >
+                    <form action="{{route('front.contactStore')}}" method="post" role="form" >
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group">

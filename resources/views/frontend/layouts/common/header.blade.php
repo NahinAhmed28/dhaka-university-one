@@ -10,20 +10,20 @@
         <nav id="navbar" class="navbar">
 
             <ul>
-                <li><a class="nav-link scrollto active" href="{{route('front')}}">Home</a></li>
+                <li><a class="nav-link scrollto {{ (request()->is('/')) ? 'active' : '' }}" href="{{route('front')}}">Home</a></li>
 
-                <li><a class="nav-link scrollto" href="{{route('public.service')}}">Services</a></li>
+                <li><a class="nav-link scrollto {{ request()->routeIs('front.service*') ? 'active' : '' }}" href="{{route('front.service')}}">Services</a></li>
                 <li class="dropdown"><a href="#"><span>Approach</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="{{route('public.about')}}">About</a></li>
-                        <li><a href="{{route('public.mission')}}">Mission And Vision</a></li>
-                        <li><a href="{{route('public.expertise')}}">Expertise</a></li>
+                        <li><a href="{{route('front.about')}}">About</a></li>
+                        <li><a href="{{route('front.mission')}}">Mission And Vision</a></li>
+                        <li><a href="{{route('front.expertise')}}">Expertise</a></li>
                     </ul>
                 </li>
 
 {{--                <li class="dropdown"><a href="#"><span>Academic</span> <i class="bi bi-chevron-down"></i></a>--}}
 {{--                    <ul>--}}
-{{--                        <li><a href="{{route('public.higher-education')}}">Higher Education</a></li>--}}
+{{--                        <li><a href="{{route('front.higher-education')}}">Higher Education</a></li>--}}
 {{--                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>--}}
 {{--                            <ul>--}}
 {{--                                <li><a href="#">Deep Drop Down 1</a></li>--}}
@@ -33,27 +33,27 @@
 {{--                                <li><a href="#">Deep Drop Down 5</a></li>--}}
 {{--                            </ul>--}}
 {{--                        </li>--}}
-{{--                        <li><a href="{{route('public.training')}}">Training</a></li>--}}
-{{--                        <li><a href="{{route('public.internship')}}">Internship</a></li>--}}
-{{--                        <li><a href="{{route('public.fellowship')}}">Fellowship</a></li>--}}
+{{--                        <li><a href="{{route('front.training')}}">Training</a></li>--}}
+{{--                        <li><a href="{{route('front.internship')}}">Internship</a></li>--}}
+{{--                        <li><a href="{{route('front.fellowship')}}">Fellowship</a></li>--}}
 {{--                    </ul>--}}
 {{--                </li>--}}
-                <li><a class="nav-link scrollto" href="{{route('public.organization')}}">Organization</a></li>
+                <li><a class="nav-link scrollto {{ request()->routeIs('front.organization*') ? 'active' : '' }}" href="{{route('front.organization')}}">Organization</a></li>
                 <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="{{route('public.ongoing-research')}}">Ongoing Research</a></li>
-                        <li><a href="{{route('public.completed-research')}}">Completed Research</a></li>
-                        <li><a href="{{route('public.publication')}}">Publication</a></li>
+                        <li><a href="{{route('front.ongoing-research')}}">Ongoing Research</a></li>
+                        <li><a href="{{route('front.completed-research')}}">Completed Research</a></li>
+                        <li><a href="{{route('front.publication')}}">Publication</a></li>
                     </ul>
                 </li>
-{{--                <li><a class="nav-link scrollto" href="{{route('public.gallery')}}">Gallery</a></li>--}}
+{{--                <li><a class="nav-link scrollto" href="{{route('front.gallery')}}">Gallery</a></li>--}}
                 <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="{{route('public.gallery')}}">Gallery</a></li>
-                        <li><a href="{{route('public.portfolio')}}">Portfolio</a></li>
+                        <li><a href="{{route('front.gallery')}}">Gallery</a></li>
+                        <li><a href="{{route('front.portfolio')}}">Portfolio</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="{{route('public.contact')}}">Contact</a></li>
+                <li><a class="nav-link scrollto {{ request()->routeIs('front.contact*') ? 'active' : '' }}" href="{{route('front.contact')}}">Contact</a></li>
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
