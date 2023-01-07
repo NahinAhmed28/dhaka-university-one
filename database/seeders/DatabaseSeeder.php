@@ -190,6 +190,14 @@ Technology.<o:p></o:p></span></span></p>',
             'created_at'=>	now(),
             'updated_at'=>now(),
         ]);
+        DB::table('experts')->insert([
+            'name' => 'name1',
+            'designation' => 'designation',
+            'message' => 'message',
+            'image' => 'default.png',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
         DB::table('contacts')->insert([
             'name' => 'title',
             'email' => 'description description description description',

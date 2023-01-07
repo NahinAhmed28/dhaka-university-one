@@ -84,16 +84,16 @@
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-                    @foreach ($members as $member)
+                    @foreach ($experts as $expert)
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="{{ asset('assets/uploads/member/'. $member->image) }}" class="testimonial-img"
+                            <img src="{{ asset('assets/uploads/expert/'. $expert->image) }}" class="testimonial-img"
                                 alt="">
-                            <h3>{{$member->name}}</h3>
-                            <h4>{!! $member->designation !!}</h4>
+                            <h3>{{$expert->name}}</h3>
+                            <h4>{!! $expert->designation !!}</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                {{$member->message}}
+                                {{$expert->message}}
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\CompletedResearch;
 use App\Models\Contact;
+use App\Models\Expert;
 use App\Models\Expertise;
 use App\Models\Fellowship;
 use App\Models\Gallery;
@@ -40,6 +41,7 @@ class FrontEndController extends Controller
             'heroes' => Hero::get(),
             'expertises' => Expertise::get(),
             'members' => Member::get(),
+            'experts' => Expert::get(),
             'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
             'portfolios' => Portfolio::orderBy('id', 'DESC')->take(6)->get(),
             'locations' => [
@@ -141,6 +143,7 @@ class FrontEndController extends Controller
         $data = [
             'organizations' => Organization::get(['image']),
             'members' => Member::get(),
+            'experts' => Expert::get(),
         ];
 
         return view('frontend.layouts.organization', $data);
