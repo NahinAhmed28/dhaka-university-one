@@ -96,8 +96,8 @@ class ExpertController extends Controller
      */
     public function edit($id)
     {
-        $experts = Expert::find($id);
-        return view('admin.experts.edit', compact('experts'));
+        $expert = Expert::find($id);
+        return view('admin.experts.edit', compact('expert'));
     }
 
     /**
