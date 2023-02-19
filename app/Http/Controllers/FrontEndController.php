@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\CompletedResearch;
 use App\Models\Contact;
+use App\Models\Expert;
 use App\Models\Expertise;
 use App\Models\Fellowship;
 use App\Models\Gallery;
@@ -15,6 +16,7 @@ use App\Models\Mission;
 use App\Models\OngoingResearch;
 use App\Models\Organization;
 use App\Models\Plan;
+use App\Models\Portfolio;
 use App\Models\Publication;
 use App\Models\Service;
 use App\Models\Training;
@@ -36,12 +38,14 @@ class FrontEndController extends Controller
             'mission' => Mission::first(),
             'vision' => Vision::first(),
             'plan' => Plan::first(),
-            'hero' => Hero::first(),
+            'heroes' => Hero::get(),
             'expertises' => Expertise::get(),
             'members' => Member::get(),
+            'experts' => Expert::get(),
             'galleries' => Gallery::orderBy('id', 'DESC')->take(6)->get(),
+            'portfolios' => Portfolio::orderBy('id', 'DESC')->take(6)->get(),
             'locations' => [
-                [ 12.9716,  77.5946],
+                [23.735708,  90.392929],
             ]
 
         ];
@@ -139,6 +143,7 @@ class FrontEndController extends Controller
         $data = [
             'organizations' => Organization::get(['image']),
             'members' => Member::get(),
+            'experts' => Expert::get(),
         ];
 
         return view('frontend.layouts.organization', $data);
@@ -157,6 +162,14 @@ class FrontEndController extends Controller
         ];
         return view('frontend.layouts.gallery', $data);
     }
+    public function portfolio()
+    {
+        $data = [
+            'portfolios' => Portfolio::get(),
+        ];
+        return view('frontend.layouts.portfolio', $data);
+    }
+
     public function contactStore(Request $request)
     {
         $data = Contact::create([

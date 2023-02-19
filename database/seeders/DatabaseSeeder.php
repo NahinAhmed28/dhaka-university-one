@@ -30,71 +30,41 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('abouts')->insert([
-            'description' => '<p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><b><span style="font-size:12.0pt;line-height:
-107%;font-family:&quot;Times New Roman&quot;,serif">About CTI<o:p></o:p></span></b></span></p>
-
-<p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
+            'description' => '<p class="MsoNormal" style="text-align:justify"><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
 mso-bidi-theme-font:minor-latin">The Center for Trade and Investment (CTI) is a
-multidisciplinary non-profit research</span></span><span style="font-size:12.0pt;
-line-height:107%;mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+multidisciplinary non-profit research&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">and development
-arm of the University of Dhaka that began its journey in November</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+arm of the University of Dhaka that began its journey in November&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">2013. Some
-members of the Faculty of Business Studies comprise the current core</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+members of the Faculty of Business Studies comprise the current core&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">staff of the
-Center. The Center is also capable of enhancing its resources by</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+Center. The Center is also capable of enhancing its resources by&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">developing
-linkages with various other centers, departments and institutes of the</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+linkages with various other centers, departments and institutes of the&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">university, as
-well as outside organizations. It is also in a position to draw upon the</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+well as outside organizations. It is also in a position to draw upon the&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">diversified
-intellectual input of over two hundred faculty members of the Faculty of</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+intellectual input of over two hundred faculty members of the Faculty of&nbsp;</span></span><span class="fontstyle01" style="font-size: 1rem;"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Business Studies
-of the university.</span></span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+of the university.</span></span><br></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">In addition to
-trade and investment issues, CTI is currently also focusing on sectoral</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+trade and investment issues, CTI is currently also focusing on sectoral&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">and skills
 development research and training.</span></span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">CTI conducts
-needs assessment studies, skill-gap analyses, etc. and works with</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+needs assessment studies, skill-gap analyses, etc. and works with&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">various
-government agencies, development partners, international certification</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+government agencies, development partners, international certification&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">bodies, and
-chambers of commerce and sector associations to promote skill</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+chambers of commerce and sector associations to promote skill&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">upgrading of
 human resources.&nbsp;</span></span><span style="font-size: 12pt;">CTI is also
 involved in promoting academia-industry collaboration for mutually&nbsp;</span><span style="font-size: 12pt;">beneficial
 results.</span></p><p class="MsoNormal" style="text-align:justify"><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Current
-collaboration partners on skill development issues include International</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+collaboration partners on skill development issues include International&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Labour
-Organization (ILO), National Skills Development Council (NSDC) Secretariat,</span></span><span style="font-size:12.0pt;line-height:107%;mso-bidi-font-family:Calibri;
-mso-bidi-theme-font:minor-latin;color:black"><br>
-</span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
+Organization (ILO), National Skills Development Council (NSDC) Secretariat,&nbsp;</span></span><span class="fontstyle01"><span style="font-size:12.0pt;line-height:107%;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Australian Trade
 Commission, State Electricity Company, Dhaka Metropolitan Police, Rapid Action
 Battalion, Ministry of Labor and Employment and Ministry of Information
@@ -127,6 +97,12 @@ Technology.<o:p></o:p></span></span></p>',
         ]);
         DB::table('galleries')->insert([
             'category' => 'category 1',
+            'image' => 'default.png' ,
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('portfolios')->insert([
+            'category' => 'category test',
             'image' => 'default.png' ,
             'created_at'=>	now(),
             'updated_at'=>now(),
@@ -207,6 +183,14 @@ Technology.<o:p></o:p></span></span></p>',
             'updated_at'=>now(),
         ]);
         DB::table('members')->insert([
+            'name' => 'name1',
+            'designation' => 'designation',
+            'message' => 'message',
+            'image' => 'default.png',
+            'created_at'=>	now(),
+            'updated_at'=>now(),
+        ]);
+        DB::table('experts')->insert([
             'name' => 'name1',
             'designation' => 'designation',
             'message' => 'message',

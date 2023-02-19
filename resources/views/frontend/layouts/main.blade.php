@@ -86,7 +86,7 @@
         </div>
     </section><!-- End About Boxes Section -->
 
-    <!-- ======= Clients Section ======= -->
+    <!-- ======= Clients and Organization Section ======= -->
     <section id="organization" class="clients">
         <div class="container" data-aos="zoom-in">
             <div class="section-title">
@@ -103,58 +103,28 @@
             </div>
 
         </div>
-    </section><!-- End Clients Section -->
+    </section><!-- End Clients and Organization Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <!-- ======= Expertises Section ======= -->
+
+    <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Expertises</h2>
+                <h2>Our</h2>
+                <p>Expertises</p>
             </div>
-            <ul class="nav nav-tabs row d-flex ">
+            <div class="row">
                 @foreach ($expertises as $expertise)
-                    <li class="nav-item col-3 pt-3">
-                        <a class="nav-link show {{($loop->index+1 == 1)?'active':''}}" data-bs-toggle="tab"
-                           href={{"#tab-".$loop->index+1}}>
-                            <i class="ri-gps-line"></i>
-                            <h4 class="d-none d-lg-block">{{ $expertise->title }}</h4>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-
-            <div class="tab-content">
-                @foreach ($expertises as $expertise)
-                    <div class="tab-pane show {{($loop->index+1 == 1)?'active':''}}" id={{"tab-".$loop->index+1}}>
-                        <div class="row">
-                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                {!!$expertise->description!!}
-                                {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                                <p class="fst-italic">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore
-                                    magna aliqua.
-                                </p>
-                                <ul>
-                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</li>
-                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
-                                        voluptate velit.</li>
-                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                        storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                                </ul>
-                                <p>
-                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate
-                                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                    proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum
-                                </p> --}}
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card">
+                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top"
+                                 alt="...">
+                            <div class="card-icon">
+                                <i class="ri-brush-4-line"></i>
                             </div>
-                            <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="img-fluid"
-                                     alt="">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="">{!!$expertise->title!!}</a></h5>
+                                <p class="card-text">{!!$expertise->description!!}</p>
                             </div>
                         </div>
                     </div>
@@ -162,10 +132,10 @@
             </div>
 
         </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Expertises Section -->
 
 
-    <!-- ======= About Boxes Section ======= -->
+    <!-- ======= Services Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
@@ -191,7 +161,37 @@
             </div>
 
         </div>
-    </section><!-- End About Boxes Section -->
+    </section><!-- End Services Boxes Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="gallery" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p>Check our Portfolio</p>
+            </div>
+
+
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach($portfolios as $portfolio)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="{{ asset('assets/uploads/portfolio/'.$portfolio->image)}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{$portfolio->category}}</h4>
+                            <a href="{{ asset('assets/uploads/portfolio/'.$portfolio->image) }}"
+                               data-portfolio="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$portfolio->category}}"><i
+                                    class="bx bx-zoom-in"></i></a>
+                            {{--                            <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+                            {{--                                    class="bx bx-link"></i></a>--}}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -200,16 +200,16 @@
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
-                    @foreach ($members as $member)
+                    @foreach ($experts as $expert)
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src="{{ asset('assets/uploads/member/'. $member->image) }}" class="testimonial-img"
+                            <img src="{{ asset('assets/uploads/expert/'. $expert->image) }}" class="testimonial-img"
                                 alt="">
-                            <h3>{{$member->name}}</h3>
-                            <h4>{{$member->designation}}</h4>
+                            <h3>{{$expert->name}}</h3>
+                            <h4>{!! $expert->designation !!}</h4>
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                {{$member->message}}
+                                {{$expert->message}}
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                         </div>
@@ -223,25 +223,16 @@
         </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="portfolio">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
                 <h2>Portfolio</h2>
-                <p>Check our Portfolio</p>
+                <p>Check our Gallery</p>
             </div>
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                {{--                    <div class="col-lg-12 d-flex justify-content-center">--}}
-                {{--                        <ul id="portfolio-flters">--}}
-                {{--                            <li data-filter="*" class="filter-active">All</li>--}}
-                {{--                            <li data-filter=".filter-app">App</li>--}}
-                {{--                            <li data-filter=".filter-card">Card</li>--}}
-                {{--                            <li data-filter=".filter-web">Web</li>--}}
-                {{--                        </ul>--}}
-                {{--                    </div>--}}
-            </div>
+
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                 @foreach($galleries as $gallery)
@@ -260,7 +251,7 @@
             </div>
 
         </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Gallery Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
@@ -280,12 +271,21 @@
                                 class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>{{$member->name}}</h4>
-                            <span>{{$member->designation}}</span>
+                            <span>{!! $member->designation !!}</span>
                             <div class="social">
 {{--                                <a href=""><i class="bi bi-twitter"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-facebook"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-instagram"></i></a>--}}
 {{--                                <a href=""><i class="bi bi-linkedin"></i></a>--}}
+
+                            </div>
+                            <div class="portfolio-info">
+                                <a href="{{ asset('assets/uploads/member/'.$member->image) }}"
+                                   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$member->message}}">More
+{{--                                    <i class="bx bx-zoom-in"></i>--}}
+                                </a>
+                                {{--                            <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+                                {{--                                    class="bx bx-link"></i></a>--}}
                             </div>
                         </div>
                     </div>
@@ -323,7 +323,7 @@
                 </div>
 
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <form action="{{route('public.contactStore')}}" method="post" role="form" >
+                    <form action="{{route('front.contactStore')}}" method="post" role="form" >
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group">
@@ -374,15 +374,15 @@
 
     function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 13,
-            center: {  lat: 23.733860, lng: 90.392869 },
+            zoom: 18,
+            center: {  lat: 23.735708, lng: 90.392929 },
         });
 
         marker = new google.maps.Marker({
             map,
             draggable: true,
             animation: google.maps.Animation.DROP,
-            position: { lat: 23.733860, lng: 90.392869 },
+            position: {  lat: 23.735708, lng: 90.392929 },
         });
         marker.addListener("click", toggleBounce);
     }

@@ -6,16 +6,14 @@
     <div class="m-3" style="margin-bottom: 20px">
 
         <div class="button-list-flex">
-            <h4>Create Heroes</h4>
+            <h4>Create Slider</h4>
 
             <a href="{{ route('hero.index') }}">
                 <button class="btn btn-primary" href>
-                    Heroes List
+                    Slider List
                 </button>
             </a>
         </div>
-
-
         <form action="{{route('hero.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -31,7 +29,7 @@
                         <div class="invalid-feedback">{{ $errors->first('image') }}</div>
                         @endif
                     </div>
-                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(1024x768) px </div>
+                    <div id="emailHelp" class="form-text text-info">Recommended image shape:(1200x600) px </div>
                     {{-- this one --}}
                     <img class="mt-2" src="#" id="image_tag" width="200px" />
                 </div>

@@ -324,7 +324,7 @@ h6 {
 * Mobile Navigation
 */
 .mobile-nav-toggle {
-  color: #fff;
+  color: #cb1111;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -878,7 +878,7 @@ section {
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
-  filter: grayscale(100);
+  /*filter: grayscale(100);*/
 }
 
 .clients img:hover {

@@ -1,4 +1,4 @@
-<div class="app-sidebar sidebar-shadow">
+<div class="app-sidebar sidebar-shadow" style="overflow-y: auto">
     <div class="app-header__logo">
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
@@ -262,6 +262,29 @@
                     </ul>
                 </li>
 
+                {{--Portfolios--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-usb"></i>
+                        Portfolios
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('portfolio.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Add Image
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('portfolio.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 {{--Heroes--}}
                 <li>
                     <a href="#">
@@ -270,16 +293,16 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
-{{--                        <li>--}}
-{{--                            <a href="{{route('hero.create')}}">--}}
-{{--                                <i class="metismenu-icon">--}}
-{{--                                </i>Add Image--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li>
+                            <a href="{{route('hero.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Add Image
+                            </a>
+                        </li>
                         <li>
                             <a href="{{route('hero.index')}}">
                                 <i class="metismenu-icon">
-                                </i>Edit
+                                </i>List
                             </a>
                         </li>
                     </ul>
@@ -330,6 +353,28 @@
                     </ul>
                 </li>
 
+                {{--Experts--}}
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Organization Experts
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('expert.create')}}">
+                                <i class="metismenu-icon">
+                                </i>Create
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('expert.index')}}">
+                                <i class="metismenu-icon">
+                                </i>List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 {{--Research--}}
                 <li>
@@ -413,12 +458,12 @@
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
-                        <li>
-                            <a href="{{route('contact.create')}}">
-                                <i class="metismenu-icon">
-                                </i>Create
-                            </a>
-                        </li>
+{{--                        <li>--}}
+{{--                            <a href="{{route('contact.create')}}">--}}
+{{--                                <i class="metismenu-icon">--}}
+{{--                                </i>Create--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li>
                             <a href="{{route('contact.index')}}">
                                 <i class="metismenu-icon">

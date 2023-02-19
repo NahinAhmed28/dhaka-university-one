@@ -9,11 +9,11 @@
         <div class="button-list-flex">
             <h4>Home Page Slider Edit</h4>
 
-{{--            <a href="{{ route('hero.index') }}">--}}
-{{--                <button class="btn btn-primary" href>--}}
-{{--                    Heroes List--}}
-{{--                </button>--}}
-{{--            </a>--}}
+            <a href="{{ route('hero.index') }}">
+                <button class="btn btn-primary" href>
+                    Slider List
+                </button>
+            </a>
         </div>
 
         <!--begin::Form-->
@@ -40,7 +40,7 @@
                                 @endif
 
                             </div>
-                            <div id="emailHelp" class="form-text text-info">Recommended image shape:(1024x768) px </div>
+                            <div id="emailHelp" class="form-text text-info">Recommended image shape:(1200x600) px </div>
                             <img class="mt-4" style="display: none" src="#" id="image_tag" width="200px" />
                         </div>
                     </div>

@@ -16,13 +16,14 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\VisionController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ExpertController;
 
 
-
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -60,13 +61,15 @@ Route::resource('publication', PublicationController::class);
 Route::resource('organization', OrganizationController::class);
 Route::resource('vision', VisionController::class);
 Route::resource('gallery', GalleryController::class);
+Route::resource('portfolio', PortfolioController::class);
 Route::resource('hero', HeroController::class);
 Route::resource('plan', PlanController::class);
 Route::resource('member', MemberController::class);
+Route::resource('expert', ExpertController::class);
 });
 
-Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('public');
-Route::group(['prefix'=>'public','as'=>'public.'], function(){
+Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('front');
+Route::group(['prefix'=>'front','as'=>'front.'], function(){
     Route::get('/about', [App\Http\Controllers\FrontEndController::class, 'about'])->name('about');
     Route::get('/service', [App\Http\Controllers\FrontEndController::class, 'service'])->name('service');
     Route::get('/expertise', [App\Http\Controllers\FrontEndController::class, 'expertise'])->name('expertise');
@@ -81,5 +84,17 @@ Route::group(['prefix'=>'public','as'=>'public.'], function(){
     Route::get('/publication', [App\Http\Controllers\FrontEndController::class, 'publication'])->name('publication');
     Route::get('/organization', [App\Http\Controllers\FrontEndController::class, 'organization'])->name('organization');
     Route::get('/gallery', [App\Http\Controllers\FrontEndController::class, 'gallery'])->name('gallery');
+    Route::get('/portfolio', [App\Http\Controllers\FrontEndController::class, 'portfolio'])->name('portfolio');
     Route::post('/contactStore', [App\Http\Controllers\FrontEndController::class, 'contactStore'])->name('contactStore');
+});
+Route::get('/clear', function() {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return "Cleared!";
+
 });
