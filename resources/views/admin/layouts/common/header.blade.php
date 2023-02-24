@@ -2,7 +2,7 @@
     <div class="app-header__logo">
         <a href="{{route('home')}}">
             <img class='logo-src'
-               src ="{{asset('frontend/assets/img/cti_logo.png')}}"
+               src ="{{asset('frontend/assets/img/logo.png')}}"
                 style="width: 100px; height:50px " alt="">
         </a>
         <div class="header__pane ml-auto">

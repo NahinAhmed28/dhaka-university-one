@@ -3,7 +3,7 @@
 
 {{--        <h1 class="logo"><a href="#">Public Side</a></h1>--}}
         <!-- Uncomment below if you prefer to use an image logo -->
-     <a href="{{route('front')}}" class="logo"><img src="{{asset('frontend/assets/img/cti_logo.png')}}"
+     <a href="{{route('front')}}" class="logo"><img src="{{asset('frontend/assets/img/logo.png')}}"
 {{--                                                     style=" background-color: rgba(255,255,255,0.44);" --}}
                                                      alt="" class="img-fluid"></a>
 
