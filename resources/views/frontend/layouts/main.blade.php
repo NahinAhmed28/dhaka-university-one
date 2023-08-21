@@ -30,9 +30,8 @@
 
                 <div class="col-lg-6 pt-3 pt-lg-0 content">
                     <h3>About Us</h3>
-                    <p class="fst-italic">
-                        {!!$about->description!!}
-                    </p>
+                    <p class="">
+                        {!! Str::limit(strip_tags($about->description), 850) !!} ...</p>
                 </div>
 
             </div>
@@ -46,38 +45,46 @@
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
+                    <div class="card"  data-toggle="modal" data-target="#missionModal">
                         <img src="{{ asset('assets/uploads/mission/'.$mission->image)}}" class="card-img-top" alt="...">
                         <div class="card-icon">
                             <i class="ri-brush-4-line"></i>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="">Our Mission</a></h5>
-                            <p class="card-text">{!!$mission->description!!}</p>
+                            <h5 class="card-title">
+                                <a href="#">Our Mission</a>
+                            </h5>
+                            <p class="card-text">{!! Str::limit(strip_tags($mission->description), 120) !!} ...</p>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card">
+                    <div class="card"  data-toggle="modal" data-target="#planModal">
                         <img src="{{ asset('assets/uploads/plan/'.$plan->image)}}" class="card-img-top" alt="...">
                         <div class="card-icon">
                             <i class="ri-calendar-check-line"></i>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="">Our Plan</a></h5>
-                            <p class="card-text">{!!$plan->description!!}</p>
+                            <h5 class="card-title">
+                                <a href="#">Our Plan</a>
+                            </h5>
+                            <p class="card-text">{!! Str::limit(strip_tags($plan->description), 120) !!} ...</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card">
+                    <div class="card"  data-toggle="modal" data-target="#visionModal">
                         <img src="{{ asset('assets/uploads/vision/'.$vision->image)}}" class="card-img-top" alt="...">
                         <div class="card-icon">
                             <i class="ri-movie-2-line"></i>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="">Our Vision</a></h5>
-                            <p class="card-text">{!!$vision->description!!}</p>
+                            <h5 class="card-title">
+                                <a href="#">Our Vision</a>
+                            </h5>
+                            <p class="card-text">{!! Str::limit(strip_tags($vision->description), 120) !!} ...</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +92,54 @@
 
         </div>
     </section><!-- End About Boxes Section -->
-
+    <div class="modal fade" id="missionModal" tabindex="-1" role="dialog" aria-labelledby="missionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="missionModalLabel">Our Mission</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mission Description Goes Here -->
+                    {!! $mission->description !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="visionModal" tabindex="-1" role="dialog" aria-labelledby="visionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="visionModalLabel">Our Vision</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- vission Description Goes Here -->
+                    {!! $vision->description !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="planModal" tabindex="-1" role="dialog" aria-labelledby="planModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="planModalLabel">Our Plan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- plan Description Goes Here -->
+                    {!! $plan->description !!}
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ======= Clients and Organization Section ======= -->
     <section id="organization" class="clients">
         <div class="container" data-aos="zoom-in">
@@ -114,25 +168,42 @@
                 <p>Expertises</p>
             </div>
             <div class="row">
-                @foreach ($expertises as $expertise)
+                @foreach ($expertises as $index => $expertise)
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top"
-                                 alt="...">
+                        <div class="card" data-toggle="modal" data-target="#expertiseModal{{ $index }}">
+                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top" alt="...">
                             <div class="card-icon">
                                 <i class="ri-brush-4-line"></i>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">{!!$expertise->title!!}</a></h5>
-                                <p class="card-text">{!!$expertise->description!!}</p>
+                                <h5 class="card-title">{{ $expertise->title }}</h5>
+                                <p class="card-text">{!! Str::limit(strip_tags($expertise->description), 200) !!} ...</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-
         </div>
-    </section><!-- End Expertises Section -->
+    </section>
+
+    @foreach ($expertises as $index => $expertise)
+        <!-- Modal for each expertise with a unique ID -->
+        <div class="modal fade" id="expertiseModal{{ $index }}" tabindex="-1" role="dialog" aria-labelledby="expertiseModalLabel{{ $index }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="expertiseModalLabel{{ $index }}">{{ $expertise->title }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {!! $expertise->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
 
     <!-- ======= Services Boxes Section ======= -->
@@ -143,25 +214,44 @@
                 <p>Services</p>
             </div>
             <div class="row">
-                @foreach ($services as $service)
+                @foreach ($services as $index => $service)
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <img src="{{ asset('assets/uploads/service/'.$service->image)}}" class="card-img-top"
-                                 alt="...">
+                        <div class="card" data-toggle="modal" data-target="#serviceModal{{ $index }}">
+                            <img src="{{ asset('assets/uploads/service/'.$service->image)}}" class="card-img-top" alt="...">
                             <div class="card-icon">
                                 <i class="ri-brush-4-line"></i>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">{!!$service->title!!}</a></h5>
-                                <p class="card-text">{!!$service->description!!}</p>
+                                <h5 class="card-title">{{ $service->title }}</h5>
+                                <p class="card-text">{!! Str::limit(strip_tags($service->description), 200) !!} ...</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-
         </div>
-    </section><!-- End Services Boxes Section -->
+    </section>
+
+    @foreach ($services as $index => $service)
+        <!-- Modal for each service with a unique ID -->
+        <div class="modal fade" id="serviceModal{{ $index }}" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel{{ $index }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="serviceModalLabel{{ $index }}">{{ $service->title }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {!! $service->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- End Services Boxes Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="gallery" class="portfolio">
