@@ -23,25 +23,44 @@
                 <p>Expertises</p>
             </div>
             <div class="row">
-                @foreach ($expertises as $expertise)
+                @foreach ($expertises as $index => $expertise)
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top"
-                                 alt="...">
+                        <div class="card" data-toggle="modal" data-target="#expertiseModal{{ $index }}">
+                            <img src="{{ asset('assets/uploads/expertise/'.$expertise->image)}}" class="card-img-top" alt="...">
                             <div class="card-icon">
                                 <i class="ri-brush-4-line"></i>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">{!!$expertise->title!!}</a></h5>
-                                <p class="card-text">{!!$expertise->description!!}</p>
+                                <h5 class="card-title">{{ $expertise->title }}</h5>
+                                <p class="card-text">{!! Str::limit(strip_tags($expertise->description), 200) !!} ...</p>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-
         </div>
-    </section><!-- End Expertises Section -->
+    </section>
+
+    @foreach ($expertises as $index => $expertise)
+        <!-- Modal for each expertise with a unique ID -->
+        <div class="modal fade" id="expertiseModal{{ $index }}" tabindex="-1" role="dialog" aria-labelledby="expertiseModalLabel{{ $index }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="expertiseModalLabel{{ $index }}">{{ $expertise->title }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {!! $expertise->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- End Expertises Section -->
 
     <!-- ======= Features Section ======= -->
 {{--    <section id="features" class="features">--}}

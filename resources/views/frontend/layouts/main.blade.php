@@ -31,7 +31,7 @@
                 <div class="col-lg-6 pt-3 pt-lg-0 content">
                     <h3>About Us</h3>
                     <p class="">
-                        {!! Str::limit(strip_tags($about->description), 850) !!} ...</p>
+                        {!! Str::limit(strip_tags($about->description), 850) !!} <a href="{{route('front.about')}}">See More</a></p>
                 </div>
 
             </div>
